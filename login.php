@@ -2,8 +2,15 @@
 require_once "config.php";
 require_once "./usuarios/Usuario.php";
 
-$usuario = new Usuario();
-$usuario->logar($usuario, $senha);
+$usuarios = new Usuario();
+
+$_SESSION["alerta_erro"]="";
+
+if (isset($_POST['usuario']) && isset($_POST['senha'])) {
+    $usuario = filter_var($_POST['usuario']);
+    $senha = filter_var($_POST['senha']);
+    $usuarios->logar($usuario, $senha);
+}
 ?>
 
 
@@ -38,12 +45,19 @@ $usuario->logar($usuario, $senha);
 
                 <label for="senha" class="form-label mt-3">Senha:</label>
                 <input type="password" name="senha" class="form-control" placeholder="Digite sua senha" required>
+
                 <div class="d-grid gap-2">
                     <button type="submit" class="botao-entrar btn btn-success mt-3 mb-3 btn-block">Entrar</button>
-                    <div>
+                <div>
+                <?php  if(isset($_SESSION["alerta_erro"]) && $_SESSION["alerta_erro"] != ""):   ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $_SESSION["alerta_erro"]; ?>
+                    </div>
+                <?php endif; ?>
             </form>
         </div>
     </div>
+    
 </body>
 
 </html>

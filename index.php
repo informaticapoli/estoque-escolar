@@ -1,3 +1,17 @@
+<?php
+require_once "config.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+
+if (isset($_SESSION['token']){
+    $usuarios->check_token($_SESSION['token']);
+}else{
+    header("Location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +22,6 @@
 </head>
 <body>
     tela inicial
+
 </body>
 </html>
