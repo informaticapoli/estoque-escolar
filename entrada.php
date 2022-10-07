@@ -16,10 +16,6 @@
         <?php require_once "./menu.php";?>
     </div>
 
-        <div class="logo">
-            <img src="./imagen/logo.png" alt="Logo Polivalente" class="logo rounded mx-auto d-block">
-        </div>
-
     <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 </body>
 </html>
