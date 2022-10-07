@@ -1,0 +1,30 @@
+body{
+    background-color: #CFDCC0;
+    color: #115B31;
+}
+
+.fundo{
+    background-color: white;
+    width: 1006px;
+    height: 575px;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 30px;
+}
+
+.container{
+    width: 900px;
+    height: 490px;
+}
+
+.btn-cadastrar{
+    margin-left: 0%;
+    margin-top: 20px;
+
+}
