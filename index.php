@@ -1,3 +1,12 @@
+<?php
+require_once "config.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+
+$usuarios->check_login();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +17,6 @@
 </head>
 <body>
     tela inicial
+
 </body>
 </html>

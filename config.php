@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $banco = "estoque_escolar";
 $usuario = "root";
 $senha ="";
@@ -14,4 +16,5 @@ try {
 } catch(PDOException $e) {
     echo $e->getMessage();
 }
+
 ?>
