@@ -4,12 +4,7 @@ require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
 
-if (isset($_SESSION['token']){
-    $usuarios->check_token($_SESSION['token']);
-}else{
-    header("Location: login.php");
-    exit;
-}
+$usuarios->check_login();
 ?>
 
 <!DOCTYPE html>

@@ -37,8 +37,26 @@ class Usuario{
         return $token;
     }
 
-    public function check_token($token){
-        
+    public function check_login(){
+        if(isset($_SESSION['token'])){
+            $token = $_SESSION['token'];
+
+            global $db;
+
+            $sql = "SELECT token FROM usuarios WHERE token = :token";
+            $sql = $db->prepare($sql);
+            $sql->bindValue(":token", $token);
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+
+            }else{
+                header("Location: login.php");
+            }
+        }else{
+            header("Location: login.php");
+            exit;
+        }
     }
 }
 ?>
