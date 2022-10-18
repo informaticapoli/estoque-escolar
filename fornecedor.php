@@ -1,10 +1,12 @@
 <?php 
 require_once "config.php";
-require_once "./usuarios/Usuario.php";
+require_once "./fornecedores/Fornecedor.php";
 
-$fornecedor = new Usuario();
+$fornecedor = new Fornecedor();
 
-$fornecedor->cadastrar($fornecedor);
+if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['endereco']) && ($_POST['endereco']) != ""){
+    $fornecedor->cadastrar();
+}
 
 ?>
 
@@ -31,6 +33,8 @@ $fornecedor->cadastrar($fornecedor);
         <form class="container" method="POST">
             <label>Fornecedor:</label>
             <input class="form-control" type="text" name="fornecedor" required>
+            <label>CNPJ:</label>
+            <input  class="form-control" type="text" name="cnpj" required>
             <label>Endereço:</label>
             <input class="form-control" type="text" name="endereco" required>
             <label>Contato:</label>
@@ -41,6 +45,7 @@ $fornecedor->cadastrar($fornecedor);
             <input class="form-control" type="text" name="telefone2">
             <label>E-mail:</label>
             <input class="form-control" type="email" name="email">
+            
             <button class="btn btn-cadastrar btn-success" type="submit">Cadastrar</button>
         </form>
     </div>
