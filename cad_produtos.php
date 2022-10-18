@@ -1,3 +1,17 @@
+<?php
+
+require_once "config.php";
+require_once "./produtos/Produto.php";
+
+$produto = new Produto();
+
+if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
+   $produto->cadastrar();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,23 +40,23 @@
                     <form method="POST">
                         <div class="row">
                             <label>Nome Produto</label>
-                            <input type="text" class="form-control" name="data_validade"/>
+                            <input type="text" class="form-control" name="nome_produto"/>
 
                             <label>Unidade Medida</label>
-                            <input type="date" class="form-control" name="senha"/>
+                            <input type="text" class="form-control" name="unidade_medida"/>
 
                             <label>Data Validade</label>
-                            <input type="date" class="form-control" name="senha"/> 
+                            <input type="date" class="form-control" name="data_validade"/> 
 
                             <label>id Nota</label>
-                            <input type="number" class="form-control" name="senha"/>
+                            <input type="number" class="form-control" name="id_nota"/>
                             
                             <label>id Fornecedor</label>
-                            <input type="number" class="form-control" name="senha"/>
+                            <input type="number" class="form-control" name="id_fornecedor"/>
                          
                             <label>id Recurso</label>
-                            <input type="number" class="form-control" name="senha"/>
-                        
+                            <input type="number" class="form-control" name="id_recurso"/>
+
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>    
                     </form>

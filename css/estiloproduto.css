@@ -61,3 +61,16 @@ legend{
 dropdown{
     margin-left: 20px;
 }
+
+input{
+    margin-bottom: 10px;
+}
+
+.tabela{
+    max-width: 1006px;
+    height: 575px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 25px;
+}
