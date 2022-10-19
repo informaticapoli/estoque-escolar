@@ -1,0 +1,47 @@
+body{
+    background-color: #CFDCC0;
+    color: #115B31;
+}
+
+.fundo{
+    background-color: white;
+    width: 1006px;
+    height: 630px;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.fundo-lista-forn{
+    background-color: white;
+    width: 1400px;
+    height: 630px;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 30px;
+}
+
+.container{
+    width: 900px;
+    height: 490px;
+}
+
+.btn-cadastrar{
+    margin-left: 0%;
+    margin-top: 20px;
+
+}
+
+.table{
+    max-width: 1350px;
+    max-height: 600px;
+    margin: auto;
+    color: #115B31;
+}
