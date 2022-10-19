@@ -2,12 +2,18 @@
 
 require_once "config.php";
 require_once "./produtos/Produto.php";
+require_once "./fornecedores/Fornecedor.php";
 
 $produto = new Produto();
+$fornecedor = new Fornecedor();
 
 if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
    $produto->cadastrar();
 }
+
+$fornecedores = $fornecedor->listarFornecedores();
+
+
 ?>
 
 
@@ -51,8 +57,13 @@ if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
                             <label>id Nota</label>
                             <input type="number" class="form-control" name="id_nota"/>
                             
-                            <label>id Fornecedor</label>
-                            <input type="number" class="form-control" name="id_fornecedor"/>
+                            <label>Fornecedor</label>
+                            <select class="form-control" name="id_fornecedor"> 
+                                <option value="">Selecione</option>
+                                <?php foreach($fornecedores as $fornecedor):?>
+                                    <option value="">g</option>
+                                <?php endforeach; ?>    
+                            </select>
                          
                             <label>id Recurso</label>
                             <input type="number" class="form-control" name="id_recurso"/>
