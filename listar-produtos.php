@@ -41,6 +41,7 @@ $produtos = $produto->listar();
                             <th> id Nota</th>
                             <th> id Fornecedor</th>
                             <th> id Recurso</th>
+                            <th> Opeção</th>
                         </thead>
 
                         <tbody>
@@ -57,6 +58,11 @@ $produtos = $produto->listar();
                                         <td><?php echo $produto['id_fornecedor']?></td>
                                         
                                         <td><?php echo $produto['id_recurso']?></td>
+
+                                        <td>
+                                            <a href="excluir.php?id=<?php echo $produto['id'] ?>" class="btn btn-danger"> Excluir </a>
+                                            <a href="editar.php?id=<?php echo $produto['id'] ?>" class="btn btn-warning"> Editar </a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
