@@ -52,5 +52,18 @@ class Fornecedor{
         }
     }
 
+    public function listarFornecedores(){
+        
+        global $db;
+        $fornecedores = array();
+        $sql = "SELECT * FROM fornecedor";
+        $sql = $db->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $fornecedores = $sql->fetchAll();
+        }
+        return $fornecedores;
+    }
 }
 ?>
