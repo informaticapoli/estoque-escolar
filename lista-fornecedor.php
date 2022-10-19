@@ -30,7 +30,7 @@ $fornecedores= $sql -> fetchAll();
     <div class="menu">  
         <?php require_once "./menu.php";?>
     </div>
-    <div class="fundo">
+    <div class="fundo-lista-forn">
         <h1>Lista de Fornecedores</h1>
         <table class="table">
             <thead>
@@ -46,7 +46,13 @@ $fornecedores= $sql -> fetchAll();
             <tbody>
             <?php foreach($fornecedores as $fornecedor): ?>
                 <tr>
-                    <td><?php echo $fornecedor['fornecedor']?></td>
+                    <td><?php echo $fornecedor['nome_fornecedor']?></td>
+                    <td><?php echo $fornecedor['cnpj']?></td>
+                    <td><?php echo $fornecedor['endereco_fornecedor']?></td>
+                    <td><?php echo $fornecedor['contato_fornecedor']?></td>
+                    <td><?php echo $fornecedor['telefone1']?></td>
+                    <td><?php echo $fornecedor['telefone2']?></td>
+                    <td><?php echo $fornecedor['e_mail']?></td>
                 </tr>
             <?php endforeach ?>
             </tbody>
