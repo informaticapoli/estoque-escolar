@@ -38,7 +38,7 @@ class Produto{
         return $produtos;
     }
 
-    public function info_produto(id_produtos){
+    public function info_produto(id_produto){
 
         global $db;
         $produto = array();
