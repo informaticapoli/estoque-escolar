@@ -2,11 +2,13 @@
 
 require_once "config.php";
 require_once "./produtos/Produto.php";
-
+$usuarios->check_login();
 $produto = new Produto();
-$produtos = $produto->listar();
-?>
 
+$produtos = $produto->listar();
+
+
+?>
 
 
 <!DOCTYPE html>

@@ -7,6 +7,7 @@ require_once "./fornecedores/Fornecedor.php";
 $produto = new Produto();
 $fornecedor = new Fornecedor();
 
+
 if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
    $produto->cadastrar();
 }

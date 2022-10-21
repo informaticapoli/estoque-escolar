@@ -3,7 +3,6 @@ require_once "config.php";
 require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
-
 $_SESSION["alerta_erro"]="";
 
 if (isset($_POST['usuario']) && isset($_POST['senha'])) {

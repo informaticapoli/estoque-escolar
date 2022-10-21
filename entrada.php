@@ -1,3 +1,12 @@
+<?php
+require_once "config.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+
+$usuarios->check_login();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +25,7 @@
         <?php require_once "./menu.php";?>
     </div>
 
-    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática <--</a></footer>
 
     
 </body>

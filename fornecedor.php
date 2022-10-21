@@ -4,6 +4,7 @@ require_once "./fornecedores/Fornecedor.php";
 
 $fornecedor = new Fornecedor();
 
+
 if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['endereco']) && ($_POST['endereco']) != ""){
     $fornecedor->cadastrar();
 }
