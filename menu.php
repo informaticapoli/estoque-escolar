@@ -1,4 +1,5 @@
 <div class="dropdown">
+    <!-- BOTAO PRODUTOS-->
         <button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Produtos
         </button>
@@ -6,9 +7,9 @@
             <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Novo</a></li>
             <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Listar</a></li>
         </ul>
+<!-- FIM BOTAO PRODUTOS-->
 
-
-
+<!-- BOTAO SAIDA-->
         <button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Saida
         </button>
@@ -16,6 +17,7 @@
             <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Novo</a></li>
             <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Listar</a></li>
         </ul>
+<!-- FIM BOTAO SAIDA-->
 
 
 
