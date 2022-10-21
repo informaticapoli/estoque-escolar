@@ -60,8 +60,8 @@ $produtos = $produto->listar();
                                         <td><?php echo $produto['id_recurso']?></td>
 
                                         <td>
-                                            <a href="excluir.php?id=<?php echo $produto['id'] ?>" class="btn btn-danger"> Excluir </a>
-                                            <a href="editar.php?id=<?php echo $produto['id'] ?>" class="btn btn-warning"> Editar </a>
+                                            <a href="excluir.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>
+                                            <a href="editar-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-warning"> Editar </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
