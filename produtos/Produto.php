@@ -24,7 +24,7 @@ class Produto{
         // print_r($sql->errorInfo());
         // exit; 
         if($sql) {
-            header("Location:Produto.php");
+            header("Location:listar-produtos.php");
         }
     }
     
@@ -37,5 +37,49 @@ class Produto{
         $produtos = $sql->fetchALL();
         return $produtos;
     }
+
+    public function info_produto(id_produtos){
+
+        global $db;
+        $produto = array();
+
+        $sql = "SELECT * FROM produtos WHERE id_produto = :id_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $id_produto);
+        $sql->execute();
+        $produto = $sql->fetch();
+
+        // print_r($sql->errorInfo());
+        // exit;
+    }
+
+    public function editar(){
+        global $db;
+        $produto = array();
+        $id_produto = $_POST['id_produto'];
+        $nome_produto = $_POST['nome_produto'];
+        $unidade_medida = $_POST['unidade_medida'];
+        $data_validade = $_POST['data_validade'];
+        $id_nota = $_POST['id_nota'];
+        $id_fornecedor = $_POST['id_fornecedor'];
+        $id_recurso = $_POST['id_recurso'];
+
+
+        $sql = "UPDATE produtos SET $id_produto = :id_produto, $nome_produto = :nome_produto,  $unidade_medida = :unidade_medida, $data_validade = :data_validade,
+        $id_nota = :id_nota, $id_fornecedor = :id_fornecedor, $id_recurso = :id_recurso, WHERE id = :id";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $id_produto);
+        $sql->bindValue(":nome_produto", $nome_produto );
+        $sql->bindValue(":unidade_medida", $unidade_medida);
+        $sql->bindValue(":data_validade", $data_validade);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->bindValue(":id_fornecedor", $id_fornecedor);
+        $sql->bindValue(":id_recurso", $id_recurso);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        header("Location: cad_produtos.php");
+    }
+
 }
 ?>
