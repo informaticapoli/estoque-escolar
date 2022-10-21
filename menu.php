@@ -4,7 +4,7 @@
             Produtos
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Novo</a></li>
+            <li><a class="dropdown-item " href="<?php echo $url ?>.php" class="botao-menu">Novo</a></li>
             <li><a class="dropdown-item" href="<?php echo $url ?>.php" class="botao-menu">Listar</a></li>
         </ul>
 <!-- FIM BOTAO PRODUTOS-->
