@@ -41,7 +41,7 @@ $produtos = $produto->listar();
                             <th> id Nota</th>
                             <th> id Fornecedor</th>
                             <th> id Recurso</th>
-                            <th> Opeção</th>
+                            <th> Opeções</th>
                         </thead>
 
                         <tbody>
@@ -68,7 +68,6 @@ $produtos = $produto->listar();
                             </tbody>
                         </table>
     </div>
-        <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 
     
 </body>
