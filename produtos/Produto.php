@@ -38,9 +38,11 @@ class Produto{
         return $produtos;
     }
 
-    public function info_produto(id_produtos){
+    public function info_produto($id_produto){
 
         global $db;
+
+        $id_produto = $_GET['id'];
         $produto = array();
 
         $sql = "SELECT * FROM produtos WHERE id_produto = :id_produto";
@@ -48,9 +50,9 @@ class Produto{
         $sql->bindValue(":id_produto", $id_produto);
         $sql->execute();
         $produto = $sql->fetch();
+        return $produto;
 
-        // print_r($sql->errorInfo());
-        // exit;
+        // print_r($sql->errorInfo());exit;
     }
 
     public function editar(){

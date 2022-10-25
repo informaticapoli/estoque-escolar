@@ -6,9 +6,8 @@ require_once "./fornecedores/Fornecedor.php";
 
 
 $produto = new Produto();
-$id_produto = $_GET['id_produto'];
-$produtos = $produto->info_produto();
-
+$id_produto = $_GET['id'];
+$produtos = $produto->info_produto($id_produto);
 ?>
 
 
@@ -36,7 +35,7 @@ $produtos = $produto->info_produto();
             
             <div class="container">
                 <fieldset>
-                    <legend> Cadastrar Produto </legend>
+                    <legend> Editar Produto </legend>
                     <form method="POST">
                         <div class="row">
                             <label>Nome Produto</label>
@@ -66,7 +65,7 @@ $produtos = $produto->info_produto();
                             <input type="hidden" value="<?php echo $id_produto['id_produto'] ?>"/>
 
 
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <button type="submit" class="btn btn-success">Atualizar</button>
                         </div>    
                     </form>
                 </fieldset>
@@ -74,7 +73,6 @@ $produtos = $produto->info_produto();
 
         </div>
 
-        <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 
     
 </body>
