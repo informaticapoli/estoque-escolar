@@ -1,21 +1,14 @@
 <?php
 
-require_once "config.php";
+require_once "./config.php";
 require_once "./produtos/Produto.php";
 require_once "./fornecedores/Fornecedor.php";
 
+
 $produto = new Produto();
-$fornecedor = new Fornecedor();
-
-if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
-   $produto->cadastrar();
-}
-
-$fornecedores = $fornecedor->listarFornecedores();
-
-
+$id_produto = $_GET['id'];
+$produtos = $produto->info_produto($id_produto);
 ?>
-
 
 
 <!DOCTYPE html>
@@ -42,7 +35,7 @@ $fornecedores = $fornecedor->listarFornecedores();
             
             <div class="container">
                 <fieldset>
-                    <legend> Cadastrar Produto </legend>
+                    <legend> Editar Produto </legend>
                     <form method="POST">
                         <div class="row">
                             <label>Nome Produto</label>
@@ -69,7 +62,10 @@ $fornecedores = $fornecedor->listarFornecedores();
                             <label>id Recurso</label>
                             <input type="number" class="form-control" name="id_recurso"/>
 
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <input type="hidden" value="<?php echo $id_produto['id_produto'] ?>"/>
+
+
+                            <button type="submit" class="btn btn-success">Atualizar</button>
                         </div>    
                     </form>
                 </fieldset>
