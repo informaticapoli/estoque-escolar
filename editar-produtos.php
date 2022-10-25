@@ -8,6 +8,8 @@ require_once "./fornecedores/Fornecedor.php";
 $produto = new Produto();
 $id_produto = $_GET['id'];
 $produtos = $produto->info_produto($id_produto);
+
+
 ?>
 
 
@@ -39,19 +41,19 @@ $produtos = $produto->info_produto($id_produto);
                     <form method="POST">
                         <div class="row">
                             <label>Nome Produto</label>
-                            <input type="text" class="form-control" name="nome_produto"/>
+                            <input type="text" class="form-control" name="nome_produto" value="<?php echo $produtos['nome_produto']?>"/>
 
                             <label>Unidade Medida</label>
-                            <input type="text" class="form-control" name="unidade_medida"/>
+                            <input type="text" class="form-control" name="unidade_medida" value="<?php echo $produtos['unidade_medida']?>"/>
 
                             <label>Data Validade</label>
-                            <input type="date" class="form-control" name="data_validade"/> 
+                            <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 
 
                             <label>id Nota</label>
-                            <input type="number" class="form-control" name="id_nota"/>
+                            <input type="number" class="form-control" name="id_nota" value="<?php echo $produtos['id_nota']?>"/>
                             
                             <label>Fornecedor</label>
-                            <select class="form-control" name="id_fornecedor"> 
+                            <select class="form-control" name="id_fornecedor" value="<?php echo $produtos['id_fornecedor']?>"> 
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
                                     <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
@@ -60,7 +62,7 @@ $produtos = $produto->info_produto($id_produto);
                             </select>
                          
                             <label>id Recurso</label>
-                            <input type="number" class="form-control" name="id_recurso"/>
+                            <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
 
                             <input type="hidden" value="<?php echo $id_produto['id_produto'] ?>"/>
 

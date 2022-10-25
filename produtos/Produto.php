@@ -52,12 +52,17 @@ class Produto{
         $produto = $sql->fetch();
         return $produto;
 
-        // print_r($sql->errorInfo());exit;
-    }
+    //   echo "<pre>"; print_r($sql->errorInfo()); exit;
+        }
 
     public function editar(){
-        global $db;
+
         $produto = array();
+
+        global $db;
+        
+        $id=$_GET['id'];
+
         $id_produto = $_POST['id_produto'];
         $nome_produto = $_POST['nome_produto'];
         $unidade_medida = $_POST['unidade_medida'];
@@ -81,6 +86,7 @@ class Produto{
         $sql->execute();
 
         header("Location: cad_produtos.php");
+        
     }
 
 }
