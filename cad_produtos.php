@@ -4,8 +4,14 @@ require_once "config.php";
 require_once "./produtos/Produto.php";
 require_once "./fornecedores/Fornecedor.php";
 
+
+
+
 $produto = new Produto();
 $fornecedor = new Fornecedor();
+
+
+
 
 
 if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){

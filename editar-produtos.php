@@ -4,6 +4,9 @@ require_once "./config.php";
 require_once "./produtos/Produto.php";
 require_once "./fornecedores/Fornecedor.php";
 
+$usuarios = new Usuario();
+$usuarios->check_login();
+
 
 $produto = new Produto();
 $id_produto = $_GET['id'];
