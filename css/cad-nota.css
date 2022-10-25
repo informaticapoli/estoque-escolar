@@ -12,27 +12,6 @@ body{
     margin-top: 40px;
 }
 
-.fundo-lista-forn{
-    background-color: white;
-    width: 1400px;
-    max-height: 630px;
-    border-radius: 30px;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
-    overflow: auto;
-}
-
-.fundo-editar-forn{
-    background-color: white;
-    width: 920px;
-    max-height: 630px;
-    border-radius: 30px;
-    margin: auto;
-    padding: 20px;    
-    margin-top: 70px;
-}
-
 .fundo-cad-nota{
     background-color: white;
     width: 920px;
@@ -56,6 +35,7 @@ h1{
 .btn-cadastrar{
     margin-left: 0%;
     margin-top: 20px;
+    width: 180px;
 }
 
 .btn-editar{
