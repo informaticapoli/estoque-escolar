@@ -123,6 +123,8 @@ class Fornecedor{
         }
     }
 
-
+    public function excluirfornecedor(){
+        
+    }
 }
 ?>

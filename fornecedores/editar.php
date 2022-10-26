@@ -53,11 +53,16 @@ if(isset($_POST["contato"])){
             <input class="form-control" type="text" name="telefone2" value="<?php echo $info_fornecedor['telefone2']?>" required>
 
             <label>E-mail:</label>
-            <input type="text" name="email" value="<?php echo $info_fornecedor['e_mail'] ?>">
+            <input class="form-control" type="text" name="email" value="<?php echo $info_fornecedor['e_mail'] ?>">
             <input type="hidden" name="id" value="<?php echo $info_fornecedor['id_fornecedor']?>">
-            
-            <button class="btn btn-editar btn-warning" type="submit">Editar</button>
+
+           <br/>
+            <a href="../lista-fornecedor.php" class="btn btn-warning ">Voltar</a>
+            <button class="btn btn-success" type="submit">Editar</button>
+
         </form>
+            
+            
     </div>
 </body>
 </html>
