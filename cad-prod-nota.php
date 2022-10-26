@@ -24,12 +24,15 @@ require_once "config.php";
     <div class="menu">  
         <?php require_once "./menu.php";?>
     </div>
-    <div class="fundo-cad-nota">
+    <div class="fundo-cad-prod-nota">
         <h1>Cadastrar Produtos da Nota Fiscal</h1>
         <form class="container" method="POST">
-            <label></label>
-            <input id="pesquisar_prod" type="text">                        
-            <button class="btn btn-cadastrar btn-success" type="submit">Finalizar cadastro</button>
+            <div class="campo_pesquisa">
+                <input id="pesquisar_prod" class="form-control" type="text">   
+                <div class="resultado">
+                    
+                </div>
+            </div>         
         </form>
     </div>
 </body>
