@@ -8,7 +8,10 @@ require_once "./fornecedores/Fornecedor.php";
 $produto = new Produto();
 $id_produto = $_GET['id'];
 $produtos = $produto->info_produto($id_produto);
-
+// print_r($produtos);
+if (isset($_POST['id_produto'])) {
+    $produto->editar($id_produto);
+}
 
 ?>
 
@@ -56,7 +59,7 @@ $produtos = $produto->info_produto($id_produto);
                             <select class="form-control" name="id_fornecedor" value="<?php echo $produtos['id_fornecedor']?>"> 
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
-                                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                                <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
 
                                 <?php endforeach; ?>    
                             </select>
@@ -64,7 +67,7 @@ $produtos = $produto->info_produto($id_produto);
                             <label>id Recurso</label>
                             <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
 
-                            <input type="hidden" value="<?php echo $id_produto['id_produto'] ?>"/>
+                            <input type="hidden" name="id_produto" value="<?php echo $id_produto['id_produto'] ?>"/>
 
 
                             <button type="submit" class="btn btn-success">Atualizar</button>
