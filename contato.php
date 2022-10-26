@@ -20,118 +20,121 @@
         <div class="row">
             <div class="col areacontato">
                 <div class="fotos"> 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Clezia
                         </p>
+                        </div>  
                     </div>
 
-                    <div clss="card shadow-sm">
-                        <title>Clezia</title>
-                        <img src="./imagen/fotodavi.jpg" class="imagemcontato" alt=""/>
-                        <div class="card-body">
-                        </div>
-                        <p class="card-text">Davi
-                        </p>
-                    </div>
-
-                    <div clss="card shadow-sm">
-                        <title>Clezia</title>
-                        <img src="./imagen/fotoelizete.jpg" class="imagemcontato" alt=""/>
-                        <div class="card-body">
-                        </div>
-                        <p class="card-text">Elizete
-                        </p>
-                    </div>
-
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
+                        <p class="card-text">Davi
+                        </p>
                         </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <title>Clezia</title>
+                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <div class="card-body">
+                        <p class="card-text">Elizete
+                        </p>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <title>Clezia</title>
+                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <div class="card-body">
                         <p class="card-text">Franciele
                         </p>
+                        </div>
                     </div>
                 </div>
 
 
 
                 <div class="fotos" >
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotojanikele.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Janikele
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotolais.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Lais
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotomilena.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Milena
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotonatallia.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Natallia
                         </p>
+                        </div>
                     </div>
                 </div>
 
+
+
+
                 <div class="fotos">
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotosamantha.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Samantha
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotolucas.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Professor Lucas
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotomarcia.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Professora Marcia
                         </p>
+                        </div>
                     </div>
 
-                    <div clss="card shadow-sm">
+                    <div class="card shadow-sm">
                         <title>Clezia</title>
                         <img src="./imagen/fotoreginaldo.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        </div>
                         <p class="card-text">Professor Reginaldo
                         </p>
+                        </div>
                     </div>
                 </div>
 

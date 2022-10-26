@@ -60,17 +60,16 @@ body{
     width: 50%;
     margin-top: 15px;
     margin-bottom: auto;
-    margin-left: 55vh;
-}
+    margin-left: 30vh;}
 
 .imagemcontato{
-    width: 360px;
-    height: 225px;
+    width: 100%;
 }
 
 .areacontato{
     display: flex;
     flex-wrap: wrap;
+    max-width: 1300px;
 }
 
 .shadow-sm{
@@ -84,12 +83,23 @@ p{
     justify-content: center;
 }
 
+
 .fotos{
     display: flex;
     margin-right: 10px;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: 3px;
+    border-radius: (5px, 5px, 5px, 5px);
+    max-width: 1300px;
 }
+
 
 .container{
     margin-bottom: 90px;
 
 }
+
+
+
