@@ -1,10 +1,9 @@
 <?php
 require_once "config.php";
+require_once "./produtos/Produto.php";
+
+$produto = new Produto();
 $id_produto = $_GET['id'];
-global $db;
-$sql = "DELETE FROM produtos WHERE id_produto = :id_produto";
-$sql = $db->prepare($sql);
-$sql->bindValue(":id_produto", $id_produto);
-$sql->execute();
-$dados = $sql->fetchALL();
+$produto->excluir($id_produto);
+// print_r($produtos);
 ?>

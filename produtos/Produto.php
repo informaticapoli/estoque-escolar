@@ -90,5 +90,16 @@ class Produto{
 
     }
 
+    public function excluir(){
+
+    global $db;
+    $id_produto=$_GET['id'];
+    
+    $sql = "DELETE FROM produtos WHERE id_produto = :id";
+    $sql = $db->prepare($sql);
+    $sql->bindValue(":id", $id_produto);
+    $sql->execute();
+    $dados = $sql->fetchALL();
+    }
 }
 ?>
