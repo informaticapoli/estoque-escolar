@@ -31,7 +31,10 @@ class Produto{
     public function listar(){
         global $db;
         $produtos = array();
-        $sql = "SELECT * FROM produtos";
+        $sql = "SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
+        produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor, recurso.nome_recurso FROM produtos 
+        INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor
+        INNER JOIN recurso ON produtos.id_recurso = recurso.id_recurso";
         $sql = $db->prepare($sql);
         $sql->execute();
         $produtos = $sql->fetchALL();
@@ -72,8 +75,9 @@ class Produto{
 
         $sql = "UPDATE produtos SET  nome_produto = :nome_produto,  
         unidade_medida = :unidade_medida, data_validade = :data_validade,
-        id_nota = :id_nota, id_fornecedor = :id_fornecedor, id_recurso = :id_recurso WHERE id_produto = :id";
-        // echo $sql;
+        id_nota = :id_nota, id_fornecedor = :id_fornecedor, id_recurso = :id_recurso WHERE id_produto = :id_produto";
+        // echo $sql; exit;
+        // echo $id_produto; exit;
         $sql = $db->prepare($sql);
         $sql->bindValue(":nome_produto", $nome_produto );
         $sql->bindValue(":unidade_medida", $unidade_medida);
@@ -81,7 +85,7 @@ class Produto{
         $sql->bindValue(":id_nota", $id_nota);
         $sql->bindValue(":id_fornecedor", $id_fornecedor);
         $sql->bindValue(":id_recurso", $id_recurso);
-        $sql->bindValue(":id", $id_produto);
+        $sql->bindValue(":id_produto", $id_produto);
         $sql->execute();
     
         header("Location:listar-produtos.php");
@@ -100,6 +104,19 @@ class Produto{
     $sql->bindValue(":id", $id_produto);
     $sql->execute();
     $dados = $sql->fetchALL();
+
+    header("Location:listar-produtos.php");
+
     }
 }
 ?>
+
+
+SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
+produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor FROM produtos 
+INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor;
+
+
+SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
+produtos.id_fornecedor, produtos.id_recurso, recurso.nome_recurso FROM produtos 
+INNER JOIN recurso ON produtos.id_recurso = recurso.id_recurso;
