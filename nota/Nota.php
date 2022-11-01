@@ -18,6 +18,22 @@ class Nota{
 
         header("Location: {$url}cad-prod-nota.php");
     }
+
+    public function adicionar_prod_nota($prod_id, $prod_qtd, $prod_valor){
+
+        global $db;
+
+        $sql = "INSERT INTO info_prod_entrada SET id_produto = :id_produto, qtd = :qtd, valor = :valor";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $prod_id);      
+        $sql->bindValue(":qtd", $prod_qtd);     
+        $sql->bindValue(":valor", $prod_valor); 
+        $sql->execute();
+
+        echo "<pre>";
+        print_r($sql->errorInfo());
+        exit;
+    }
     
 }
 

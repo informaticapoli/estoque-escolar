@@ -101,5 +101,21 @@ class Produto{
         
     }
 
+    public function select_prod($prod){
+        global $db;
+
+        $produto_info = array();
+
+        $sql = "SELECT * FROM produtos WHERE id_produto = :id_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $prod);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $produto_info = $sql->fetch();
+        }
+        return $produto_info;
+    }
+
 }
 ?>
