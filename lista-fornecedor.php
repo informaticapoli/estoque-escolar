@@ -58,7 +58,7 @@ $fornecedores= $fornecedor->listarFornecedores();
                     <td>
                     <a href="./fornecedores/editar.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>" class="btn btn-warning">Editar</a>
                     
-                    <a href="./fornecedores/excluir.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>"  class="btn btn-danger">Excluir</a>
+                    <a href="./fornecedores/excluir.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>" onclick="return confirm('Deseja excluir o registro?')" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
             <?php endforeach ?>

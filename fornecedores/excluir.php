@@ -1,11 +1,8 @@
 <?php
 require_once "../config.php";
-$id = $_GET['id'];
-global $db;
+require_once "Fornecedor.php";
 
-$sql = "DELETE FROM fornecedor WHERE id = :id";
-$sql = $db->prepare($sql);
-$sql->bindValue(":id", $id);
-$sql->execute();
-
-header("location: ../lista-fornecedor.php");
+$fornecedor = new Fornecedor();
+$id = $_GET['id_fornecedor'];
+$fornecedor->excluirFornecedor($id);
+?>

@@ -123,8 +123,21 @@ class Fornecedor{
         }
     }
 
-    public function excluirfornecedor(){
+    public function excluirFornecedor(){
         
+        $id = $_GET['id_fornecedor'];
+        global $db;
+        
+        $sql = "DELETE FROM fornecedor WHERE id_fornecedor = :id";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        // echo '<pre>';
+        // print_r($sql->errorInfo());exit;
+        
+        header("location: ../lista-fornecedor.php");
+
     }
 }
 ?>
