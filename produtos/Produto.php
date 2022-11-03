@@ -21,8 +21,7 @@ class Produto{
         $sql->bindValue(":id_recurso", $id_recurso);
         $sql->execute();
         
-        // print_r($sql->errorInfo());
-        // exit; 
+        // print_r($sql->errorInfo());exit; 
         if($sql) {
             header("Location:listar-produtos.php");
         }
