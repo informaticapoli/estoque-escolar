@@ -15,25 +15,53 @@ class Nota{
         $sql->bindValue(":recurso", $recurso);
         $sql->bindValue(":total_nf", $total_nf);        
         $sql->execute();
+        $id_nota = $db->lastInsertId();
 
-        header("Location: {$url}cad-prod-nota.php");
+        header("Location: {$url}cad-prod-nota.php?id=$id_nota");
     }
 
-    public function adicionar_prod_nota($prod_id, $prod_qtd, $prod_valor){
+    public function adicionar_prod_nota($prod_id, $id_nota, $prod_qtd, $prod_valor){
 
         global $db;
 
-        $sql = "INSERT INTO info_prod_entrada SET id_produto = :id_produto, qtd = :qtd, valor = :valor";
+        $sql = "INSERT INTO info_produtos_entrada SET id_produto = :id_produto, id_nota = :id_nota, qtd = :qtd, valor = :valor";
         $sql = $db->prepare($sql);
-        $sql->bindValue(":id_produto", $prod_id);      
+        $sql->bindValue(":id_produto", $prod_id);   
+        $sql->bindValue(":id_nota", $id_nota);    
         $sql->bindValue(":qtd", $prod_qtd);     
         $sql->bindValue(":valor", $prod_valor); 
         $sql->execute();
 
-        echo "<pre>";
-        print_r($sql->errorInfo());
-        exit;
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+
+        //echo "<pre>";
+        //print_r($sql->errorInfo());
+        //exit;
     }
+
+    public function exibir_prod_nota($id_nota){
+        global $db;
+
+        $exibir_prod = array();
+
+        $sql = "SELECT * FROM info_produtos_entrada WHERE id_nota = :id_nota";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $exibir_prod = $sql->fetchAll();
+        }
+
+        return $exibir_prod;
+        
+    }
+
+    
     
 }
 

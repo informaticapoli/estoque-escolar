@@ -5,26 +5,41 @@ $(document).ready(function (){
     });
     $("#salvar_prod").on("click", function(){
         let prod_id = $("#prod_id").val();
+        let id_nota = $("#id_nota").val();
         let prod_qtd = $("#prod_qtd").val();
         let prod_valor = $("#prod_valor").val();
         if(prod_id != "" && prod_qtd != "" && prod_valor != ""){
-            adicionarProdutoNota(prod_id, prod_qtd, prod_valor);
+            adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor);
+        }else{
         }
     });
    
   });
 
-    function adicionarProdutoNota(prod_id, prod_qtd, prod_valor){
+    function excluir(id){
+    }
+
+    function adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor){
         $.ajax({
             url:'http://localhost/estoque-escolar/nota/produtos.php',
             type:'POST',
             dataType:'json',
             data:{
-                prod_id, prod_qtd, prod_valor
+                prod_id, id_nota, prod_qtd, prod_valor
                 },
             success:function(json) {
+                let html = "";
+            for (let i in json.produtos){
+                html+= "<tr>";
+                html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
+                html+= "<td> <a href='javascript:;' onclick='excluir("+json.produtos[i]['id']+")' >Excluir</a></td>";
                 
+                html+= "</tr>";
             }
+            $("#produtos_cad").html(html);
+        }
             
         });
     }
