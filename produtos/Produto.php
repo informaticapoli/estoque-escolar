@@ -29,8 +29,11 @@ class Produto{
     }
     
     public function listar(){
+        
         global $db;
+
         $produtos = array();
+        
         $sql = "SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
         produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor, recurso.nome_recurso FROM produtos 
         INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor
@@ -110,13 +113,3 @@ class Produto{
     }
 }
 ?>
-
-
-SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
-produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor FROM produtos 
-INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor;
-
-
-SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
-produtos.id_fornecedor, produtos.id_recurso, recurso.nome_recurso FROM produtos 
-INNER JOIN recurso ON produtos.id_recurso = recurso.id_recurso;

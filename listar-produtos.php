@@ -39,8 +39,8 @@ $produtos = $produto->listar();
                             <th> Unidade Medida</th>
                             <th> Data Validade</th>
                             <th> id Nota</th>
-                            <th> id Fornecedor</th>
-                            <th> id Recurso</th>
+                            <th> Nome Fornecedor</th>
+                            <th> Recurso</th>
                             <th> Opeções</th>
                         </thead>
 
@@ -55,9 +55,9 @@ $produtos = $produto->listar();
 
                                         <td><?php echo $produto['id_nota']?></td>
 
-                                        <td><?php echo $produto['id_fornecedor']?></td>
+                                        <td><?php echo $produto['nome_fornecedor']?></td>
                                         
-                                        <td><?php echo $produto['id_recurso']?></td>
+                                        <td><?php echo $produto['nome_recurso']?></td>
 
                                         <td>
                                             <a href="excluir-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>
