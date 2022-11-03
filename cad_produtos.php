@@ -46,16 +46,16 @@ $fornecedores = $fornecedor->listarFornecedores();
                     <form method="POST">
                         <div class="row">
                             <label>Nome Produto</label>
-                            <input type="text" class="form-control" name="nome_produto"/>
+                            <input type="text" class="form-control" placeholder="Informe o nome do produto " name="nome_produto"/>
 
                             <label>Unidade Medida</label>
-                            <input type="text" class="form-control" name="unidade_medida"/>
+                            <input type="text" class="form-control" placeholder="Informe a quantidade de unidades" name="unidade_medida"/>
 
                             <label>Data Validade</label>
-                            <input type="date" class="form-control" name="data_validade"/> 
+                            <input type="date" class="form-control" placeholder="Informe a data de validade do produto" name="data_validade"/> 
 
-                            <label>id Nota</label>
-                            <input type="number" class="form-control" name="id_nota"/>
+                            <label>Número da Nota</label>
+                            <input type="number" class="form-control" placeholder="Informe o número da nota" name="id_nota"/>
                             
                             <label>Fornecedor</label>
                             <select class="form-control" name="id_fornecedor"> 
@@ -66,8 +66,8 @@ $fornecedores = $fornecedor->listarFornecedores();
                                 <?php endforeach; ?>    
                             </select>
                          
-                            <label>id Recurso</label>
-                            <input type="number" class="form-control" name="id_recurso"/>
+                            <label>Número Recurso</label>
+                            <input type="number" class="form-control" placeholder="Informe número do recurso" name="id_recurso"/>
 
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>    
