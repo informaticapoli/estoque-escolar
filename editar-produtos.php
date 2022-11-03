@@ -67,7 +67,7 @@ if (isset($_POST['id_produto'])) {
                             <label>id Recurso</label>
                             <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
 
-                            <input type="hidden" name="id_produto" value="<?php echo $id_produto['id_produto'] ?>"/>
+                            <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
 
 
                             <button type="submit" class="btn btn-success">Atualizar</button>
