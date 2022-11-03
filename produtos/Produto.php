@@ -41,8 +41,8 @@ class Produto{
         return $produtos;
     }
 
-    public function info_produto($id_produto){
 
+    public function info_produto($id_produto){
         global $db;
 
         $id_produto = $_GET['id'];
