@@ -14,6 +14,7 @@ if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
 }
 
 $fornecedores = $fornecedor->listarFornecedores();
+$recursos = $recurso->pegarecursos();
 
 ?>
 
@@ -58,6 +59,8 @@ $fornecedores = $fornecedor->listarFornecedores();
                             <label>id Nota</label>
                             <input type="number" class="form-control" name="id_nota"/>
                             
+
+
                             <label>Fornecedor</label>
                             <select class="form-control" name="id_fornecedor"> 
                                 <option value="">Selecione</option>
@@ -75,6 +78,8 @@ $fornecedores = $fornecedor->listarFornecedores();
                                     <option value="<?php echo $recurso['id_recurso'] ?>"><?php echo $recurso['nome_recurso'] ?></option>
                                 <?php endforeach; ?>    
                             </select>
+
+
 
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>    
