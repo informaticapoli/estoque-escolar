@@ -17,7 +17,45 @@ $(document).ready(function (){
   });
 
     function excluir(id){
+        $.ajax({
+            url:'http://localhost/estoque-escolar/nota/excluir.php',
+            type:'POST',
+            dataType:'json',
+            data:{
+                id
+                },
+            success:function(json) {
+
+            }
+            
+        });
     }
+
+    function listar_prod(prod_id, id_nota, prod_qtd, prod_valor){
+        $.ajax({
+            url:'http://localhost/estoque-escolar/nota/listar.php',
+            type:'POST',
+            dataType:'json',
+            data:{
+                prod_id, id_nota, prod_qtd, prod_valor
+                },
+            success:function(json) {
+                let html = "";
+            for (let i in json.produtos){
+                html+= "<tr>";
+                html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
+                html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
+                
+                html+= "</tr>";
+            }
+            $("#produtos_cad").html(html);
+        }
+            
+        });
+    }
+
 
     function adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor){
         $.ajax({
@@ -34,7 +72,7 @@ $(document).ready(function (){
                 html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
-                html+= "<td> <a href='javascript:;' onclick='excluir("+json.produtos[i]['id']+")' >Excluir</a></td>";
+                html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
                 
                 html+= "</tr>";
             }

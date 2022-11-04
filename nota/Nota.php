@@ -61,7 +61,21 @@ class Nota{
         
     }
 
-    
+    public function excluir_prod_nota($id){ 
+        global $db;
+        
+        $sql = "DELETE FROM info_produtos_entrada WHERE id_info=:id";
+        $sql = $db -> prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql -> execute();
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     
 }
 
