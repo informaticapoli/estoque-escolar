@@ -96,6 +96,41 @@ class Produto{
 
     }
 
+
+    public function pesquisar_prod($texto){
+
+        global $db;
+
+        $produtos = array();
+
+        $sql = "SELECT * FROM produtos WHERE nome_produto LIKE :nome_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":nome_produto", $texto."%");
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $produtos = $sql->fetchAll();
+        }
+        return $produtos;
+        
+    }
+
+    public function select_prod($prod){
+        global $db;
+
+        $produto_info = array();
+
+        $sql = "SELECT * FROM produtos WHERE id_produto = :id_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $prod);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $produto_info = $sql->fetch();
+        }
+        return $produto_info;
+    }
+
     public function excluir(){
 
     global $db;
