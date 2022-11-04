@@ -3,10 +3,13 @@ require_once "../config.php";
 require_once "Fornecedor.php";
 global $db;
 
-$info_fornecedor = new Fornecedor();
+$fornecedor = new Fornecedor();
 
-$info_fornecedor= $info_fornecedor->info_fornecedor();
-        
+$info_fornecedor= $fornecedor->info_fornecedor();
+
+if(isset($_POST["contato"])){
+    $fornecedor->editarFornecedor();
+}
 
 ?>
 
@@ -32,23 +35,34 @@ $info_fornecedor= $info_fornecedor->info_fornecedor();
         <h1>Editar Fornecedores</h1>
         <form class="container" method="POST">
             <label>Fornecedor:</label>
-            <input class="form-control" type="text" name="fornecedor" value="<?php echo $fornecedor['nome_fornecedor']?>" required >
+            <input class="form-control" type="text" name="fornecedor" value="<?php echo $info_fornecedor['nome_fornecedor']?>" required >
+
             <label>CNPJ:</label>
-            <input  class="form-control" type="text" name="cnpj" value="<?php echo $fornecedor['cnpj']?>" required>
+            <input  class="form-control" type="text" name="cnpj" value="<?php echo $info_fornecedor['cnpj']?>" required>
+
             <label>Endereço:</label>
-            <input class="form-control" type="text" name="endereco" required>
+            <input class="form-control" type="text" name="endereco" value="<?php echo $info_fornecedor['endereco_fornecedor']?>" required>
+
             <label>Contato:</label>
-            <input class="form-control" type="text" name="contato" required>
+            <input class="form-control" type="text" name="contato" value="<?php echo $info_fornecedor['contato_fornecedor']?>" required>
+
             <label>Telefone 1:</label>
-            <input class="form-control" type="text" name="telefone1" required>
+            <input class="form-control" type="text" name="telefone1" value="<?php echo $info_fornecedor['telefone1']?>" required>
+
             <label>Telefone 2:</label> 
-            <input class="form-control" type="text" name="telefone2">
+            <input class="form-control" type="text" name="telefone2" value="<?php echo $info_fornecedor['telefone2']?>" required>
+
             <label>E-mail:</label>
-            <input class="form-control" type="email" name="email">
-            <input type="hidden" name="id" value="<?php echo $id ?>">
-            
-            <button class="btn btn-editar btn-warning" type="submit">Editar</button>
+            <input class="form-control" type="text" name="email" value="<?php echo $info_fornecedor['e_mail'] ?>">
+            <input type="hidden" name="id" value="<?php echo $info_fornecedor['id_fornecedor']?>">
+
+           <br/>
+            <a href="../lista-fornecedor.php" class="btn btn-warning ">Voltar</a>
+            <button class="btn btn-success" type="submit">Editar</button>
+
         </form>
+            
+            
     </div>
 </body>
 </html>

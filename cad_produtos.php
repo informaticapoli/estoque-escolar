@@ -4,10 +4,18 @@ require_once "config.php";
 require_once "./produtos/Produto.php";
 require_once "./fornecedores/Fornecedor.php";
 require_once "./recursos/Recurso.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+$usuarios->check_login();
 
 $produto = new Produto();
 $fornecedor = new Fornecedor();
 $recurso = new Recurso();
+
+
+
+
 
 if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
    $produto->cadastrar();

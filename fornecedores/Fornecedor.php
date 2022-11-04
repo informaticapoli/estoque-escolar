@@ -67,6 +67,8 @@ class Fornecedor{
     }
 
     public function editarFornecedor(){
+        global $db;
+        global $url;
         $fornecedor = $_POST['fornecedor'];
         $endereco = $_POST['endereco'];
         $contato = $_POST['contato'];
@@ -76,11 +78,11 @@ class Fornecedor{
         $cnpj = $_POST['cnpj'];
         $id = $_POST['id'];
 
-        $sql = "UPDATE fornecedor SET nome_fornecedor = :fornecedor, endereco = :endereco_fornecedor, contato_fornecedor = :contato, telefone1 = :telefone1, telefone2 = :telefone2, email = :email, cnpj = :cnpj WHERE id = :id";
+        $sql = "UPDATE fornecedor SET nome_fornecedor = :fornecedor, endereco_fornecedor = :endereco_fornecedor, contato_fornecedor = :contato, telefone1 = :telefone1, telefone2 = :telefone2, e_mail = :email, cnpj = :cnpj WHERE id_fornecedor = :id";
 
         $sql = $db->prepare($sql);
         $sql->bindValue(":fornecedor", $fornecedor); 
-        $sql->bindValue(":endereco", $endereco);
+        $sql->bindValue(":endereco_fornecedor", $endereco);
         $sql->bindValue(":contato", $contato);
         $sql->bindValue(":telefone1", $telefone1);
         $sql->bindValue(":telefone2", $telefone2);
@@ -89,7 +91,10 @@ class Fornecedor{
         $sql->bindValue(":id", $id);
         $sql->execute();
 
-        header("Location: {$url}inicio.php");
+        //echo '<pre>';
+        //print_r($sql->errorInfo());exit;
+
+        header("Location: ../lista-fornecedor.php");
     }
 
     public function info_fornecedor(){
@@ -113,10 +118,26 @@ class Fornecedor{
                 header("Location: {$url}inicio.php");
                 exit;
             }
+            return $fornecedor;
     
         }
     }
 
+    public function excluirFornecedor(){
+        
+        $id = $_GET['id_fornecedor'];
+        global $db;
+        
+        $sql = "DELETE FROM fornecedor WHERE id_fornecedor = :id";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
 
+        // echo '<pre>';
+        // print_r($sql->errorInfo());exit;
+        
+        header("location: ../lista-fornecedor.php");
+
+    }
 }
 ?>
