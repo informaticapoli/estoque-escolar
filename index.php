@@ -3,8 +3,10 @@ require_once "config.php";
 require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
-
 $usuarios->check_login();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@ $usuarios->check_login();
     <title>Inicio</title>
 </head>
 <body>
-    tela inicial
+    Tela Inicial
 
 </body>
 </html>
