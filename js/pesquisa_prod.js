@@ -13,10 +13,12 @@ $(document).ready(function (){
         }else{
         }
     });
-   
+    let id_nota = $("#id_nota").val();
+    listar_prod(id_nota);
   });
 
     function excluir(id){
+        let id_nota = $("#id_nota").val();
         $.ajax({
             url:'http://localhost/estoque-escolar/nota/excluir.php',
             type:'POST',
@@ -25,25 +27,25 @@ $(document).ready(function (){
                 id
                 },
             success:function(json) {
-
+                listar_prod(id_nota);
             }
             
         });
     }
 
-    function listar_prod(prod_id, id_nota, prod_qtd, prod_valor){
+    function listar_prod(id_nota){
         $.ajax({
             url:'http://localhost/estoque-escolar/nota/listar.php',
             type:'POST',
             dataType:'json',
             data:{
-                prod_id, id_nota, prod_qtd, prod_valor
+                id_nota
                 },
             success:function(json) {
                 let html = "";
             for (let i in json.produtos){
                 html+= "<tr>";
-                html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
                 html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";

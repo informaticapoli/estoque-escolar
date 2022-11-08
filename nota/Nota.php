@@ -48,7 +48,7 @@ class Nota{
 
         $exibir_prod = array();
 
-        $sql = "SELECT * FROM info_produtos_entrada WHERE id_nota = :id_nota";
+        $sql = "SELECT *,produtos.nome_produto FROM info_produtos_entrada INNER JOIN produtos ON info_produtos_entrada.id_produto = produtos.id_produto WHERE info_produtos_entrada.id_nota = :id_nota";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_nota", $id_nota);
         $sql->execute();
@@ -56,6 +56,7 @@ class Nota{
         if($sql->rowCount() > 0){
             $exibir_prod = $sql->fetchAll();
         }
+
 
         return $exibir_prod;
         
