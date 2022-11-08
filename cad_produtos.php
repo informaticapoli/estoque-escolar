@@ -3,16 +3,25 @@
 require_once "config.php";
 require_once "./produtos/Produto.php";
 require_once "./fornecedores/Fornecedor.php";
+require_once "./recursos/Recurso.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+$usuarios->check_login();
 
 $produto = new Produto();
 $fornecedor = new Fornecedor();
+$recurso = new Recurso();
+
+
+
+
 
 if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
    $produto->cadastrar();
 }
 
 $fornecedores = $fornecedor->listarFornecedores();
-
 
 ?>
 
@@ -62,12 +71,18 @@ $fornecedores = $fornecedor->listarFornecedores();
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
                                     <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
-
                                 <?php endforeach; ?>    
                             </select>
+
+
                          
-                            <label>Número Recurso</label>
-                            <input type="number" class="form-control" placeholder="Informe número do recurso" name="id_recurso"/>
+                            <label>Recurso</label>
+                            <select class="form-control" name="id_recurso"> 
+                                <option value="">Selecione</option>
+                                <?php foreach($recursos as $recurso):?>
+                                    <option value="<?php echo $recurso['id_recurso'] ?>"><?php echo $recurso['nome_recurso'] ?></option>
+                                <?php endforeach; ?>    
+                            </select>
 
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>    

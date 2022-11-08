@@ -2,11 +2,17 @@
 
 require_once "config.php";
 require_once "./produtos/Produto.php";
+require_once "./usuarios/Usuario.php";
+
+$usuarios = new Usuario();
+$usuarios->check_login();
 
 $produto = new Produto();
-$produtos = $produto->listar();
-?>
 
+$produtos = $produto->listar();
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -20,6 +26,12 @@ $produtos = $produto->listar();
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/estiloproduto.css">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/datatables.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="./css/datatable.css">
+
     <title>Entrada</title>
 </head>
 <body>
@@ -33,14 +45,12 @@ $produtos = $produto->listar();
                 <fieldset>
                     <legend>Lista de Registros</legend>
                     </hr>
-                    <table class="table" >
+                    <table class="table" id="myTable">
                         <thrad>
-                            <th> Nome Produto</th>
-                            <th> Unidade Medida</th>
-                            <th> Data Validade</th>
-                            <th> id Nota</th>
-                            <th> id Fornecedor</th>
-                            <th> id Recurso</th>
+                            <th> Produto</th>
+                            <th> U. M.</th>
+                            <th> Fornecedor</th>
+                            <th> Recurso</th>
                             <th> Opeções</th>
                         </thead>
 
@@ -51,13 +61,9 @@ $produtos = $produto->listar();
 
                                         <td><?php echo $produto['unidade_medida']?></td>
 
-                                        <td><?php echo $produto['data_validade']?></td>
-
-                                        <td><?php echo $produto['id_nota']?></td>
-
-                                        <td><?php echo $produto['id_fornecedor']?></td>
+                                        <td><?php echo $produto['nome_fornecedor']?></td>
                                         
-                                        <td><?php echo $produto['id_recurso']?></td>
+                                        <td><?php echo $produto['nome_recurso']?></td>
 
                                         <td>
                                             <a href="excluir-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>

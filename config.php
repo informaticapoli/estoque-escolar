@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+require_once "./usuarios/Usuario.php";
+
+
+
 
 $banco = "estoque_escolar";
 $usuario = "root";
