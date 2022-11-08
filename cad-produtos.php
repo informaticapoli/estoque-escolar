@@ -62,11 +62,7 @@ $recursos = $recurso->pegarecursos();
                             <input type="text" class="form-control" name="unidade_medida"/>
 
                             <label>Data Validade</label>
-                            <input type="date" class="form-control" name="data_validade"/> 
-
-                            <label>id Nota</label>
-                            <input type="number" class="form-control" name="id_nota"/>
-                            
+                            <input type="date" class="form-control" name="data_validade"/>                             
 
 
                             <label>Fornecedor</label>
