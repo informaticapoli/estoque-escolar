@@ -6,16 +6,22 @@ require_once "./fornecedores/Fornecedor.php";
 require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
+$produto = new Produto();
+$fornecedor = new Fornecedor();
 $usuarios->check_login();
 
 
-$produto = new Produto();
+
+
 $id_produto = $_GET['id'];
 $produtos = $produto->info_produto($id_produto);
 // print_r($produtos);
+
 if (isset($_POST['id_produto'])) {
     $produto->editar($id_produto);
 }
+
+$fornecedores = $fornecedor->listarFornecedores();
 
 ?>
 
@@ -57,13 +63,12 @@ if (isset($_POST['id_produto'])) {
                         <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 
 
                         <label>Fornecedor</label>
-                        <select class="form-control" name="id_fornecedor" value="<?php echo $produtos['id_fornecedor']?>"> 
-                            <option value="">Selecione</option>
-                            <?php foreach($fornecedores as $fornecedor):?>
-                            <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
-
-                            <?php endforeach; ?>    
-                        </select>
+                            <select class="form-control" name="id_fornecedor"> 
+                                <option value="">Selecione</option>
+                                <?php foreach($fornecedores as $fornecedor):?>
+                                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                                <?php endforeach; ?>    
+                            </select>
                     
                         <label>id Recurso</label>
                         <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>

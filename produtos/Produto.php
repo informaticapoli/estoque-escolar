@@ -91,20 +91,6 @@ class Produto{
 
     }
 
-    // public function pode_excluir(){
-    //     global $db;
-
-    //     $id_produto = $_GET['id'];
-    //     $produto = array();
-
-    //     $sql = "SELECT * FROM info_produto_enrada WHERE id_produto = :id_produto";
-    //     $sql = $db->prepare($sql);
-    //     $sql->bindValue(":id_produto", $id_produto);
-    //     $sql->execute();
-    //     $produto = $sql->fetch();
-
-    // //   echo "<pre>"; print_r($sql->errorInfo()); exit;
-    //     }
 
     public function pesquisar_prod($texto){
 
@@ -140,17 +126,36 @@ class Produto{
         return $produto_info;
     }
 
+    private function pode_excluir($id_produto){
+        global $db;
+
+        $produto = array();
+
+        $sql = "SELECT * FROM info_produto_enrada WHERE id_produto = :id_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $id_produto);
+        $sql->execute();
+
+        if($sql->rowCount()>0){
+            return false;
+        }else{
+            return true;
+        }
+
+    //   echo "<pre>"; print_r($sql->errorInfo()); exit;
+        }
+
     public function excluir(){
 
     global $db;
     $id_produto=$_GET['id'];
-    
-    $sql = "DELETE FROM produtos WHERE id_produto = :id";
-    $sql = $db->prepare($sql);
-    $sql->bindValue(":id", $id_produto);
-    $sql->execute();
-    $dados = $sql->fetchALL();
-
+    if($this->pode_excluir($id_produto)){
+        $sql = "DELETE FROM produtos WHERE id_produto = :id";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id", $id_produto);
+        $sql->execute();
+        $dados = $sql->fetchALL();
+    }
     header("Location:listar-produtos.php");
 
     }
