@@ -1,7 +1,12 @@
 $(document).ready(function (){
     $("#pesquisar_prod").on("keyup", function(){
         let palavra = $(this).val();
-        pesquisa(palavra);
+        if(palavra.length == 0){
+            $(".resultado").html("");
+            $(".resultado").hide("slow");
+        }else{
+            pesquisa(palavra);
+        }
     });
     $("#salvar_prod").on("click", function(){
         let prod_id = $("#prod_id").val();
@@ -13,9 +18,13 @@ $(document).ready(function (){
         }else{
         }
     });
+    $("#pesquisar_prod").on("focusout", function(){
+        $("#pesquisar_prod").val("");
+        $(".resultado").hide("slow");
+    });
     let id_nota = $("#id_nota").val();
     listar_prod(id_nota);
-  });
+});
 
     function excluir(id){
         let id_nota = $("#id_nota").val();
@@ -58,6 +67,14 @@ $(document).ready(function (){
         });
     }
 
+    function limparCampos(){
+        $("#pesquisar_prod").val("");
+        $("#prod_qtd").val("");
+        $("#prod_valor").val("");
+        $("#prod_nome").val("");
+        $("#pesquisar_prod").focus();
+    }
+
 
     function adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor){
         $.ajax({
@@ -79,6 +96,7 @@ $(document).ready(function (){
                 html+= "</tr>";
             }
             $("#produtos_cad").html(html);
+            limparCampos();
         }
             
         });
@@ -134,6 +152,4 @@ $(document).ready(function (){
             error:function(e){
             }
         });
-
-
     }

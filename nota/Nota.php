@@ -77,7 +77,18 @@ class Nota{
         }
     }
 
-    // public function listando_nota(){
+    public function finalizarNota($id_nota){
+        global $db;
+
+        $sql = "UPDATE entrada_nota SET status = 1 WHERE id_nota = :id_nota";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+
+        header("Location: {$url}inicio.php");
+    } 
+
+     // public function listando_nota(){
     //     global $db;
 
     //     $nota = array();
@@ -87,9 +98,6 @@ class Nota{
     //     $sql->bindValue(":id_nota", $id_nota);
     //     $sql->execute();
     // }
-
-    
 }
-
 
 ?>

@@ -37,23 +37,23 @@ if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['ender
     <div class="menu">  
         <?php require_once "./menu.php";?>
     </div>
-    <div class="fundo">
+    <div class="fundo-cad">
         <h1>Cadastrar Fornecedor</h1>
         <form class="container" method="POST">
             <label>Fornecedor:</label>
-            <input class="form-control" type="text" name="fornecedor" required>
+            <input class="form-control" placeholder="Informe o fornecedor" type="text" name="fornecedor" required>
             <label>CNPJ:</label>
-            <input  class="form-control cnpj" type="text" name="cnpj" required>
+            <input  class="form-control cnpj" placeholder="00.000.000/0000-00" type="text" name="cnpj" required>
             <label>Endereço:</label>
-            <input class="form-control" type="text" name="endereco" required>
+            <input class="form-control" placeholder="Coloque o endereço informado" type="text" name="endereco" required>
             <label>Contato:</label>
             <input class="form-control" placeholder="Informe o nome do responsavel" type="text" name="contato" required>
             <label>Telefone 1:</label>
-            <input class="form-control telefone_add" type="text" name="telefone1" required>
+            <input class="form-control telefone_add" placeholder="(00) 0000-0000" type="text" name="telefone1" required>
             <label>Telefone 2:</label> 
-            <input class="form-control telefone_add" type="text" name="telefone2">
+            <input class="form-control telefone_add"  placeholder="(00) 0000-0000" type="text" name="telefone2">
             <label>E-mail:</label>
-            <input class="form-control" type="email" name="email">
+            <input class="form-control" placeholder="@gmail.com" type="email" name="email">
             
             <button class="btn btn-cadastrar btn-success" type="submit">Cadastrar</button>
         </form>
