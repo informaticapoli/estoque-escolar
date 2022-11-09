@@ -77,6 +77,17 @@ class Nota{
         }
     }
 
+    // public function listando_nota(){
+    //     global $db;
+
+    //     $nota = array();
+
+    //     $sql = "SELECT * FROM entrada_nota WHERE id_nota = :id_nota";
+    //     $sql = $db->prepare($sql);
+    //     $sql->bindValue(":id_nota", $id_nota);
+    //     $sql->execute();
+    // }
+
     
 }
 
