@@ -22,7 +22,6 @@ if (isset($_POST['id_produto'])) {
 }
 
 $fornecedores = $fornecedor->listarFornecedores();
-
 ?>
 
 
@@ -66,15 +65,14 @@ $fornecedores = $fornecedor->listarFornecedores();
                             <select class="form-control" name="id_fornecedor"> 
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
-                                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
-                                <?php endforeach; ?>    
+                                    <option <?php echo($produtos['id_fornecedor'] == $fornecedor['id_fornecedor'] ? "selected" : ""); ?> value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                                <?php endforeach;?>    
                             </select>
                     
                         <label>id Recurso</label>
                         <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
 
                         <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
-
 
                         <button type="submit" class="btn btn-success">Atualizar</button>
                     </div>    

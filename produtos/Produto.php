@@ -131,7 +131,7 @@ class Produto{
 
         $produto = array();
 
-        $sql = "SELECT * FROM info_produto_enrada WHERE id_produto = :id_produto";
+        $sql = "SELECT * FROM info_produtos_entrada WHERE id_produto = :id_produto";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_produto", $id_produto);
         $sql->execute();
