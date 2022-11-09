@@ -1,6 +1,7 @@
 <?php
 require_once "config.php";
 require_once "./fornecedores/Fornecedor.php";
+require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
 $usuarios->check_login();
