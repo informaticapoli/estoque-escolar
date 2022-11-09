@@ -23,8 +23,8 @@ body{
 }
 
 .fundo-cad-prod-nota{
+    display: flex;
     background-color: white;
-    width: 700px;
     max-height: 600px;
     border-radius: 30px;
     margin: auto;
@@ -65,13 +65,13 @@ h1{
 }
 
 .resultado{
-    width: 500px;
     height: 120px;
     border: #CFDCC0 solid 2px;
     border-radius: 10px;
     margin-top: 5px;
     padding: 5px;
     display: none;
+    max-width: 615px;
 }
 
 .info-prod{
@@ -90,4 +90,18 @@ h1{
 .btn-cad-prod{
     margin-top: 10px;
     margin-left: 0%;
+}
+
+.form-prod-nota{
+    display: block;
+    flex: 1;
+}
+
+.form-prod-nota2{
+    display: block;
+    flex: 1;
+}
+
+.form-prod{
+    max-width: 615px;
 }
