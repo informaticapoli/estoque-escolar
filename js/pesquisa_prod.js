@@ -1,7 +1,12 @@
 $(document).ready(function (){
     $("#pesquisar_prod").on("keyup", function(){
         let palavra = $(this).val();
-        pesquisa(palavra);
+        if(palavra.length == 0){
+            $(".resultado").html("");
+            $(".resultado").hide("slow");
+        }else{
+            pesquisa(palavra);
+        }
     });
     $("#salvar_prod").on("click", function(){
         let prod_id = $("#prod_id").val();
@@ -14,9 +19,8 @@ $(document).ready(function (){
         }
     });
     $("#pesquisar_prod").on("focusout", function(){
-        $(".resultado").html("");
+        $("#pesquisar_prod").val("");
         $(".resultado").hide("slow");
-        limparCampos();
     });
     let id_nota = $("#id_nota").val();
     listar_prod(id_nota);
