@@ -15,7 +15,7 @@ $(document).ready(function (){
     });
     let id_nota = $("#id_nota").val();
     listar_prod(id_nota);
-  });
+});
 
     function excluir(id){
         let id_nota = $("#id_nota").val();
@@ -134,6 +134,4 @@ $(document).ready(function (){
             error:function(e){
             }
         });
-
-
     }

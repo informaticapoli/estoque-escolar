@@ -3,8 +3,6 @@
 session_start();
 
 
-
-
 $banco = "estoque_escolar";
 $usuario = "root";
 $senha ="";

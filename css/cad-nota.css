@@ -29,7 +29,7 @@ body{
     border-radius: 30px;
     margin: auto;
     padding: 20px;    
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 h1{
@@ -80,4 +80,14 @@ h1{
 
 #item-prod{
     cursor: pointer;
+}
+
+.caixa-table{
+    max-height: 250px;
+    overflow: auto;
+}
+
+.btn-cad-prod{
+    margin-top: 10px;
+    margin-left: 0%;
 }

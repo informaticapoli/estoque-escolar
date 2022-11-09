@@ -2,7 +2,15 @@
 require_once "config.php";
 require_once "./nota/Nota.php";
 require_once "./fornecedores/Fornecedor.php";
+require_once "./produtos/Produto.php";
+require_once "./recursos/Recurso.php";
+require_once "./usuarios/Usuario.php";
 
+$usuarios = new Usuario();
+$usuarios->check_login();
+
+$produto = new Produto();
+$recurso = new Recurso();
 $fornecedores = new Fornecedor();
 
 $lista_fornecedores = $fornecedores->listarFornecedores();
@@ -12,6 +20,8 @@ $cad_nota = new Nota();
 if(isset($_POST['id_fornecedor']) && ($_POST['id_fornecedor']) != "" && ($_POST['num_nota']) && ($_POST['num_nota']) != "" && ($_POST['total_nf']) && ($_POST['total_nf']) != ""){
     $cad_nota->cadastrar_nota();
 }
+
+$recursos = $recurso->pegarecursos();
 
 ?>
 
@@ -49,8 +59,13 @@ if(isset($_POST['id_fornecedor']) && ($_POST['id_fornecedor']) != "" && ($_POST[
             </select>
             <label>Número da Nota:</label>
             <input class="form-control" type="text" name="num_nota" required>
-            <label>Recurso:</label>
-            <input class="form-control" type="text" name="recurso" required>
+            <label>Recurso</label>
+                            <select class="form-control" name="id_recurso"> 
+                                <option value="">Selecione</option>
+                                <?php foreach($recursos as $recurso):?>
+                                    <option value="<?php echo $recurso['id_recurso'] ?>"><?php echo $recurso['nome_recurso'] ?></option>
+                                <?php endforeach; ?>    
+                            </select>
             <label>Valor total NF:</label>
             <input class="form-control" type="text" name="total_nf" required>
                         

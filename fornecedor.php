@@ -37,7 +37,7 @@ if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['ender
     <div class="menu">  
         <?php require_once "./menu.php";?>
     </div>
-    <div class="fundo">
+    <div class="fundo-cad">
         <h1>Cadastrar Fornecedor</h1>
         <form class="container" method="POST">
             <label>Fornecedor:</label>
