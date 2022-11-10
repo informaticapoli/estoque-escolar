@@ -40,7 +40,9 @@ $recursos = $recurso->pegarecursos();
     <title>Cadastrar Nota Fiscal</title>
 </head>
 <body>
-    <div class="menu">  
+
+    <div class="menu">
+          
         <?php require_once "./menu.php";?>
     </div>
     <div class="fundo-cad-nota">
@@ -68,6 +70,7 @@ $recursos = $recurso->pegarecursos();
             <input class="form-control" type="text" name="total_nf" required>
                         
             <button class="btn btn-cadastrar btn-success" type="submit">Próxima etapa</button>
+            
         </form>
     </div>
 </body>
