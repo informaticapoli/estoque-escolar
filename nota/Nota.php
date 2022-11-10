@@ -88,16 +88,16 @@ class Nota{
         header("Location: {$url}inicio.php");
     } 
 
-     // public function listando_nota(){
-    //     global $db;
+     public function listando_nota(){
+        global $db;
 
-    //     $nota = array();
+        $nota = array();
 
-    //     $sql = "SELECT * FROM entrada_nota WHERE id_nota = :id_nota";
-    //     $sql = $db->prepare($sql);
-    //     $sql->bindValue(":id_nota", $id_nota);
-    //     $sql->execute();
-    // }
+        $sql = "SELECT * FROM entrada_nota WHERE id_nota = :id_nota";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+    }
 }
 
 ?>
