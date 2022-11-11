@@ -10,8 +10,8 @@ require_once "config.php";
             Produtos
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item " href="<?php echo $url ?>cad_produtos.php" class="botao-menu">Novo*</a></li>
-            <li><a class="dropdown-item" href="<?php echo $url ?>listar-produtos.php" class="botao-menu">Listar</a></li>
+            <li><a class="dropdown-item " href="<?php echo $url ?>cad_produtos.php" class="botao-menu">Cadastrar Produto</a></li>
+            <li><a class="dropdown-item" href="<?php echo $url ?>listar-produtos.php" class="botao-menu">Listar Produtos</a></li>
         </ul>
 <!-- FIM BOTAO PRODUTOS-->
 
