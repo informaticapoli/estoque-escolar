@@ -75,7 +75,6 @@ $(document).ready(function (){
         $("#pesquisar_prod").focus();
     }
 
-
     function adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor){
         $.ajax({
             url:'http://localhost/estoque-escolar/nota/produtos.php',
@@ -101,7 +100,6 @@ $(document).ready(function (){
             
         });
     }
-
 
     function selecionarProduto(id_produto){
         $.ajax({
