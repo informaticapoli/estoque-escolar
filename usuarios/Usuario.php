@@ -17,7 +17,7 @@ class Usuario{
         if($sql->rowCount() > 0){
             $dado_usuario = $sql->fetch();
             $_SESSION["token"] = $this->gerar_token($dado_usuario["id"]);
-            header("Location: index.php");
+            header("Location: inicio.php");
         }else{
             $_SESSION["alerta_erro"] = "Usuário ou senha inválidos";
         }
