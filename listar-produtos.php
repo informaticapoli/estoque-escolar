@@ -37,7 +37,8 @@ $produtos = $produto->listar();
 
     <div class="menu">  
         <?php require_once "./menu.php";?>
-    </div>  
+    </div> 
+     
     <div class="tabela">
         <fieldset>
             <legend>Lista de Registros</legend>

@@ -13,7 +13,7 @@ $usuarios->check_login();
 
 $fornecedor = new Fornecedor();
 
-$fornecedores= $fornecedor->listarFornecedores();
+$fornecedores = $fornecedor->listarFornecedores();
 
 ?>
 

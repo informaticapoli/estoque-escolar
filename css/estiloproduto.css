@@ -73,10 +73,6 @@ input, select{
     background-color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 25px;
-<<<<<<< HEAD
-    margin-top: 35px;
     overflow: auto;
-=======
     margin-top: 40px;
->>>>>>> 0057571cce10e0009c84fb6b03ce503dad80a3f1
 }
