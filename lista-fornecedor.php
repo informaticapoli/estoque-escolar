@@ -5,6 +5,7 @@ require_once "./usuarios/Usuario.php";
 
 require_once "./fornecedores/Fornecedor.php";
 require_once "./usuarios/Usuario.php";
+require_once "./fornecedores/Fornecedor.php";
 
 $usuarios = new Usuario();
 $usuarios->check_login();
@@ -12,7 +13,7 @@ $usuarios->check_login();
 
 $fornecedor = new Fornecedor();
 
-$fornecedores= $fornecedor->listarFornecedores();
+$fornecedores = $fornecedor->listarFornecedores();
 
 ?>
 

@@ -158,6 +158,19 @@ class Nota{
 
 
     } 
+
+
+     public function listando_nota(){
+        global $db;
+        $notas = array();
+        $sql = "SELECT * FROM entrada_nota";
+        $sql = $db->prepare($sql);
+        $sql->execute();
+        $notas = $sql->fetchAll();
+        return $notas;
+
+        // echo '<pre>';print_r($sql->errorInfo());exit;
+    }
 }
 
 ?>
