@@ -67,12 +67,12 @@ input, select{
 }
 
 .tabela{
-    max-width: 1006px;
-    height: 575px;
+    max-width: 1500px;
+    height: 700px;
     margin: auto;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 25px;
     overflow: auto;
-    margin-top: 40px;
+    margin-top: 80px;
 }
