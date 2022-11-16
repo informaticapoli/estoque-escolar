@@ -24,6 +24,15 @@ $(document).ready(function (){
     });
     let id_nota = $("#id_nota").val();
     listar_prod(id_nota);
+
+    $("#adicionar_prod").on("click", function(){
+        let prod_id = $("#prod_id").val();
+        let prod_qtd = $("#prod_qtd").val();
+        if(prod_id != "" && prod_qtd != ""){
+            adicionarProdutoCardapio(prod_id, prod_qtd);
+        }else{
+        }
+    });
 });
 
     function excluir(id){
@@ -150,4 +159,30 @@ $(document).ready(function (){
             error:function(e){
             }
         });
+
+
+    function adicionarProdutoCardapio(prod_id, prod_qtd){
+        $.ajax({
+            url:'http://localhost/estoque-escolar/cardapio/produtos.php',
+            type:'POST',
+            dataType:'json',
+            data:{
+                prod_id, prod_qtd,
+                },
+            success:function(json) {
+                let html = "";
+            for (let i in json.produtos){
+                html+= "<tr>";
+                html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['quantidade'])+"</td>";
+                html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
+                
+                html+= "</tr>";
+            }
+            $("#produtos_cad").html(html);
+            limparCampos();
+        }
+            
+        });
+    }
     }
