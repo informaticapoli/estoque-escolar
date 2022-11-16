@@ -51,7 +51,7 @@ if (isset($_POST['id_produto'])) {
                             <input type="text" class="form-control" name="nome_produto" value="<?php echo $produtos['nome_produto']?>"/>
 
                             <label>Unidade Medida</label>
-                            <input type="text" class="form-control" name="unidade_medida" value="<?php echo $produtos['unidade_medida']?>"/>
+                            <input type="text" class="form-control" name="unidade_medida" value="UN" desabled/>
 
                             <label>Data Validade</label>
                             <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 

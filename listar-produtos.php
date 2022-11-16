@@ -34,11 +34,13 @@ $produtos = $produto->listar();
     <title>Entrada</title>
 </head>
 <body>
-
-    <div class="menu">  
+    
+    <div class="menu">
+     
         <?php require_once "./menu.php";?>
     </div>  
     <div class="tabela">
+      
         <fieldset>
             <legend>Lista de Registros</legend>
             <table id="myTable" class="table" >
@@ -67,6 +69,11 @@ $produtos = $produto->listar();
                 </tbody>
             </table>
         </fieldset>
+        <div class="row box">
+                <div class="col-md-6">
+                    <button class="btn btn-warning">Voltar</button>
+                </div>
+            </div>
     </div>
     
 

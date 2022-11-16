@@ -40,6 +40,7 @@ $fornecedores= $fornecedor->listarFornecedores();
         <?php require_once "./menu.php";?>
     </div>
     <div class="fundo-lista-forn">
+    
         <h1>Lista de Fornecedores</h1>
         <table class="table" id="myTable">
             <thead>
@@ -73,6 +74,11 @@ $fornecedores= $fornecedor->listarFornecedores();
             </tbody>
            
         </table>
+        <div class="row box">
+                <div class="col-md-6">
+                    <button class="btn btn-warning">Voltar</button>
+                </div>
+            </div>
     </div>
 </body>
 </html>

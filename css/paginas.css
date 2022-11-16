@@ -15,7 +15,7 @@ body{
 
 .btn{
     height: 40px;
-    margin-left: 20px;
+    margin: 5px;
     border-radius: 15px;
 }
 
@@ -100,5 +100,14 @@ p{
 
 }
 
+.box{
+    
+    display: flex;
+}
 
+.box button{
+    width: 100%;
+    margin-top: 20px;
+
+}
 
