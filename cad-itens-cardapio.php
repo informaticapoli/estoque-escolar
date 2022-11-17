@@ -4,10 +4,7 @@ require_once "./cardapio/Cardapio.php";
 
 $cardapio = new Cardapio;
 
-if(isset($_POST['nome_cardapio'])){
-    $nome_card = $_POST['nome_cardapio'];
-    $cardapio->cadCardapio($nome_card);
-}
+
 
 ?>
 
@@ -35,7 +32,6 @@ if(isset($_POST['nome_cardapio'])){
 
             <div class="cardapio1">
                 <h1>Itens do Cardápio</h1>
-                <form method="POST">
                     <div class="row">
                         <div class="campo_pesquisa col-md-11">
                             <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
@@ -45,68 +41,58 @@ if(isset($_POST['nome_cardapio'])){
                         </div>
                     </div>     
                     <div class="row info-prod">
-                            <div class="col-md-11">
-                                <input type="text" class="form-control" id="prod_nome" disabled>
-                                <input type="hidden" id="prod_id" disabled>
-                            </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-11">
-                            <label>Quantidade:</label>
-                            <input type="text" class="form-control" id="prod_qtd">
+                            <input type="text" class="form-control" id="prod_nome" disabled>
+                            <input type="hidden" id="prod_id" disabled>
                         </div>
                     </div>
+
+                    <h3>Quantidade por pessoa</h3>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Turno 1" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="qtd_turno1" placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"placeholder="Turno 2" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="qtd_turno2"  placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Turno 3" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"  id="qtd_turno3"   placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>     
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-success btn-cad-prod" id="adicionar_prod">Adicionar</button>
+                            <button type="submit" id="adicionar_prod" class="btn btn-success btn-cad-prod">Adicionar</button>
                         </div>
-                    </div>
-                </form>
-
-                <h3>Quantidade por pessoa</h3>
-
-                <div class="row colunasTurno">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Turno 1" disabled>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Quantidade" id="prod_qtd">
-                    </div>
-                </div>
-
-                <div class="row colunasTurno">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Turno 2" disabled>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Quantidade" id="prod_qtd">
-                    </div>
-                </div>
-
-                <div class="row colunasTurno">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Turno 3" disabled>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Quantidade" id="prod_qtd">
-                    </div>
-                </div>     
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-success btn-cad-prod" id="adicionar_prod">Salvar</button>
-                    </div>
-                </div>       
+                    </div>     
             </div>
+            
 
             <div class="cardapio2">
         
                 <table class="table">
                     <thead>
                         <th>Produtos</th>
-                        <th>Quantidade</th>           
+                        <th>Quantidade</th>     
+                        <th>Turno</th>     
                     </thead>
                     <tbody id="produtos_cad">
-                            <div></div>
+                        <div></div>
                     </tbody>
                 </table>
             </div>

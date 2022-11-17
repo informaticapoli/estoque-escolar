@@ -33,10 +33,10 @@ body{
 
 .fundo{
     background-color: rgb(255, 255, 255);
-    height: 650px;
+    height: 600px;
     border-radius: 30px;
     overflow: auto;
-    width: 1000px;
+    width: 1200px;
     margin: auto;
     margin-top: 35px;
     padding: 20px;

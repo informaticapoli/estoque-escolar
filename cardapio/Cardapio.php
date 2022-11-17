@@ -16,14 +16,17 @@ class Cardapio{
         
     }
     
-    public function adicionar_prod_cardapio($prod_id, $prod_qtd){
+    public function adicionar_prod_cardapio($prod_id, $qtd_mat, $qtd_vesp, $qtd_not){
 
         global $db;
 
-        $sql = "INSERT INTO info_produtos_entrada SET id_produto = :id_produto, qtd = :qtd";
+        $sql = "INSERT INTO info_produtos_entrada SET id_produto = :id_produto, qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_produto", $prod_id);   
-        $sql->bindValue(":qtd", $prod_qtd);     
+        $sql->bindValue(":qtd_mat", $qtd_mat);     
+        $sql->bindValue(":qtd_vesp", $qtd_vesp);     
+        $sql->bindValue(":qtd_not", $qtd_not);
+        
         $sql->execute();
         
         if($sql){
@@ -31,7 +34,6 @@ class Cardapio{
         }else{
             return false;
         }
-
         //echo "<pre>";
         //print_r($sql->errorInfo());
         //exit;
