@@ -22,28 +22,31 @@
                 <div class="fotos"> 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoClezia.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Clezia
                         </p>
+                        <a href="https://github.com/CleziaGeovana">CleziaAssunção</a>
                         </div>  
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoDavi.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Davi
                         </p>
+                        <a href="https://github.com/DaviChagasReis">DaviChagasReis</a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoElizete.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Elizete
                         </p>
+                        <a href="https://github.com/elizetecoutinho">elizetecoutinho</a>
                         </div>
                     </div>
 
@@ -53,6 +56,7 @@
                         <div class="card-body">
                         <p class="card-text">Franciele
                         </p>
+                        <a href="https://github.com/franciele">franciele</a>    **************
                         </div>
                     </div>
                 </div>
@@ -62,37 +66,41 @@
                 <div class="fotos" >
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotojanikele.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoJanikele.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Janikele
                         </p>
+                        <a href="https://github.com/Janykele">Janykele</a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotolais.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoLaiz.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        <p class="card-text">Lais
+                        <p class="card-text">Laiz
                         </p>
+                        <a href="https://github.com/LaizFerreira">LaizFerreira</a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotomilena.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoMilena.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Milena
                         </p>
+                        <a href="https://github.com/Milenalsy">Milenalsy</a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotonatallia.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoNatallia.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Natallia
                         </p>
+                        <a href="https://github.com/NatalliaSoares">NatalliaSoares</a>
                         </div>
                     </div>
                 </div>
@@ -107,15 +115,17 @@
                         <div class="card-body">
                         <p class="card-text">Samantha
                         </p>
+                        <a href="https://github.com/SamanthaCta">SamanthaCta</a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotolucas.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoLucas.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Professor Lucas
                         </p>
+                        <a href="https://github.com/LucasSilverio">LucasSilverio</a>
                         </div>
                     </div>
 
@@ -125,15 +135,17 @@
                         <div class="card-body">
                         <p class="card-text">Professora Marcia
                         </p>
+                        <a href="https://github.com/marcia">marcia</a>   ********************
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotoreginaldo.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoReginaldo.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Professor Reginaldo
                         </p>
+                        <a href="https://github.com/reginaldo">reginaldo</a>    *************
                         </div>
                     </div>
                 </div>
