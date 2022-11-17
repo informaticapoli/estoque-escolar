@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 require_once "config.php";
 require_once "./nota/Nota.php";
@@ -12,7 +12,7 @@ $nota = new Nota();
 $notas = $nota->listando_nota();
 
 
-?>
+?> -->
 
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ $notas = $nota->listando_nota();
 
                             <td>
                                 <a href="excluir-.php?id=<?php echo $nota[''] ?>" class="btn btn-danger"> Excluir </a>
-                                <a href="editar-notas.php?id=<?php echo $nota[''] ?>" class="btn btn-warning"> Editar </a>
+                                <a href="./nota/editar-nota.php?id=<?php echo $nota['id_nota'] ?>" class="btn btn-warning"> Editar </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -1,20 +1,16 @@
 <?php
 
 require_once "../config.php";
+// require_once "../usuarios/Usuario.php";
 require_once "../nota/Nota.php";
-require_once "../usuarios/Usuario.php";
-
-$usuarios = new Usuario();
-$usuarios->check_login();
 
 $nota = new Nota();
+// $usuarios->check_login();
 
-$notas = $nota->editar();
+$id_nota = $_GET['id'];
 
-
+$notas = $nota->select_nota($id_nota);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,38 +28,39 @@ $notas = $nota->editar();
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="../css/datatable.css">
 
-    <title>LISTA DE NOTAS</title>
+    <title>EDITAR NOTA</title>
 </head>
 <body>
-
     <div class="menu">  
         <?php require_once "../menu.php";?>
-    </div>  
+    </div>
 
-    <div class="fundo">           
-            
-            <div class="container">
-                <fieldset>
-                    <legend> Editar Nota </legend>
-                    <form method="POST">
-                        <div class="row">
-                            <label>Nome Fornecedor</label>
-                            <input type="text" class="form-control" name="id_fornecedor" value="<?php echo $nota['id_fornecedor']?>"/>
+    <div class="fundo">                       
+        <div class="container">
+            <fieldset>
+                <legend> Editar Nota </legend>
+                <form method="POST">
+                    <div class="row">
+
+                        <label>Nome Fornecedor</label>
+                        <input type="text" class="form-control" name="id_fornecedor" value="<?php echo $notas['id_fornecedor']?>"/>
+
+                        <label>Numero da Nota</label>
+                        <input type="number" class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
+
+                        <label>Data Entrada</label>
+                        <input type="text" class="form-control" name="data_entrada" value="<?php echo $notas['data_entrada']?>"/> 
+                    
+                        <label>Valor Produto</label>
+                        <input type="number" class="form-control" name="valor_produto" value="<?php echo $notas['valor_produto']?>"/>
+
+                        <input type="hidden" name="id_nota" value="<?php echo $id_nota?>"/>
     
-                            <label>Numero da Nota</label>
-                            <input type="text" class="form-control" name="numero_nota" value="<?php echo $nota['numero_nota']?>"/>
-    
-                            <label>Data Entrada</label>
-                            <input type="text" class="form-control" name="data_entrada" value="<?php echo $nota['data_entrada']?>"/> 
-                        
-                            <label>Valor Produto</label>
-                            <input type="number" class="form-control" name="valor_produto" value="<?php echo $nota['valor_produto']?>"/>
-        
-                            <button type="submit" class="btn btn-success">Atualizar</button>
-                        </div>    
-                    </form>
-                </fieldset>
-            </div> 
-        </div>
+                        <button type="submit" class="btn btn-success">Atualizar</button>
+                    </div>    
+                </form>
+            </fieldset>
+        </div> 
+    </div>
 </body>
 </html>
