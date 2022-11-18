@@ -24,6 +24,18 @@ $(document).ready(function (){
     });
     let id_nota = $("#id_nota").val();
     listar_prod(id_nota);
+
+    $("#adicionar_prod").on("click", function(){
+        let prod_id = $("#prod_id").val();
+        let qtd_turno1 = $("#qtd_turno1").val();
+        let qtd_turno2 = $("#qtd_turno2").val();
+        let qtd_turno3 = $("#qtd_turno3").val();
+        if(prod_id != "", qtd_turno1 != "", qtd_turno2 !="", qtd_turno3 !=""){
+            adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3);
+        }else{
+            alert("Preencha todos os campos");
+        }
+    });
 });
 
     function excluir(id){
@@ -55,8 +67,8 @@ $(document).ready(function (){
             for (let i in json.produtos){
                 html+= "<tr>";
                 html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['valor_total'])+"</td>";
                 html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
                 
                 html+= "</tr>";
@@ -75,7 +87,6 @@ $(document).ready(function (){
         $("#pesquisar_prod").focus();
     }
 
-
     function adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor){
         $.ajax({
             url:'http://localhost/estoque-escolar/nota/produtos.php',
@@ -88,9 +99,9 @@ $(document).ready(function (){
                 let html = "";
             for (let i in json.produtos){
                 html+= "<tr>";
-                html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['qtd'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['valor'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['valor_total'])+"</td>";
                 html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
                 
                 html+= "</tr>";
@@ -101,7 +112,6 @@ $(document).ready(function (){
             
         });
     }
-
 
     function selecionarProduto(id_produto){
         $.ajax({
@@ -153,3 +163,33 @@ $(document).ready(function (){
             }
         });
     }
+
+
+    function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3){
+        
+        $.ajax({
+            url:'http://localhost/estoque-escolar/cardapio/produtos.php',
+            type:'POST',
+            dataType:'json',
+            data:{
+                prod_id, qtd_turno1, qtd_turno2, qtd_turno3
+                },
+            success:function(json) {
+                let html = "";
+                for (let i in json.produtos){
+                    html+= "<tr>";
+                    html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
+                    html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
+                    
+                    html+= "</tr>";
+                }
+                $("#produtos_cad").html(html);
+                limparCampos();
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+            
+        });
+    }
+
