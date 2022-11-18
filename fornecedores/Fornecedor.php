@@ -91,8 +91,8 @@ class Fornecedor{
         $sql->bindValue(":id", $id);
         $sql->execute();
 
-        //echo '<pre>';
-        //print_r($sql->errorInfo());exit;
+        // echo '<pre>';
+        // print_r($sql->errorInfo());exit;
 
         header("Location: ../lista-fornecedor.php");
     }

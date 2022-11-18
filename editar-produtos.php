@@ -6,17 +6,22 @@ require_once "./fornecedores/Fornecedor.php";
 require_once "./usuarios/Usuario.php";
 
 $usuarios = new Usuario();
+$produto = new Produto();
+$fornecedor = new Fornecedor();
 $usuarios->check_login();
 
 
-$produto = new Produto();
+
+
 $id_produto = $_GET['id'];
 $produtos = $produto->info_produto($id_produto);
 // print_r($produtos);
+
 if (isset($_POST['id_produto'])) {
     $produto->editar($id_produto);
 }
 
+$fornecedores = $fornecedor->listarFornecedores();
 ?>
 
 
@@ -42,47 +47,38 @@ if (isset($_POST['id_produto'])) {
 
     <div class="fundo">           
             
-            <div class="container">
-                <fieldset>
-                    <legend> Editar Produto </legend>
-                    <form method="POST">
-                        <div class="row">
-                            <label>Nome Produto</label>
-                            <input type="text" class="form-control" name="nome_produto" value="<?php echo $produtos['nome_produto']?>"/>
-
+        <div class="container">
+            <fieldset>
+                <legend> Editar Produto </legend>
+                <form method="POST">
+                    <div class="row">
+                        <label>Nome Produto</label>
+                        <input type="text" class="form-control" name="nome_produto" value="<?php echo $produtos['nome_produto']?>"/>
+                        
                             <label>Unidade Medida</label>
                             <input type="text" class="form-control" name="unidade_medida" value="UN" desabled/>
 
-                            <label>Data Validade</label>
-                            <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 
+                        <label>Data Validade</label>
+                        <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 
 
-                            <label>id Nota</label>
-                            <input type="number" class="form-control" name="id_nota" value="<?php echo $produtos['id_nota']?>"/>
-                            
-                            <label>Fornecedor</label>
-                            <select class="form-control" name="id_fornecedor" value="<?php echo $produtos['id_fornecedor']?>"> 
+                        <label>Fornecedor</label>
+                            <select class="form-control" name="id_fornecedor"> 
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
-                                <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
-
-                                <?php endforeach; ?>    
+                                    <option <?php echo($produtos['id_fornecedor'] == $fornecedor['id_fornecedor'] ? "selected" : ""); ?> value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                                <?php endforeach;?>    
                             </select>
-                         
-                            <label>id Recurso</label>
-                            <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
+                    
+                        <label>id Recurso</label>
+                        <input type="number" class="form-control" name="id_recurso" value="<?php echo $produtos['id_recurso']?>"/>
 
-                            <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
+                        <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
 
-
-                            <button type="submit" class="btn btn-success">Atualizar</button>
-                        </div>    
-                    </form>
-                </fieldset>
-            </div> 
-
-        </div>
-
-
-    
+                        <button type="submit" class="btn btn-success">Atualizar</button>
+                    </div>    
+                </form>
+            </fieldset>
+        </div> 
+    </div>
 </body>
 </html>

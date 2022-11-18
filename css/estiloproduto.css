@@ -73,5 +73,6 @@ input, select{
     background-color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 25px;
+    overflow: auto;
     margin-top: 40px;
 }
