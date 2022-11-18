@@ -11,7 +11,7 @@ require_once "config.php";
         </button>
         <ul class="dropdown-menu">
             
-            <li><a class="dropdown-item " href="<?php echo $url ?>cad_produtos.php" class="botao-menu">Cadastrar Produto</a></li>
+            <li><a class="dropdown-item " href="<?php echo $url ?>cad-produtos.php" class="botao-menu">Cadastrar Produto</a></li>
             <li><a class="dropdown-item" href="<?php echo $url ?>listar-produtos.php" class="botao-menu">Listar Produtos</a></li>
             
         </ul>

@@ -57,7 +57,7 @@ $recursos = $recurso->pegarecursos();
                 <option value="" disabled selected >Selecione um fornecedor</option>
                 <?php foreach($lista_fornecedores as $fornecedor):?>
 
-                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                    <option value="<?php echo utf8_encode($fornecedor['id_fornecedor']) ?>"><?php echo  utf8_encode($fornecedor['nome_fornecedor'])?></option>
 
                 <?php endforeach; ?>    
             </select>
@@ -76,6 +76,7 @@ $recursos = $recurso->pegarecursos();
             <button class="btn btn-cadastrar btn-success" type="submit">Próxima etapa</button>
             
         </form>
+            
     </div>
 </body>
 </html>

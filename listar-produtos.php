@@ -51,7 +51,7 @@ $produtos = $produto->listar();
                         <th> U. M.</th>
                         <th> Fornecedor</th>
                         <th> Recurso</th>
-                        <th> Opeções</th>
+                        <th> Opções</th>
                     </tr>   
                 </thead>
                 <tbody>
@@ -69,15 +69,14 @@ $produtos = $produto->listar();
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </fieldset>
-        <div class="row box">
+
+            <div class="row box">
                 <div class="col-md-6">
-                    <button class="btn btn-warning">Voltar</button>
+                    <a href="./inicio.php"class="btn btn-warning">Voltar</a>
                 </div>
             </div>
-    </div>
-    
 
-    
+        </fieldset>
+       
 </body>
 </html>

@@ -63,8 +63,9 @@ if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['ender
                     type="submit">Cadastrar</button>
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-warning">Voltar</button>
+                <a href="./inicio.php"class="btn btn-voltar btn-warning">Voltar</a>
                 </div>
+            
             </div>    
         </form>
     </div>

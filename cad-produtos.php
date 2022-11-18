@@ -91,7 +91,7 @@ $recursos = $recurso->pegarecursos();
 
                             <button type="submit" class="btn btn-success">Cadastrar</button>
 
-                            <a href="<?php echo $url ?>inicio.php" class="btn btn-warning">Voltar</a>
+                            <a href="<?php echo $url ?>inicio.php"  class="btn btn-voltar btn-warning">Voltar</a>
                         </div>    
                     </form>
                 </fieldset>

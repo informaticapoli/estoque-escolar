@@ -75,7 +75,14 @@ $fornecedores = $fornecedor->listarFornecedores();
                         <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
 
                         <button type="submit" class="btn btn-success">Atualizar</button>
-                    </div>    
+                    </div> 
+                    
+                        <div class="row box">
+                            <div class="col-md-6">
+                            <a href="./inicio.php" class="btn btn-warning">Voltar</a>
+                    
+                            </div>
+                        </div>
                 </form>
             </fieldset>
         </div> 
