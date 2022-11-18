@@ -52,11 +52,11 @@
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/IpeAmarelo.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoFranciele.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Franciele
                         </p>
-                        <a href="https://github.com/franciele">franciele</a>    **************
+                        <a href="https://github.com/FotoFranciele">franciele</a>    **************
                         </div>
                     </div>
                 </div>
