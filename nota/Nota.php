@@ -101,35 +101,6 @@ class Nota{
         // echo '<pre>';print_r($sql->errorInfo());exit;
     }
 
-    // public function editar(){
-
-    //     global $db;
-    //     $notas = array();
-
-    //     $id_nota=$_GET['id'];
-    //     $id_fornecedor = $_POST['id_fornecedor'];
-    //     $numero_nota = $_POST['numero_nota'];
-    //     $data_entrada = $_POST['data_entrada'];
-    //     $valor_produto = $_POST['valor_produto'];
-
-    //     $sql = "UPDATE entrada_nota SET  id_fornecedor = :id_fornecedor, numero_nota = :numero_nota, data_entrada = :data_entrada, valor_produto = :valor_produto WHERE id_nota = :id_nota";
-
-    //     // echo"<pre>"; print_r($sql->errorInfo()); exit;
-
-    //     $sql = $db->prepare($sql);
-    //     $sql->bindValue(":id_fornecedor", $id_fornecedor);
-    //     $sql->bindValue(":numero_nota", $numero_nota);
-    //     $sql->bindValue(":data_entrada", $data_entrada);
-    //     $sql->bindValue(":valor_produto", $valor_produto);
-    //     $sql->bindValue(":id_nota", $id_nota);
-    //     $sql->execute();
-    
-    //     // header("Location: listar-notas.php");
-
-    //     // echo "<pre>"; print_r($sql->errorInfo()); exit;
-
-    // }
-
     public function select_nota($id_nota){
         global $db;
 
@@ -144,6 +115,33 @@ class Nota{
 
         // echo '<pre>';print_r($sql->errorInfo());exit;
     }
-}
 
+    public function editar_nota(){
+
+        global $db;
+        $notas = array();
+
+        $id_nota=$_GET['id'];
+
+        $id_fornecedor = $_POST['id_fornecedor'];
+        $valor_produto = $_POST['valor_produto'];
+
+        $sql = "UPDATE entrada_nota SET  id_fornecedor, :id_fornecedor, valor_produto = :valor_produto WHERE id_nota = :id_nota";
+
+        // echo"<pre>"; print_r($sql->errorInfo()); exit;
+
+        $sql = $db->prepare($sql);
+
+        $sql->bindValue(":id_fornecedor", $id_fornecedor);
+        $sql->bindValue(":valor_produto", $valor_produto);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+    
+         header("Location: http://localhost/estoque-escolar/listar-nota.php");
+
+        //  echo "<pre>"; print_r($sql->errorInfo()); exit;
+
+    }
+
+}
 ?>

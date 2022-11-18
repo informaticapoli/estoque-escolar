@@ -7,9 +7,19 @@ require_once "../nota/Nota.php";
 $nota = new Nota();
 // $usuarios->check_login();
 
-$id_nota = $_GET['id'];
+if(!isset($_GET['id'])){
+    header("Location: listar-notas.php");
+    exit;
+}
 
+$id_nota=$_GET['id'];
 $notas = $nota->select_nota($id_nota);
+
+if(isset($_POST['id_nota'])){
+    $notas = $nota->editar_nota();
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,20 +53,22 @@ $notas = $nota->select_nota($id_nota);
                     <div class="row">
 
                         <label>Nome Fornecedor</label>
-                        <input type="text" class="form-control" name="id_fornecedor" value="<?php echo $notas['id_fornecedor']?>"/>
+                        <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_fornecedor" value="<?php echo $notas['id_fornecedor']?>"/>
 
                         <label>Numero da Nota</label>
-                        <input type="number" class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
+                        <input type="text"  <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
 
                         <label>Data Entrada</label>
-                        <input type="text" class="form-control" name="data_entrada" value="<?php echo $notas['data_entrada']?>"/> 
+                        <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_produto" value="<?php echo $notas['id_produto']?>"/> 
                     
                         <label>Valor Produto</label>
-                        <input type="number" class="form-control" name="valor_produto" value="<?php echo $notas['valor_produto']?>"/>
+                        <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="valor_produto" value="<?php echo $notas['valor_produto']?>"/>
 
                         <input type="hidden" name="id_nota" value="<?php echo $id_nota?>"/>
     
+                        <?php if($notas['status'] == 0): ?>
                         <button type="submit" class="btn btn-success">Atualizar</button>
+                        <?php endif?>
                     </div>    
                 </form>
             </fieldset>

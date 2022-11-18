@@ -13,8 +13,6 @@ $notas = $nota->listando_nota();
 
 
 ?> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +44,7 @@ $notas = $nota->listando_nota();
             <table id="myTable" class="table" >
                 <thead>
                     <tr>
+                        <th> Produtos</th>
                         <th> Fornecedor</th>
                         <th> Numero Nota</th>
                         <th> Data Entrada</th>
@@ -56,6 +55,7 @@ $notas = $nota->listando_nota();
                 <tbody>
                     <?php foreach($notas as $nota): ?>
                         <tr>
+                            <td><?php echo $nota['id_produto']?></td>
                             <td><?php echo $nota['id_fornecedor']?></td>
                             <td><?php echo $nota['numero_nota']?></td>
                             <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
