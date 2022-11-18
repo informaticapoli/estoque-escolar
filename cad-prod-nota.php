@@ -3,6 +3,13 @@ require_once "config.php";
 require_once "nota/Nota.php";
 
 $nota = new Nota;
+
+if(isset($_GET['id']) && $_GET['id'] != ""){
+    $id = $_GET['id'];
+}else{
+    header ("Location: cad-nota.php");
+    exit;
+}
  
 if(isset($_POST['id_nota'])){
     $id_nota = addslashes($_POST['id_nota']);
@@ -82,7 +89,7 @@ if(isset($_POST['id_nota'])){
                 </table>
             </div>
             <form method="POST">
-                <input type="hidden" id="id_nota" name="id_nota" value="<?php echo $_GET['id'] ?>" >
+                <input type="hidden" id="id_nota" name="id_nota" value="<?php echo $id ?>" >
                 <button type="submit" class="btn btn-success btn-cad-prod">Finalizar Cadastro</button>
             </form>
         </div>
