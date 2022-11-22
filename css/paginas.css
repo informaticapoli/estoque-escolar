@@ -114,3 +114,15 @@ p, a{
 img{
     border-radius: 10px 10px 0 0;
 }
+
+
+i img{
+    width: 40px;
+}
+
+
+.card-body a{
+align-items: center;
+color:dimgrey;
+text-decoration: none;
+}

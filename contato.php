@@ -26,7 +26,12 @@
                         <div class="card-body">
                         <p class="card-text">Clezia
                         </p>
-                        <a href="https://github.com/CleziaGeovana">CleziaAssunção</a>
+                        <a href="https://github.com/CleziaGeovana">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            CleziaAssunção
+                        </a>
                         </div>  
                     </div>
 
@@ -36,7 +41,12 @@
                         <div class="card-body">
                         <p class="card-text">Davi
                         </p>
-                        <a href="https://github.com/DaviChagasReis">DaviChagasReis</a>
+                        <a href="https://github.com/DaviChagasReis">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            DaviChagasReis
+                        </a>
                         </div>
                     </div>
 
@@ -46,7 +56,12 @@
                         <div class="card-body">
                         <p class="card-text">Elizete
                         </p>
-                        <a href="https://github.com/elizetecoutinho">elizetecoutinho</a>
+                        <a href="https://github.com/elizetecoutinho">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>    
+                            ElizeteCoutinho
+                        </a>
                         </div>
                     </div>
 
@@ -54,9 +69,14 @@
                         <title>Clezia</title>
                         <img src="./imagen/FotoFranciele.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        <p class="card-text">Franciele
+                        <p class="card-text">Francielle
                         </p>
-                        <a href="https://github.com/FotoFranciele">franciele</a>    **************
+                        <a href="https://github.com/FotoFrancielle">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            Francielle
+                        </a> 
                         </div>
                     </div>
                 </div>
@@ -70,7 +90,12 @@
                         <div class="card-body">
                         <p class="card-text">Janikele
                         </p>
-                        <a href="https://github.com/Janykele">Janykele</a>
+                        <a href="https://github.com/Janykele">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            Janykele
+                        </a>
                         </div>
                     </div>
 
@@ -78,9 +103,14 @@
                         <title>Clezia</title>
                         <img src="./imagen/FotoLaiz.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
-                        <p class="card-text">Laiz
-                        </p>
-                        <a href="https://github.com/LaizFerreira">LaizFerreira</a>
+                            <p class="card-text">Laiz
+                            </p>
+                            <a href="https://github.com/LaizFerreira">
+                                <i>
+                                    <img src="./imagen/imagemGithubMark.png" alt="">
+                                </i>
+                                LaizFerreira
+                            </a>
                         </div>
                     </div>
 
@@ -90,7 +120,12 @@
                         <div class="card-body">
                         <p class="card-text">Milena
                         </p>
-                        <a href="https://github.com/Milenalsy">Milenalsy</a>
+                        <a href="https://github.com/Milenalsy">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            Milenalsy
+                        </a>
                         </div>
                     </div>
 
@@ -100,7 +135,12 @@
                         <div class="card-body">
                         <p class="card-text">Natallia
                         </p>
-                        <a href="https://github.com/NatalliaSoares">NatalliaSoares</a>
+                        <a href="https://github.com/NatalliaSoares">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            NatalliaSoares
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -111,11 +151,16 @@
                 <div class="fotos">
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotosamantha.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoSamantha.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Samantha
                         </p>
-                        <a href="https://github.com/SamanthaCta">SamanthaCta</a>
+                        <a href="https://github.com/SamanthaCta">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            SamanthaCta
+                        </a>
                         </div>
                     </div>
 
@@ -125,17 +170,27 @@
                         <div class="card-body">
                         <p class="card-text">Professor Lucas
                         </p>
-                        <a href="https://github.com/LucasSilverio">LucasSilverio</a>
+                        <a href="https://github.com/LucasSilverio">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            LucasSilverio
+                        </a>
                         </div>
                     </div>
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/fotomarcia.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoMarcia.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Professora Marcia
                         </p>
-                        <a href="https://github.com/marcia">marcia</a>   ********************
+                        <a href="https://github.com/marcia">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            Marcia
+                        </a>   
                         </div>
                     </div>
 
@@ -145,7 +200,12 @@
                         <div class="card-body">
                         <p class="card-text">Professor Reginaldo
                         </p>
-                        <a href="https://github.com/reginaldo">reginaldo</a>    *************
+                        <a href="https://github.com/reginaldo">
+                            <i>
+                                <img src="./imagen/imagemGithubMark.png" alt="">
+                            </i>
+                            Reginaldo
+                        </a>    
                         </div>
                     </div>
                 </div>
