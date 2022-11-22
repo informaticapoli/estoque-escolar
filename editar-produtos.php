@@ -10,9 +10,6 @@ $produto = new Produto();
 $fornecedor = new Fornecedor();
 $usuarios->check_login();
 
-
-
-
 $id_produto = $_GET['id'];
 $produtos = $produto->info_produto($id_produto);
 // print_r($produtos);
@@ -82,3 +79,36 @@ $fornecedores = $fornecedor->listarFornecedores();
     </div>
 </body>
 </html>
+
+
+
+<!-- 
+<div class="menu">  
+        <?php require_once "../menu.php";?>
+    </div>  
+
+    <div class="fundo">           
+            
+            <div class="container">
+                <fieldset>
+                    <legend> Editar Nota </legend>
+                    <form method="POST">
+                        <div class="row">
+                            <label>Nome Fornecedor</label>
+                            <input type="text" class="form-control" name="id_fornecedor" value="<?php echo $nota['id_fornecedor']?>"/>
+    
+                            <label>Numero da Nota</label>
+                            <input type="text" class="form-control" name="numero_nota" value="<?php echo $nota['numero_nota']?>"/>
+    
+                            <label>Data Entrada</label>
+                            <input type="text" class="form-control" name="data_entrada" value="<?php echo $nota['data_entrada']?>"/> 
+                        
+                            <label>Valor Produto</label>
+                            <input type="number" class="form-control" name="valor_produto" value="<?php echo $nota['valor_produto']?>"/>
+        
+                            <button type="submit" class="btn btn-success">Atualizar</button>
+                        </div>    
+                    </form>
+                </fieldset>
+            </div> 
+        </div> -->
