@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
 require_once "Cardapio.php";
 
 $retorno = array();
@@ -15,5 +15,7 @@ if(isset($_POST['id_cardapio'])){
 }else{
     $retorno["sucesso"]=false;
 }
+
+echo json_encode($retorno);
 
 ?>

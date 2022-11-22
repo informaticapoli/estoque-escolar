@@ -6,6 +6,8 @@ $cardapio = new Cardapio;
 
 $id_cardapio = $_GET['id'];
 
+$infoCardapio = $cardapio->pegarNome($id_cardapio);
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +52,7 @@ $id_cardapio = $_GET['id'];
 
                     <h3>Quantidade por pessoa</h3>
 
-                    <input type="text" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
+                    <input type="hidden" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
 
                     <div class="row colunasTurno">
                         <div class="col-md-6">
@@ -87,15 +89,18 @@ $id_cardapio = $_GET['id'];
             
 
             <div class="cardapio2">
+
+                <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?></h4>
         
                 <table class="table">
                     <thead>
                         <th>Produtos</th>
-                        <th>Quantidade</th>     
-                        <th>Turno</th>     
+                        <th>Turno 1</th>     
+                        <th>Turno 2</th>    
+                        <th>Turno 3</th>      
                     </thead>
                     <tbody id="produtos_cad">
-                        <div></div>
+                        
                     </tbody>
                 </table>
             </div>

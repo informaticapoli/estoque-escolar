@@ -8,20 +8,22 @@ class Cardapio{
         $sql=$db->prepare($sql);
         $sql->bindValue(":nome", $nome_card);
         $sql->execute();
-        
-        header("Location: {$url}cad-itens-cardapio.php");
+        $id_cardapio = $db->lastInsertId();
+
+        header("Location: {$url}cad-itens-cardapio.php?id=$id_cardapio");
     }
     
-    public function adicionar_prod_cardapio($prod_id, $qtd_turno1, $qtd_turno2, $qtd_turno3){
+    public function adicionar_prod_cardapio($prod_id, $qtd_turno1, $qtd_turno2, $qtd_turno3, $id_cardapio){
 
         global $db;
 
-        $sql = "INSERT INTO item_cardapio SET id_produto = :id_prod, qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not";
+        $sql = "INSERT INTO item_cardapio SET id_produto = :id_prod, qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not, id_cardapio = :id_cardapio";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_prod", $prod_id);   
         $sql->bindValue(":qtd_mat", $qtd_turno1);     
         $sql->bindValue(":qtd_vesp", $qtd_turno2);     
         $sql->bindValue(":qtd_not", $qtd_turno3);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
         
         $sql->execute();
 
@@ -43,9 +45,10 @@ class Cardapio{
 
         $exibir_prod = array();
 
-        $sql = "SELECT *, produtos.nome_produto FROM item_cardapio
-        INNER JOIN produtos ON item_cardapio.id_produto = produtos.id_produto
-        WHERE item_cardapio.id_cardapio = :id_cardapio GROUP BY item_cardapio.id_produto";
+        $sql = "SELECT item_cardapio.*, produtos.nome_produto 
+        FROM item_cardapio 
+        INNER JOIN produtos ON produtos.id_produto = item_cardapio.id_produto 
+        WHERE id_cardapio = :id_cardapio";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_cardapio", $id_cardapio);
         $sql->execute();
@@ -57,6 +60,24 @@ class Cardapio{
 
         return $exibir_prod;
         
+    }
+
+    public function pegarNome($id_cardapio){
+
+        global $db;
+
+        $nome_prod = array();
+
+        $sql = "SELECT * FROM cardapio WHERE id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue("id_cardapio" , $id_cardapio);
+        $sql->execute();
+
+        if($sql->rowCount()>0){
+            $nome_prod = $sql->fetch();
+        }
+
+        return $nome_prod;
     }
 
 }
