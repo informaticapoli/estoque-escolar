@@ -4,7 +4,7 @@ require_once "./cardapio/Cardapio.php";
 
 $cardapio = new Cardapio;
 
-if(isset($_POST['nome_cardapio'])){
+if(isset($_POST['nome_cardapio']) && $_POST['nome_cardapio'] != ""){
     $nome_card = $_POST['nome_cardapio'];
     $cardapio->cadCardapio($nome_card);
 }
