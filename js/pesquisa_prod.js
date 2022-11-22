@@ -16,6 +16,7 @@ $(document).ready(function (){
         if(prod_id != "" && prod_qtd != "" && prod_valor != ""){
             adicionarProdutoNota(prod_id, id_nota, prod_qtd, prod_valor);
         }else{
+            alert("Atenção! Preencha todos os campos obrigatórios!");
         }
     });
     $("#pesquisar_prod").on("focusout", function(){
