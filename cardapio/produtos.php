@@ -16,11 +16,11 @@ if(isset($_POST['prod_id'])){
     //$exibir_prod = $cardapio->exibir_prod_cardapio($id_cardapio);
 };
 
-echo json_encode($prod);
+
 
 $retorno = array();
 $retorno["sucesso"] = $prod;
-$retorno["produtos"] = $exibir_prod;
+//$retorno["produtos"] = $exibir_prod;
 
 //echo "<pre>";
 //print_r($retorno);

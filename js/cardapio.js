@@ -1,4 +1,7 @@
 $(document).ready(function (){
+    let id_cardapio = $("#id_cardapio").val();
+    pegarProdutos(id_cardapio);
+
     $("#adicionar_prod").on("click", function(){
         let prod_id = $("#prod_id").val();
         let qtd_turno1 = $("#qtd_turno1").val();
@@ -24,8 +27,8 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
             prod_id, qtd_turno1, qtd_turno2, qtd_turno3, id_cardapio
             },
         success:function(json) {
-            let html = "";
-            for (let i in json.produtos){
+            //let html = "";
+            /*for (let i in json.produtos){
                 html+= "<tr>";
                 html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['qtd_mat'])+"</td>";
@@ -33,13 +36,15 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
                 html+= "<td>"+(json.produtos[i]['qtd_not'])+"</td>";
                 html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
                 
-                html+= "</tr>";
-            }
-            $("#produtos_cad").html(html);
-            limparCampos();
+                html+= "</tr>";*/
+            //}
+            /*$("#produtos_cad").html(html);
+            limparCampos();*/
+            pegarProdutos(id_cardapio);
+
         },
         error: function (request, status, error) {
-            alert(request.responseText);
+            console.log(error);
         }
         
     });
@@ -57,7 +62,7 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
                 let html = "";
                 for (let i in json.produtos){
                     html+= "<tr>";
-                    html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
+                    html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
                     html+= "<td>"+(json.produtos[i]['qtd_mat'])+"</td>";
                     html+= "<td>"+(json.produtos[i]['qtd_vesp'])+"</td>";
                     html+= "<td>"+(json.produtos[i]['qtd_not'])+"</td>";
@@ -69,7 +74,7 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
                 limparCampos();
             },
             error: function (request, status, error) {
-                alert(request.responseText);
+                console.log(error);
             }
             
         });
