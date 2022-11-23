@@ -4,7 +4,7 @@ require_once "./cardapio/Cardapio.php";
 
 $cardapio = new Cardapio;
 
-
+$id_cardapio = $_GET['id'];
 
 ?>
 
@@ -20,6 +20,7 @@ $cardapio = new Cardapio;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/jquery.js"></script>
     <script src="./js/pesquisa_prod.js"></script>
+    <script src="./js/cardapio.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
     <title>Cadastrar Produtos NF</title>
 </head>
@@ -48,6 +49,8 @@ $cardapio = new Cardapio;
                     </div>
 
                     <h3>Quantidade por pessoa</h3>
+
+                    <input type="text" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
 
                     <div class="row colunasTurno">
                         <div class="col-md-6">
