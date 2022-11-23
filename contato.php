@@ -67,7 +67,7 @@
 
                     <div class="card shadow-sm">
                         <title>Clezia</title>
-                        <img src="./imagen/FotoFranciele.jpg" class="imagemcontato" alt=""/>
+                        <img src="./imagen/FotoFrancielle.jpg" class="imagemcontato" alt=""/>
                         <div class="card-body">
                         <p class="card-text">Francielle
                         </p>
