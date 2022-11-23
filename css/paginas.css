@@ -17,7 +17,7 @@ body{
 
 .btn{
     height: 40px;
-    margin-left: 20px;
+    margin: 5px;
     border-radius: 15px;
 }
 
@@ -125,4 +125,14 @@ i img{
 align-items: center;
 color:dimgrey;
 text-decoration: none;
+}
+
+.row{
+    margin-top: 23px;
+   
+
+}
+
+.btn-voltar{
+    width: 110px;
 }

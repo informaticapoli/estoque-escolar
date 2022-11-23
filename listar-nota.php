@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 require_once "config.php";
 require_once "./nota/Nota.php";
@@ -9,12 +9,10 @@ $usuarios->check_login();
 
 $nota = new Nota();
 
-$nota = $nota->listando_nota();
+$notas = $nota->listando_nota();
 
 
-?>
-
-
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,28 +44,26 @@ $nota = $nota->listando_nota();
             <table id="myTable" class="table" >
                 <thead>
                     <tr>
+                        <th> Produtos</th>
                         <th> Fornecedor</th>
                         <th> Numero Nota</th>
-                        <th> Produtos</th>
-                        <th> Quantidade</th>
-                        <th> Recurso</th>
-                        <th> Valor Produto</th>
-                        <th> Total Nota</th>
+                        <th> Data Entrada</th>
+                        <th> valor</th>
                         <th> Opções</th>
                     </tr>   
                 </thead>
                 <tbody>
                     <?php foreach($notas as $nota): ?>
                         <tr>
-                            <td><?php echo $nota['']?></td>
-                            <td><?php echo $nota['']?></td>
-                            <td><?php echo $nota['']?></td>                                        
-                            <td><?php echo $nota['']?></td>
-                            <td><?php echo $nota['']?></td>
+                            <td><?php echo $nota['id_produto']?></td>
+                            <td><?php echo $nota['id_fornecedor']?></td>
+                            <td><?php echo $nota['numero_nota']?></td>
+                            <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
+                            <td><?php echo $nota['valor_produto']?></td>
 
                             <td>
-                                <a href="excluir-produtos.php?id=<?php echo $nota[''] ?>" class="btn btn-danger"> Excluir </a>
-                                <a href="editar-produtos.php?id=<?php echo $nota[''] ?>" class="btn btn-warning"> Editar </a>
+                                <a href="excluir-.php?id=<?php echo $nota[''] ?>" class="btn btn-danger"> Excluir </a>
+                                <a href="./nota/editar-nota.php?id=<?php echo $nota['id_nota'] ?>" class="btn btn-warning"> Editar </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

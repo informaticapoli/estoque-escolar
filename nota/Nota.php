@@ -171,6 +171,48 @@ class Nota{
 
         // echo '<pre>';print_r($sql->errorInfo());exit;
     }
-}
 
+    public function select_nota($id_nota){
+        global $db;
+
+        $nota = array();
+
+        $sql = "SELECT * FROM entrada_nota WHERE id_nota = :id_nota";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+        $nota = $sql->fetch();
+        return $nota;
+
+        // echo '<pre>';print_r($sql->errorInfo());exit;
+    }
+
+    public function editar_nota(){
+
+        global $db;
+        $notas = array();
+
+        $id_nota=$_GET['id'];
+
+        $id_fornecedor = $_POST['id_fornecedor'];
+        $valor_produto = $_POST['valor_produto'];
+
+        $sql = "UPDATE entrada_nota SET  id_fornecedor, :id_fornecedor, valor_produto = :valor_produto WHERE id_nota = :id_nota";
+
+        // echo"<pre>"; print_r($sql->errorInfo()); exit;
+
+        $sql = $db->prepare($sql);
+
+        $sql->bindValue(":id_fornecedor", $id_fornecedor);
+        $sql->bindValue(":valor_produto", $valor_produto);
+        $sql->bindValue(":id_nota", $id_nota);
+        $sql->execute();
+    
+         header("Location: http://localhost/estoque-escolar/listar-nota.php");
+
+        //  echo "<pre>"; print_r($sql->errorInfo()); exit;
+
+    }
+
+}
 ?>
