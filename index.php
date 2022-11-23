@@ -18,7 +18,7 @@ $usuarios->check_login();
     <title>Inicio</title>
 </head>
 <body>
-    Tela Inicial
+    
 
 </body>
 </html>

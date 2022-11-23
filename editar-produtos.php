@@ -51,9 +51,9 @@ $fornecedores = $fornecedor->listarFornecedores();
                     <div class="row">
                         <label>Nome Produto</label>
                         <input type="text" class="form-control" name="nome_produto" value="<?php echo $produtos['nome_produto']?>"/>
-
-                        <label>Unidade Medida</label>
-                        <input type="text" class="form-control" name="unidade_medida" value="<?php echo $produtos['unidade_medida']?>"/>
+                        
+                            <label>Unidade Medida</label>
+                            <input type="text" class="form-control" name="unidade_medida" value="UN" desabled/>
 
                         <label>Data Validade</label>
                         <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/> 
@@ -72,7 +72,14 @@ $fornecedores = $fornecedor->listarFornecedores();
                         <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>"/>
 
                         <button type="submit" class="btn btn-success">Atualizar</button>
-                    </div>    
+                    </div> 
+                    
+                        <div class="row box">
+                            <div class="col-md-6">
+                            <a href="./inicio.php" class="btn btn-warning">Voltar</a>
+                    
+                            </div>
+                        </div>
                 </form>
             </fieldset>
         </div> 

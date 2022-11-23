@@ -29,6 +29,11 @@ if(isset($_POST['id_nota'])){
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/jquery.js"></script>
+    <script src="./js/mask.js"></script>
+    <script src="./js/datatables.js"></script>
+
+    <script src="./js/app.js"></script>
+
     <script src="./js/pesquisa_prod.js"></script>
     <link rel="stylesheet" href="./css/paginas.css">
     <link rel="stylesheet" href="./css/cad-nota.css">
@@ -64,7 +69,7 @@ if(isset($_POST['id_nota'])){
                     </div>
                     <div class="col-md-6">
                         <label>Valor:</label>
-                        <input type="text" class="form-control" id="prod_valor">
+                        <input type="text" class="form-control dinheiro" id="prod_valor">
                     </div>
                 </div>
                 <div class="row">
