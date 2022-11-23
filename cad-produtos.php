@@ -58,8 +58,8 @@ $recursos = $recurso->pegarecursos();
                             <label>Nome Produto</label>
                             <input type="text" class="form-control" placeholder="Informe o nome do produto " name="nome_produto"/>
 
-                            <label>Unidade Medida</label>
-                            <input type="text" class="form-control" placeholder="Informe a quantidade de unidades" name="unidade_medida"/>
+                            <label>Unidade </label>
+                            <input type="text" class="form-control" placeholder="Informe a quantidade de unidades" name="unidade_medida" value="UN" disabled/>
 
                             <label>Data Validade</label>
                             <input type="date" class="form-control" placeholder="Informe a data de validade do produto" name="data_validade"/> 
@@ -73,7 +73,7 @@ $recursos = $recurso->pegarecursos();
                             <select class="form-control" name="id_fornecedor"> 
                                 <option value="">Selecione</option>
                                 <?php foreach($fornecedores as $fornecedor):?>
-                                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo $fornecedor['nome_fornecedor'] ?></option>
+                                    <option value="<?php echo $fornecedor['id_fornecedor'] ?>"><?php echo utf8_encode($fornecedor['nome_fornecedor']) ?></option>
                                 <?php endforeach; ?>    
                             </select>
 
@@ -90,6 +90,8 @@ $recursos = $recurso->pegarecursos();
 
 
                             <button type="submit" class="btn btn-success">Cadastrar</button>
+
+                            <a href="<?php echo $url ?>inicio.php"  class="btn btn-voltar btn-warning">Voltar</a>
                         </div>    
                     </form>
                 </fieldset>

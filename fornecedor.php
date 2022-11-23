@@ -55,7 +55,18 @@ if(isset($_POST['fornecedor']) && ($_POST['fornecedor']) != "" && ($_POST['ender
             <label>E-mail:</label>
             <input class="form-control" placeholder="@gmail.com" type="email" name="email">
             
-            <button class="btn btn-cadastrar btn-success" type="submit">Cadastrar</button>
+           
+
+            <div class="row box">
+                <div class="col-md-2">
+                    <button class="btn btn-cadastrar btn-success"
+                    type="submit">Cadastrar</button>
+                </div>
+                <div class="col-md-6">
+                <a href="./inicio.php"class="btn btn-voltar btn-warning">Voltar</a>
+                </div>
+            
+            </div>    
         </form>
     </div>
 </body>

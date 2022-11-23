@@ -57,8 +57,8 @@ if(isset($_POST["contato"])){
             <input type="hidden" name="id" value="<?php echo $info_fornecedor['id_fornecedor']?>">
 
            <br/>
-            <a href="../lista-fornecedor.php" class="btn btn-warning ">Voltar</a>
-            <button class="btn btn-success" type="submit">Editar</button>
+            <a href="../lista-fornecedor.php" class="btn btn-voltar btn-warning ">Voltar</a>
+            <button class="btn btn-voltar btn-success" type="submit">Editar</button>
 
         </form>
             
