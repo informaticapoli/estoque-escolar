@@ -18,7 +18,7 @@ Tabela de conteúdos
    * [Tests](#testes)
    * [Tecnologias](#tecnologias)
 <!--te-->
-<h2>Sobre</h2>
+<h2>Sobre</h2>         
 <p> Este programa tem o intuíto de  fazer o controle de entrada e saída de Produtos Alimenticios da  Escola Estadual Lauriston de Souza.
 <h2>Como Usar</h2>
 <p>-Fazer o login;</p>
