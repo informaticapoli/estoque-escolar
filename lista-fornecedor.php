@@ -41,6 +41,7 @@ $fornecedores = $fornecedor->listarFornecedores();
         <?php require_once "./menu.php";?>
     </div>
     <div class="fundo-lista-forn">
+    
         <h1>Lista de Fornecedores</h1>
         <table class="table" id="myTable">
             <thead>
@@ -57,13 +58,13 @@ $fornecedores = $fornecedor->listarFornecedores();
             <tbody>
             <?php foreach($fornecedores as $fornecedor): ?>
                 <tr>
-                    <td><?php echo $fornecedor['nome_fornecedor']?></td>
-                    <td><?php echo $fornecedor['cnpj']?></td>
-                    <td><?php echo $fornecedor['endereco_fornecedor']?></td>
-                    <td><?php echo $fornecedor['contato_fornecedor']?></td>
-                    <td><?php echo $fornecedor['telefone1']?></td>
-                    <td><?php echo $fornecedor['telefone2']?></td>
-                    <td><?php echo $fornecedor['e_mail']?></td>
+                    <td><?php echo utf8_encode($fornecedor['nome_fornecedor'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['cnpj'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['endereco_fornecedor'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['contato_fornecedor'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['telefone1'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['telefone2'])?></td>
+                    <td><?php echo utf8_encode($fornecedor['e_mail'])?></td>
                     <td>
                     <a href="./fornecedores/editar.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>" class="btn btn-warning">Editar</a>
                     
@@ -73,7 +74,14 @@ $fornecedores = $fornecedor->listarFornecedores();
             <?php endforeach ?>
             </tbody>
            
+
+            
         </table>
+            <div class="row box">
+                <div class="col-md-6">
+                    <a href="./inicio.php"class="btn btn-voltar btn-warning">Voltar</a>
+                </div>
+            </div>
     </div>
 </body>
 </html>

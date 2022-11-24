@@ -15,7 +15,7 @@ body{
 
 .btn{
     height: 40px;
-    margin-left: 20px;
+    margin: 5px;
     border-radius: 15px;
 }
 
@@ -101,4 +101,14 @@ p{
 }
 
 
+
+.row{
+    margin-top: 23px;
+   
+
+}
+
+.btn-voltar{
+    width: 110px;
+}
 

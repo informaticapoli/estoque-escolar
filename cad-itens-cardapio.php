@@ -4,10 +4,9 @@ require_once "./cardapio/Cardapio.php";
 
 $cardapio = new Cardapio;
 
-if(isset($_POST['nome_cardapio'])){
-    $nome_card = $_POST['nome_cardapio'];
-    $cardapio->cadCardapio($nome_card);
-}
+$id_cardapio = $_GET['id'];
+
+$infoCardapio = $cardapio->pegarNome($id_cardapio);
 
 ?>
 
@@ -23,6 +22,7 @@ if(isset($_POST['nome_cardapio'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/jquery.js"></script>
     <script src="./js/pesquisa_prod.js"></script>
+    <script src="./js/cardapio.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
     <title>Cadastrar Produtos NF</title>
 </head>
@@ -31,17 +31,83 @@ if(isset($_POST['nome_cardapio'])){
         <?php require_once "./menu.php";?>
     </div>
     <div class="fundo">
-        <h1>Itens do Cardápio</h1>
-        <form method="POST">
-            <div class="campo_pesquisa">
-                <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
-                <div class="resultado">
-                    
-                </div>
-            </div>         
-        </form>
-        <form class="form_card" method="POST">
+        <section class="cardapio">
 
-        </form>
+            <div class="cardapio1">
+                <h1>Itens do Cardápio</h1>
+                    <div class="row">
+                        <div class="campo_pesquisa col-md-11">
+                            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
+                            <div class="resultado">
+
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="row info-prod">
+                        <div class="col-md-11">
+                            <input type="text" class="form-control" id="prod_nome" disabled>
+                            <input type="hidden" id="prod_id" disabled>
+                        </div>
+                    </div>
+
+                    <h3>Quantidade por pessoa</h3>
+
+                    <input type="hidden" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Turno 1" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="qtd_turno1" placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"placeholder="Turno 2" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="qtd_turno2"  placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>
+
+                    <div class="row colunasTurno">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Turno 3" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control"  id="qtd_turno3"   placeholder="Quantidade" id="prod_qtd">
+                        </div>
+                    </div>     
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" id="adicionar_prod" class="btn btn-success btn-cad-prod">Adicionar</button>
+                        </div>
+                    </div>     
+            </div>
+            
+
+            <div class="cardapio2">
+
+                <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?></h4>
+        
+                <table class="table">
+                    <thead>
+                        <th>Produtos</th>
+                        <th>Turno 1</th>     
+                        <th>Turno 2</th>    
+                        <th>Turno 3</th>      
+                    </thead>
+                    <tbody id="produtos_cad">
+                        
+                    </tbody>
+                </table>
+            </div>
+                
+        </section>
+
     </div>
+
+    
 </body>

@@ -34,12 +34,14 @@ $produtos = $produto->listar();
     <title>Entrada</title>
 </head>
 <body>
-
-    <div class="menu">  
+    
+    <div class="menu">
+     
         <?php require_once "./menu.php";?>
     </div> 
      
     <div class="tabela">
+      
         <fieldset>
             <legend>Lista de Registros</legend>
             <table id="myTable" class="table" >
@@ -49,7 +51,7 @@ $produtos = $produto->listar();
                         <th> U. M.</th>
                         <th> Fornecedor</th>
                         <th> Recurso</th>
-                        <th> Opeções</th>
+                        <th> Opções</th>
                     </tr>   
                 </thead>
                 <tbody>
@@ -67,10 +69,14 @@ $produtos = $produto->listar();
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </fieldset>
-    </div>
-    
 
-    
+            <div class="row box">
+                <div class="col-md-6">
+                    <a href="./inicio.php"class="btn btn-warning">Voltar</a>
+                </div>
+            </div>
+
+        </fieldset>
+       
 </body>
 </html>
