@@ -53,13 +53,13 @@ if(isset($_POST['id_nota'])){
                     <div class="row">
 
                         <label>Nome Fornecedor</label>
-                        <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_fornecedor" value="<?php echo $notas['id_fornecedor']?>"/>
+                        <input type="text" disabled <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="nome_fornecedor" value="<?php echo $notas['nome_fornecedor']?>"/>
 
                         <label>Numero da Nota</label>
-                        <input type="text"  <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
+                        <input type="text" disabled <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
 
                         <label>Data Entrada</label>
-                        <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_produto" value="<?php echo $notas['id_produto']?>"/> 
+                        <input type="text" disabled <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_produto" value="<?php echo $notas['id_produto']?>"/> 
                     
                         <label>Valor Produto</label>
                         <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="valor_produto" value="<?php echo $notas['valor_produto']?>"/>

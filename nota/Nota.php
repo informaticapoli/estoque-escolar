@@ -163,7 +163,8 @@ class Nota{
      public function listando_nota(){
         global $db;
         $notas = array();
-        $sql = "SELECT * FROM entrada_nota";
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor FROM entrada_nota 
+        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
         $sql = $db->prepare($sql);
         $sql->execute();
         $notas = $sql->fetchAll();
@@ -175,13 +176,13 @@ class Nota{
     public function select_nota($id_nota){
         global $db;
 
-        $nota = array();
+        $notas = array();
 
-        $sql = "SELECT * FROM entrada_nota WHERE id_nota = :id_nota";
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor FROM entrada_nota 
+        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
         $sql = $db->prepare($sql);
-        $sql->bindValue(":id_nota", $id_nota);
         $sql->execute();
-        $nota = $sql->fetch();
+        $notas = $sql->fetch();
         return $nota;
 
         // echo '<pre>';print_r($sql->errorInfo());exit;
@@ -216,3 +217,14 @@ class Nota{
 
 }
 ?>
+
+
+        "SELECT entrada_nota.id_nota,entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, FROM entrada_nota 
+        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
+        INNER JOIN entrada_nota ON entrada_nota.id_fornecedor = entrada_nota.id_fornecedor"
+        
+
+        "SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
+        produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor, recurso.nome_recurso FROM produtos 
+        INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor
+        INNER JOIN recurso ON produtos.id_recurso = recurso.id_recurso"

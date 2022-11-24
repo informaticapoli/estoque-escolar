@@ -45,7 +45,7 @@ $notas = $nota->listando_nota();
                 <thead>
                     <tr>
                         <th> Produtos</th>
-                        <th> Fornecedor</th>
+                        <th> Nome Fornecedor</th>
                         <th> Numero Nota</th>
                         <th> Data Entrada</th>
                         <th> valor</th>
@@ -56,7 +56,7 @@ $notas = $nota->listando_nota();
                     <?php foreach($notas as $nota): ?>
                         <tr>
                             <td><?php echo $nota['id_produto']?></td>
-                            <td><?php echo $nota['id_fornecedor']?></td>
+                            <td><?php echo $nota['nome_fornecedor']?></td>
                             <td><?php echo $nota['numero_nota']?></td>
                             <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
                             <td><?php echo $nota['valor_produto']?></td>
