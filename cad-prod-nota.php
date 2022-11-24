@@ -68,7 +68,7 @@ if(isset($_POST['id_nota'])){
                         <input type="text" class="form-control" id="prod_qtd">
                     </div>
                     <div class="col-md-6">
-                        <label>Valor:</label>
+                        <label>Valor(UN):</label>
                         <input type="text" class="form-control dinheiro" id="prod_valor">
                     </div>
                 </div>
@@ -82,11 +82,12 @@ if(isset($_POST['id_nota'])){
         
         <div class="form-prod-nota2">
             <div class="caixa-table">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <th>Produtos</th>
                         <th>Quantidade</th>
-                        <th>Valor</th>                
+                        <th>Valor(UN)</th> 
+                        <th>Total</th>               
                     </thead>
                     <tbody id="produtos_cad">
                         <div></div>

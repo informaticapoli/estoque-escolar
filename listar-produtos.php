@@ -59,7 +59,7 @@ $produtos = $produto->listar();
                         <tr>
                             <td><?php echo $produto['nome_produto']?></td>
                             <td><?php echo $produto['unidade_medida']?></td>
-                            <td><?php echo $produto['nome_fornecedor']?></td>                                        
+                            <td><?php echo utf8_encode($produto['nome_fornecedor'])?></td>                                        
                             <td><?php echo $produto['nome_recurso']?></td>
                             <td>
                                 <a href="excluir-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>
