@@ -4,8 +4,7 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Sobre](#Sobre)
-   Este progrma tem o intuito de  fazer o controle de entrada e saida de Produtos Alimenticios da  Escola estadual Lauriston de Souza.
-   
+  
    * [Tabela de Conteudo](#tabela-de-conteudo)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
@@ -19,3 +18,15 @@ Tabela de conteúdos
    * [Tests](#testes)
    * [Tecnologias](#tecnologias)
 <!--te-->
+<h2>Sobre</h2>
+<p> Este programa tem o intuíto de  fazer o controle de entrada e saída de Produtos Alimenticios da  Escola Estadual Lauriston de Souza.
+<h2>Como Usar</h2>
+<p>-Fazer o login;</p>
+<p>-Colocar nome de usúario e senha;</p>
+<p>-Cadastrar produtos,fornecedores e recursos;</p>
+<p>-Incluir nota fiscal,incluindo produtos no estoque;</p>
+<p>-Incluir cardápio dos turnos;</p>
+<p>-Saída de produtos subtraindo do estoque;</p>
+
+
+   
