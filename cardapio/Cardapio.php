@@ -86,7 +86,7 @@ class Cardapio{
 
         $sql = "DELETE FROM item_cardapio WHERE id_item_card = :id";
         $sql = $db->prepare($sql);
-        $sql->bindoValue("id_item_card", $id)
+        $sql->bindValue(":id", $id);
         $sql->execute();
 
         if($sql){

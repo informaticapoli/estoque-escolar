@@ -21,7 +21,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/jquery.js"></script>
-    <script src="./js/pesquisa_prod.js"></script>
+    <!--<script src="./js/pesquisa_prod.js"></script>-->
     <script src="./js/cardapio.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
     <title>Cadastrar Produtos NF</title>
@@ -99,7 +99,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                         <th>Turno 2</th>    
                         <th>Turno 3</th>      
                     </thead>
-                    <tbody id="produtos_cad">
+                    <tbody id="produtos_cardapio">
                         
                     </tbody>
                 </table>
