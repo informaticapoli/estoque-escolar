@@ -20,6 +20,9 @@ Tabela de conteúdos
 <!--te-->
 <h2>Sobre</h2>         
 <p> Este programa tem o intuíto de  fazer o controle de entrada e saída de Produtos Alimenticios da  Escola Estadual Lauriston de Souza.
+<p> Cadastar nota fiscal,ver de qual fornecedor está vindo,número da nota e recurso (estado ou fazenda),valor total da nota;<p/>
+<p> Pesquisar produtos da nota fiscal,quantidade, valor unitário e salvar;<p>
+<p> A quantidade da unidade irá multiplicar, aparecerá o valor total,caso precisar poderá excluir os produtos e depois finalizar cadastro;</p>
 <h2>Como Usar</h2>
 <p>-Fazer o login;</p>
 <p>-Colocar nome de usúario e senha;</p>
