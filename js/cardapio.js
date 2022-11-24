@@ -79,5 +79,37 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
             
         });
     }
+        
+    function limparCampos(){
+        $("#pesquisar_prod").val("");
+        $("#prod_nome").val("");
+        $("#qtd_turno1").val("");
+        $("#qtd_turno2").val("");
+        $("#qtd_turno3").val("");
+        $("#pesquisar_prod").focus();
+    }
+
+    function exclui_item(id){
+        let id_cardapio = $('#id_cardapio').val();
+        $.ajax({
+            url:'http://localhost/estoque-escolar/cardapio/excluir_item.php',
+            type: POST,
+            dataType:'json',
+            data: {  id  },
+            succes:function(json){
+                listarItens(id_cardapio)
+            }
+
+        });
+    }
+
+    function listarItens(id_cardapio){
+        $.ajax({
+            url:'http://localhost/estoque-escolar/cardapio/'
+        });
+        
+    }
+
+    
 
 

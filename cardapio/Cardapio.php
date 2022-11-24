@@ -80,6 +80,22 @@ class Cardapio{
         return $nome_prod;
     }
 
+    public function excluir_prod_cardapio($id){
+
+        global $db;
+
+        $sql = "DELETE FROM item_cardapio WHERE id_item_card = :id";
+        $sql = $db->prepare($sql);
+        $sql->bindoValue("id_item_card", $id)
+        $sql->execute();
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }
 
 
