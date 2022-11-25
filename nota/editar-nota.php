@@ -13,7 +13,8 @@ if(!isset($_GET['id'])){
 }
 
 $id_nota=$_GET['id'];
-$notas = $nota->select_nota($id_nota);
+echo "<pre>";
+print_r ($notas = $nota->select_nota($id_nota));
 
 if(isset($_POST['id_nota'])){
     $notas = $nota->editar_nota();
@@ -57,9 +58,6 @@ if(isset($_POST['id_nota'])){
 
                         <label>Numero da Nota</label>
                         <input type="text" disabled <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="numero_nota" value="<?php echo $notas['numero_nota']?>"/>
-
-                        <label>Data Entrada</label>
-                        <input type="text" disabled <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="id_produto" value="<?php echo $notas['id_produto']?>"/> 
                     
                         <label>Valor Produto</label>
                         <input type="text" <?php echo($notas['status'] == 1 ? "disabled" : "")?> class="form-control" name="valor_produto" value="<?php echo $notas['valor_produto']?>"/>

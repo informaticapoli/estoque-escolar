@@ -105,7 +105,7 @@ class Nota{
         }
 
         //echo "<pre>";
-        //print_r($sql->errorInfo());
+        // print_r($sql->errorInfo());
         //exit;
     }
 
@@ -147,11 +147,6 @@ class Nota{
 
     public function finalizarNota($id_nota){
         global $db;
-
-        /*$sql = "UPDATE entrada_nota SET status = 1 WHERE id_nota = :id_nota";
-        $sql = $db->prepare($sql);
-        $sql->bindValue(":id_nota", $id_nota);
-        $sql->execute();*/
         $this->pegarProdNota($id_nota);
 
         header("Location: {$url}inicio.php");
@@ -163,8 +158,9 @@ class Nota{
      public function listando_nota(){
         global $db;
         $notas = array();
-        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor FROM entrada_nota 
-        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.data_entrada, entrada_nota.valor_produto
+                FROM entrada_nota 
+                INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
         $sql = $db->prepare($sql);
         $sql->execute();
         $notas = $sql->fetchAll();
@@ -178,12 +174,14 @@ class Nota{
 
         $notas = array();
 
-        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor FROM entrada_nota 
-        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.id_produto, entrada_nota.valor_produto, entrada_nota.status
+                FROM entrada_nota 
+                INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
+                WHERE entrada_noda.id_nota";
         $sql = $db->prepare($sql);
         $sql->execute();
         $notas = $sql->fetch();
-        return $nota;
+        return $notas;
 
         // echo '<pre>';print_r($sql->errorInfo());exit;
     }
@@ -198,13 +196,12 @@ class Nota{
         $id_fornecedor = $_POST['id_fornecedor'];
         $valor_produto = $_POST['valor_produto'];
 
-        $sql = "UPDATE entrada_nota SET  id_fornecedor, :id_fornecedor, valor_produto = :valor_produto WHERE id_nota = :id_nota";
+        $sql = "UPDATE entrada_nota SET valor_produto = :valor_produto WHERE id_nota = :id_nota";
 
-        // echo"<pre>"; print_r($sql->errorInfo()); exit;
+        // print_r($sql->errorInfo());
 
         $sql = $db->prepare($sql);
 
-        $sql->bindValue(":id_fornecedor", $id_fornecedor);
         $sql->bindValue(":valor_produto", $valor_produto);
         $sql->bindValue(":id_nota", $id_nota);
         $sql->execute();
@@ -217,14 +214,3 @@ class Nota{
 
 }
 ?>
-
-
-        "SELECT entrada_nota.id_nota,entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, FROM entrada_nota 
-        INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
-        INNER JOIN entrada_nota ON entrada_nota.id_fornecedor = entrada_nota.id_fornecedor"
-        
-
-        "SELECT produtos.id_produto, produtos.nome_produto, produtos.unidade_medida, produtos.data_validade, produtos.id_nota, 
-        produtos.id_fornecedor, produtos.id_recurso, fornecedor.nome_fornecedor, recurso.nome_recurso FROM produtos 
-        INNER JOIN fornecedor ON produtos.id_fornecedor = fornecedor.id_fornecedor
-        INNER JOIN recurso ON produtos.id_recurso = recurso.id_recurso"
