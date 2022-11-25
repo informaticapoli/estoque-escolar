@@ -46,14 +46,23 @@ if(isset($_POST['id_nota'])){
     <div class="fundo-cad-prod-nota container">
         <div class="form-prod-nota">
             <h1>Cadastrar Produtos da Nota Fiscal</h1>
-            <form method="POST">
-                <div class="campo_pesquisa">
-                    <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
-                    <div class="resultado">
-                        
-                    </div>
-                </div>         
-            </form>
+            <div class="row ">
+                <form method="POST">
+                    <div class="row campo_pesquisa">
+                        <div class="col-md-12">
+                            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
+                            
+                            
+                        </div>
+                        <div class="col-md-12">
+                                <div class="resultado">
+                                
+                                </div>
+                        </div>
+                    </div>         
+                </form>
+            </div>
+            
             <div class="row info-prod">
                 <div class="row">
                     <div class="col-md-12">

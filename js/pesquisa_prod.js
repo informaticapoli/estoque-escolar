@@ -58,16 +58,28 @@ $(document).ready(function (){
                 },
             success:function(json) {
                 let html = "";
+                let total=0;
+
             for (let i in json.produtos){
                 html+= "<tr>";
-                html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
-                html+= "<td>R$ "+(json.produtos[i]['valor_total'])+"</td>";
-                html+= "<td>R$ "+(json.produtos[i]['valor_total'] * json.produtos[i]['quantidade_total'] ).toFixed(2)+"</td>";
-                html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
-                
+                    html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
+                    html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
+                    html+= "<td>R$ "+(json.produtos[i]['valor_total'])+"</td>";
+                    html+= "<td>R$ "+(json.produtos[i]['valor_total'] * json.produtos[i]['quantidade_total'] ).toFixed(2)+"</td>";
+                    html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";                
                 html+= "</tr>";
+                total += (json.produtos[i]['valor_total'] * json.produtos[i]['quantidade_total'] );
             }
+
+            html += "<tr>";
+
+                html += "<td> </td>";
+                html += "<td> </td>";
+                html += "<td>Total</td>";
+                html += "<td>R$ "+total.toFixed(2) +"</td>";
+            
+            html += "</tr>";
+
             $("#produtos_cad").html(html);
         }
             
