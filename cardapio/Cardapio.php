@@ -17,26 +17,24 @@ class Cardapio{
 
         global $db;
 
-        $sql = "INSERT INTO item_cardapio SET id_produto = :id_prod, qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not, id_cardapio = :id_cardapio";
-        $sql = $db->prepare($sql);
-        $sql->bindValue(":id_prod", $prod_id);   
-        $sql->bindValue(":qtd_mat", $qtd_turno1);     
-        $sql->bindValue(":qtd_vesp", $qtd_turno2);     
-        $sql->bindValue(":qtd_not", $qtd_turno3);
-        $sql->bindValue(":id_cardapio", $id_cardapio);
-        
-        $sql->execute();
+        if(!$this->prod_cadastrado($prod_id, $id_cardapio)){
+            $sql = "INSERT INTO item_cardapio SET id_produto = :id_prod, qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not, id_cardapio = :id_cardapio";
+            $sql = $db->prepare($sql);
+            $sql->bindValue(":id_prod", $prod_id);   
+            $sql->bindValue(":qtd_mat", $qtd_turno1);     
+            $sql->bindValue(":qtd_vesp", $qtd_turno2);     
+            $sql->bindValue(":qtd_not", $qtd_turno3);
+            $sql->bindValue(":id_cardapio", $id_cardapio);
+            $sql->execute();
 
-        
-        /*echo "<pre>";
-        print_r($sql->errorInfo());
-        exit;*/
-        
-        if($sql){
             return true;
         }else{
             return false;
         }
+               
+        /*echo "<pre>";
+        print_r($sql->errorInfo());
+        exit;*/
 
     }
 
@@ -94,6 +92,30 @@ class Cardapio{
         }else{
             return false;
         }
+
+    }
+
+    private function prod_cadastrado($prod_id, $id_cardapio){
+
+        global $db;
+
+        $sql = "SELECT * FROM item_cardapio WHERE id_produto = :id_produto AND id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_produto", $prod_id);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
+        $sql->execute();
+
+        /*print_r($sql->errorInfo());
+        echo $sql->rowCount();
+        exit;*/
+
+        if($sql->rowCount()>0){
+            return true;
+        }else{
+            return false;
+        }
+
+
 
     }
 }

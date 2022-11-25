@@ -92,19 +92,24 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
 
                 <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?></h4>
         
-                <table class="table">
-                    <thead>
-                        <th>Produtos</th>
-                        <th>Turno 1</th>     
-                        <th>Turno 2</th>    
-                        <th>Turno 3</th>      
-                    </thead>
-                    <tbody id="produtos_cardapio">
-                        
-                    </tbody>
-                </table>
+                <div class="lista_produtos">
+                    <table class="table">
+                        <thead>
+                            <th>Produtos</th>
+                            <th>Turno 1</th>     
+                            <th>Turno 2</th>    
+                            <th>Turno 3</th>      
+                        </thead>
+                        <tbody id="produtos_cardapio">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <button type="submit" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</button>
             </div>
-                
+
+            
         </section>
 
     </div>

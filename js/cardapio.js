@@ -37,19 +37,9 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
             prod_id, qtd_turno1, qtd_turno2, qtd_turno3, id_cardapio
             },
         success:function(json) {
-            //let html = "";
-            /*for (let i in json.produtos){
-                html+= "<tr>";
-                html+= "<td>"+(json.produtos[i]['id_produto'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['qtd_mat'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['qtd_vesp'])+"</td>";
-                html+= "<td>"+(json.produtos[i]['qtd_not'])+"</td>";
-                html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
-                
-                html+= "</tr>";*/
-            //}
-            /*$("#produtos_cad").html(html);
-            limparCampos();*/
+            if(!json.sucesso){
+                alert("Não foi possível adicionar o produto. Verifique se o produto já foi incluido.")
+            }
             listarItens(id_cardapio);
 
         },

@@ -96,8 +96,9 @@ h3{
 }
 
 .cardapio2{
-    display: block;
+    display: flex;
     flex: 1;
+    flex-direction: column;
 }
 
 .colunasTurno{
@@ -110,3 +111,14 @@ h3{
     margin-left: 0%;
 }
 
+.btn-finalizar{
+    margin-top: 10px;
+    margin-left: 0%;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.lista_produtos{
+    overflow: auto;
+    max-height: 450px;
+}
