@@ -13,11 +13,10 @@ if(!isset($_GET['id'])){
 }
 
 $id_nota=$_GET['id'];
-echo "<pre>";
-print_r ($notas = $nota->select_nota($id_nota));
+$notas = $nota->select_nota($id_nota);
 
 if(isset($_POST['id_nota'])){
-    $notas = $nota->editar_nota();
+    $notas = $nota->editar_nota($id_nota);
 }
 
 

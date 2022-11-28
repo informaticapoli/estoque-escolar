@@ -81,9 +81,7 @@ class Nota{
         $sql->bindValue(":qtn_produto", $prod_qtd);     
         $sql->execute();
 
-        /*echo "<pre>";
-        print_r($sql->errorInfo());
-        exit;*/
+
     }
 
     public function adicionar_prod_nota($prod_id, $id_nota, $prod_qtd, $prod_valor){
@@ -104,9 +102,7 @@ class Nota{
             return false;
         }
 
-        //echo "<pre>";
-        // print_r($sql->errorInfo());
-        //exit;
+
     }
 
     public function exibir_prod_nota($id_nota){
@@ -160,33 +156,34 @@ class Nota{
         $notas = array();
         $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.data_entrada, entrada_nota.valor_produto
                 FROM entrada_nota 
-                INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor";
+                INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
+                WHERE entrada_nota.id_nota";
+
         $sql = $db->prepare($sql);
         $sql->execute();
         $notas = $sql->fetchAll();
         return $notas;
 
-        // echo '<pre>';print_r($sql->errorInfo());exit;
     }
 
     public function select_nota($id_nota){
         global $db;
 
-        $notas = array();
-
-        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.id_produto, entrada_nota.valor_produto, entrada_nota.status
+        $nota = array();
+        
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, entrada_nota.numero_nota, entrada_nota.id_produto, entrada_nota.valor_produto, entrada_nota.status, fornecedor.nome_fornecedor
                 FROM entrada_nota 
                 INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
-                WHERE entrada_noda.id_nota";
+                WHERE id_nota = :id_nota";
         $sql = $db->prepare($sql);
+        $sql->bindValue(":id_nota", $id_nota);
         $sql->execute();
-        $notas = $sql->fetch();
-        return $notas;
+        $nota = $sql->fetch();
+        return $nota;
 
-        // echo '<pre>';print_r($sql->errorInfo());exit;
     }
 
-    public function editar_nota(){
+    public function editar_nota($id_nota){
 
         global $db;
         $notas = array();
@@ -197,8 +194,6 @@ class Nota{
         $valor_produto = $_POST['valor_produto'];
 
         $sql = "UPDATE entrada_nota SET valor_produto = :valor_produto WHERE id_nota = :id_nota";
-
-        // print_r($sql->errorInfo());
 
         $sql = $db->prepare($sql);
 
