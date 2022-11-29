@@ -24,6 +24,10 @@ Tabela de conteúdos
 <p> Pesquisar produtos da nota fiscal,quantidade, valor unitário e salvar;<p>
 <p> A quantidade da unidade irá multiplicar, aparecerá o valor total,caso precisar poderá excluir os produtos e depois finalizar cadastro;</p>
 <p> Listar produtos do qual poderá editar, alterar e excluir</p>
+<h2>Requisitos</h2>
+<p>Baixar o aplicativo Visual Code link: </p>
+<ul><li>PHP</li></ul>
+
 <h2>Como Usar</h2>
 <p>-Fazer o login;</p>
 <p>-Colocar nome de usúario e senha;</p>
