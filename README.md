@@ -26,7 +26,12 @@ Tabela de conteúdos
 <p> Listar produtos do qual poderá editar, alterar e excluir</p>
 <h2>Requisitos</h2>
 <p>Baixar o aplicativo Visual Code link: https://code.visualstudio.com/insiders/ </p>
-<ul><li>PHP</li></ul>
+<ul>
+  <li>PHP</li>
+  <li>heidisql</li>
+  <li></li>
+ </ul>
+
 
 <h2>Como Usar</h2>
 <p>-Fazer o login;</p>
