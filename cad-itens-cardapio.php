@@ -23,6 +23,9 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
     <script src="./js/jquery.js"></script>
     <!--<script src="./js/pesquisa_prod.js"></script>-->
     <script src="./js/cardapio.js"></script>
+    <script src="./js/datatables.js"></script>
+    <script src="./js/mask.js"></script>
+    <script src="./js/app.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
     <title>Cadastrar Produtos NF</title>
 </head>
@@ -37,11 +40,8 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                 <h1>Itens do Cardápio</h1>
                     <div class="row">
                         <div class="campo_pesquisa col-md-11">
-                            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
-                            <div class="resultado">
-
-                            </div>
-                        </div>
+                        <button type="button" class="btn btn-success btn-add-prod" data-bs-toggle="modal" data-bs-target="#exampleModal">Adicionar Produto</button>
+                    </div>
                     </div>     
                     <div class="row info-prod">
                         <div class="col-md-11">
@@ -50,7 +50,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                         </div>
                     </div>
 
-                    <h3>Quantidade por pessoa</h3>
+                    <h3>Quantidade por pessoa em gramas</h3>
 
                     <input type="hidden" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
 
@@ -59,7 +59,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                             <input type="text" class="form-control" placeholder="Turno 1" disabled>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="qtd_turno1" placeholder="Quantidade" id="prod_qtd">
+                            <input type="text" class="form-control peso" id="qtd_turno1" placeholder="Quantidade em gramas" id="prod_qtd">
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                             <input type="text" class="form-control"placeholder="Turno 2" disabled>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="qtd_turno2"  placeholder="Quantidade" id="prod_qtd">
+                            <input type="text" class="form-control peso" id="qtd_turno2"  placeholder="Quantidade em gramas" id="prod_qtd">
                         </div>
                     </div>
 
@@ -77,7 +77,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                             <input type="text" class="form-control" placeholder="Turno 3" disabled>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control"  id="qtd_turno3"   placeholder="Quantidade" id="prod_qtd">
+                            <input type="text" class="form-control peso"  id="qtd_turno3"   placeholder="Quantidade em gramas" id="prod_qtd">
                         </div>
                     </div>     
                     <div class="row">
@@ -93,7 +93,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                 <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?></h4>
         
                 <div class="lista_produtos">
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <th>Produtos</th>
                             <th>Turno 1</th>     
@@ -106,12 +106,39 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                     </table>
                 </div>
 
-                <button type="submit" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</button>
+                <a href="#" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</a>
+                
             </div>
 
             
         </section>
 
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Produtos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Produtos</th>    
+                    </thead>
+                    <tbody class="resultado" data-bs-dismiss="modal">
+                        
+                    </tbody>
+                </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+        </div>
+    </div>
     </div>
 
     

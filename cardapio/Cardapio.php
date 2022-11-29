@@ -43,10 +43,10 @@ class Cardapio{
 
         $exibir_prod = array();
 
-        $sql = "SELECT item_cardapio.*, produtos.nome_produto 
+        $sql = "SELECT item_cardapio.*, LPAD(item_cardapio.qtd_mat, 3, '0') AS matutino, LPAD(item_cardapio.qtd_vesp, 3, '0') AS vespertino, LPAD(item_cardapio.qtd_not, 3, '0') AS noturno, produtos.nome_produto 
         FROM item_cardapio 
         INNER JOIN produtos ON produtos.id_produto = item_cardapio.id_produto 
-        WHERE id_cardapio = :id_cardapio";
+        WHERE id_cardapio = :id_cardapio ORDER BY nome_produto";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_cardapio", $id_cardapio);
         $sql->execute();
