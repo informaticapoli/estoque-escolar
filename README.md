@@ -28,8 +28,8 @@ Tabela de conteúdos
 <p>Baixar o aplicativo Visual Code link: https://code.visualstudio.com/insiders/ </p>
 <ul>
   <li>PHP</li>
-  <li>heidisql</li>
-  <li>Bootstrap</li>
+  <li>MySql</li>
+  <li>Apach</li>
  </ul>
 
 
