@@ -16,6 +16,10 @@
         <?php require_once "./menu.php";?>
     </div>
 
+<div class="título">
+    II Turma do Curso Técnico de Informática - Ano 2021 
+</div>
+
     <div class="container">
         <div class="row">
             <div class="col areacontato">
@@ -26,7 +30,7 @@
                         <div class="card-body">
                         <p class="card-text">Clezia
                         </p>
-                        <a href="https://github.com/CleziaGeovana">
+                        <a target="_blank" href="https://github.com/CleziaGeovana">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -41,7 +45,7 @@
                         <div class="card-body">
                         <p class="card-text">Davi
                         </p>
-                        <a href="https://github.com/DaviChagasReis">
+                        <a target="_blank" href="https://github.com/DaviChagasReis">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -56,7 +60,7 @@
                         <div class="card-body">
                         <p class="card-text">Elizete
                         </p>
-                        <a href="https://github.com/elizetecoutinho">
+                        <a target="_blank" href="https://github.com/elizetecoutinho">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>    
@@ -71,7 +75,7 @@
                         <div class="card-body">
                         <p class="card-text">Francielle
                         </p>
-                        <a href="https://github.com/FotoFrancielle">
+                        <a target="_blank" href="https://github.com/FotoFrancielle">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -90,7 +94,7 @@
                         <div class="card-body">
                         <p class="card-text">Janikele
                         </p>
-                        <a href="https://github.com/Janykele">
+                        <a target="_blank" href="https://github.com/Janykele">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -105,7 +109,7 @@
                         <div class="card-body">
                             <p class="card-text">Laiz
                             </p>
-                            <a href="https://github.com/LaizFerreira">
+                            <a target="_blank" href="https://github.com/LaizFerreira">
                                 <i>
                                     <img src="./imagen/imagemGithubMark.png" alt="">
                                 </i>
@@ -120,7 +124,7 @@
                         <div class="card-body">
                         <p class="card-text">Milena
                         </p>
-                        <a href="https://github.com/Milenalsy">
+                        <a target="_blank" href="https://github.com/Milenalsy">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -135,7 +139,7 @@
                         <div class="card-body">
                         <p class="card-text">Natallia
                         </p>
-                        <a href="https://github.com/NatalliaSoares">
+                        <a target="_blank" href="https://github.com/NatalliaSoares">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -155,7 +159,7 @@
                         <div class="card-body">
                         <p class="card-text">Samantha
                         </p>
-                        <a href="https://github.com/SamanthaCta">
+                        <a target="_blank" href="https://github.com/SamanthaCta">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -170,7 +174,7 @@
                         <div class="card-body">
                         <p class="card-text">Professor Lucas
                         </p>
-                        <a href="https://github.com/LucasSilverio">
+                        <a target="_blank" href="https://github.com/LucasSilverio">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -185,7 +189,7 @@
                         <div class="card-body">
                         <p class="card-text">Professora Marcia
                         </p>
-                        <a href="https://github.com/marcia">
+                        <a target="_blank" href="https://github.com/marcia">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>
@@ -200,7 +204,7 @@
                         <div class="card-body">
                         <p class="card-text">Professor Reginaldo
                         </p>
-                        <a href="https://github.com/reginaldo">
+                        <a target="_blank" href="https://github.com/reginaldo">
                             <i>
                                 <img src="./imagen/imagemGithubMark.png" alt="">
                             </i>

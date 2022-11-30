@@ -108,6 +108,7 @@ p, a{
 
 .container{
     margin-bottom: 90px;
+    margin-left: 410px;
 }
 
 
@@ -135,4 +136,11 @@ text-decoration: none;
 
 .btn-voltar{
     width: 110px;
+}
+
+.título{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    margin-top: 20px
 }
