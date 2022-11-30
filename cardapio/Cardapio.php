@@ -60,6 +60,23 @@ class Cardapio{
         
     }
 
+    public function exibir_cardapio(){
+        global $db;
+
+        $exibir_cardapio = array();
+
+        $sql = "SELECT * FROM cardapio ORDER BY nome_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $exibir_cardapio = $sql->fetchAll();
+        }
+
+        return $exibir_cardapio;
+        
+    }
+
     public function pegarNome($id_cardapio){
 
         global $db;

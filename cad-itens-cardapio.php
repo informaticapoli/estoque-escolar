@@ -27,7 +27,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
     <script src="./js/mask.js"></script>
     <script src="./js/app.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
-    <title>Cadastrar Produtos NF</title>
+    <title>Cadastrar Itens Cardápio</title>
 </head>
 <body>
     <div class="menu">  
@@ -106,7 +106,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                     </table>
                 </div>
 
-                <a href="#" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</a>
+                <a href="./listar-cardapios.php" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</a>
                 
             </div>
 

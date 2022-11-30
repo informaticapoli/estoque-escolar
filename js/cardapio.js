@@ -33,7 +33,6 @@ $(document).ready(function (){
             alert("Preencha todos os campos");
         }
     });
-    
 });
 
 
