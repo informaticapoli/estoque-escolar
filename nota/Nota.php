@@ -145,7 +145,7 @@ class Nota{
         global $db;
         $this->pegarProdNota($id_nota);
 
-        header("Location: {$url}inicio.php");
+        header("Location: http://localhost/estoque-escolar/listar-nota.php");
 
 
     } 
@@ -190,9 +190,12 @@ class Nota{
 
         $id_nota=$_GET['id'];
 
-        $id_fornecedor = $_POST['id_fornecedor'];
+        $id_nota = $_POST['id_nota'];
         $valor_produto = $_POST['valor_produto'];
-
+        
+        // echo $valor_produto;
+        // echo "<br/>";
+        $valor_produto = str_replace(",", ".", str_replace (".", "", $valor_produto));
         $sql = "UPDATE entrada_nota SET valor_produto = :valor_produto WHERE id_nota = :id_nota";
 
         $sql = $db->prepare($sql);
