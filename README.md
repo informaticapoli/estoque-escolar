@@ -42,4 +42,35 @@ Tabela de conteúdos
 <p>-Saída de produtos subtraindo do estoque;</p>
 
 
+<img src="https://i.imgur.com/OOudPWP.png"/>
+
+
+<img src="https://i.imgur.com/536tmlu.png"/>
+
+
+<img src="https://i.imgur.com/5V5igSt.png"/>
+
+<img src="https://i.imgur.com/LwCvMHu.png"/>
+
+<img src="https://i.imgur.com/exYoUgH.png"/>
+
+<img src="https://i.imgur.com/SymB1n1.png"/>
+
+<img src="https://i.imgur.com/WWCVmAy.png"/>
+
+<img src=""/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
