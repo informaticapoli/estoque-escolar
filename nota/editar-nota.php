@@ -1,14 +1,16 @@
 <?php
 
 require_once "../config.php";
-// require_once "../usuarios/Usuario.php";
+require_once "../usuarios/Usuario.php";
 require_once "../nota/Nota.php";
 
 $nota = new Nota();
-// $usuarios->check_login();
+
+$usuario = new Usuario();
+$usuario->check_login();
 
 if(!isset($_GET['id'])){
-    header("Location: listar-notas.php");
+    header("Location: listar-nota.php");
     exit;
 }
 

@@ -88,6 +88,8 @@ class Nota{
 
         global $db;
 
+        $prod_valor = str_replace(",", ".", str_replace (".", "", $prod_valor));
+        
         $sql = "INSERT INTO info_produtos_entrada SET id_produto = :id_produto, id_nota = :id_nota, qtd = :qtd, valor = :valor";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_produto", $prod_id);   
@@ -154,7 +156,7 @@ class Nota{
      public function listando_nota(){
         global $db;
         $notas = array();
-        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.data_entrada, entrada_nota.valor_produto
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, fornecedor.nome_fornecedor, entrada_nota.numero_nota, entrada_nota.data_entrada, entrada_nota.total_nota
                 FROM entrada_nota 
                 INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
                 WHERE entrada_nota.id_nota";
@@ -171,7 +173,7 @@ class Nota{
 
         $nota = array();
         
-        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, entrada_nota.numero_nota, entrada_nota.id_produto, entrada_nota.valor_produto, entrada_nota.status, fornecedor.nome_fornecedor
+        $sql = "SELECT entrada_nota.id_nota, entrada_nota.id_fornecedor, entrada_nota.numero_nota, entrada_nota.id_produto, entrada_nota.total_nota, entrada_nota.status, fornecedor.nome_fornecedor
                 FROM entrada_nota 
                 INNER JOIN fornecedor ON entrada_nota.id_fornecedor = fornecedor.id_fornecedor
                 WHERE id_nota = :id_nota";

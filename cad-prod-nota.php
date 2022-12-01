@@ -31,9 +31,7 @@ if(isset($_POST['id_nota'])){
     <script src="./js/jquery.js"></script>
     <script src="./js/mask.js"></script>
     <script src="./js/datatables.js"></script>
-
     <script src="./js/app.js"></script>
-
     <script src="./js/pesquisa_prod.js"></script>
     <link rel="stylesheet" href="./css/paginas.css">
     <link rel="stylesheet" href="./css/cad-nota.css">
@@ -68,7 +66,7 @@ if(isset($_POST['id_nota'])){
                         <input type="text" class="form-control" id="prod_qtd">
                     </div>
                     <div class="col-md-6">
-                        <label>Valor:</label>
+                        <label>Valor Unitário:</label>
                         <input type="text" class="form-control dinheiro" id="prod_valor">
                     </div>
                 </div>
@@ -86,7 +84,8 @@ if(isset($_POST['id_nota'])){
                     <thead>
                         <th>Produtos</th>
                         <th>Quantidade</th>
-                        <th>Valor</th>                
+                        <th>Valor Produto</th>             
+                        <th>Valor Total</th>   
                     </thead>
                     <tbody id="produtos_cad">
                         <div></div>
