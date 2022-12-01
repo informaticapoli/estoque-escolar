@@ -19,11 +19,13 @@ Tabela de conteúdos
    * [Tecnologias](#tecnologias)
 <!--te-->
 <h2>Sobre</h2>         
-<p> Este programa tem o intuíto de  fazer o controle de entrada e saída de Produtos Alimenticios da  Escola Estadual Lauriston de Souza.
-<p> Cadastar nota fiscal,ver de qual fornecedor está vindo,número da nota e recurso (estado ou fazenda),valor total da nota;<p/>
-<p> Pesquisar produtos da nota fiscal,quantidade, valor unitário e salvar;<p>
-<p> A quantidade da unidade irá multiplicar, aparecerá o valor total,caso precisar poderá excluir os produtos e depois finalizar cadastro;</p>
+<p> Este programa tem o intuíto de fazer o controle de entrada e saída de Produtos Alimentícios em ambiente escolar;</p>
+<p> O Cardápio Escolar está incluso no sistema com a opção de editar, salvar ou excluir;</p>
+<p> Cadastar nota fiscal, ver qual o fornecedor, número da nota e recurso, valor total da nota;</p>
+<p> Pesquisar produtos da nota fiscal,quantidade, valor unitário e salvar;</p>
+<p> A quantidade de produtos iram se multiplicar conformne a quantidade necessaria por turno aparecendo o valor total, e caso precise fazer alterações poderá ser excluido os produtos e em seguida finalizar o cadastro;</p>
 <p> Listar produtos do qual poderá editar, alterar e excluir</p>
+
 <h2>Requisitos</h2>
 <p>Baixar o aplicativo Visual Code link: https://code.visualstudio.com/insiders/ </p>
 <ul>
