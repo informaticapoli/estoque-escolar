@@ -10,7 +10,7 @@ Tabela de conteúdos
 <!--te-->
 <h2>Sobre</h2>         
 <p> Este programa tem o intuíto de fazer o controle de entrada e saída de Produtos Alimentícios em ambiente escolar;</p>
-<p> No cardápio teremos a opção de comida do dia com quantidade necessária que cada pessoa irá consumir por turno multiplicado pela quantidade de alunos, essa quantidade de produto será incluída e automaticamente será excluida do estoque.</p>
+<p> No cardápio teremos a opção da refeição do dia com quantidade necessária que cada pessoa irá consumir por turno multiplicado pela quantidade de alunos, essa quantidade de produto será incluída e automaticamente será excluida do estoque.</p>
 <p> O cardápio já estará disponibilizado no sistema que facilitará o preenchimento das quantidades a serem retiradas;</p>
 <p> Cadastar nota fiscal, ver qual o fornecedor, número da nota e recurso, valor total da nota;</p>
 <p> Pesquisar produtos da nota fiscal,quantidade, valor unitário e salvar;</p>
