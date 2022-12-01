@@ -28,7 +28,7 @@ Tabela de conteúdos
 <p>Baixar o aplicativo Visual Code link: https://code.visualstudio.com/insiders/ </p>
 <ul>
   <li>PHP</li>
-  <li>MySql</li>
+  <li>MySQL</li>
   <li>Apache</li>
  </ul>
 
