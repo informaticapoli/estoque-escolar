@@ -4,19 +4,9 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Sobre](#Sobre)
-  
-   * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Instalação](#instalacao)
+   * [Requisitos](#requisitos)
    * [Como usar](#como-usar)
-   * 
-      * [Requisitos](#requisitos)
-      
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-   * [Tests](#testes)
-   * [Tecnologias](#tecnologias)
+   
 <!--te-->
 <h2>Sobre</h2>         
 <p> Este programa tem o intuíto de fazer o controle de entrada e saída de Produtos Alimentícios em ambiente escolar;</p>
