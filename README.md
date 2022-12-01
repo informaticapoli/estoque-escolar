@@ -30,8 +30,8 @@ Tabela de conteúdos
 <p>- Colocar nome de usúario e senha;</p>
 <p>- Cadastrar produtos, fornecedores e recursos;</p>
 <p>- Saída de produtos subtraindo do estoque;</p>
-<p>- Cadastrar nota fiscal,incluindo produtos no estoque;</p>
 <p>- Seleção de produtos para montagem do cardápio;</p>
+<p>- Cadastrar nota fiscal,incluindo produtos no estoque;</p>
 
 
 
