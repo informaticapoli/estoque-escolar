@@ -43,7 +43,7 @@ $produtos = $produto->listar();
     <div class="tabela">
       
         <fieldset>
-            <legend>Lista de Registros</legend>
+            <legend>Lista de Produtos</legend>
             <table id="myTable" class="table" >
                 <thead>
                     <tr>
