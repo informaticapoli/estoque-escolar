@@ -26,12 +26,13 @@ Tabela de conteúdos
 
 
 <h2>Como Usar</h2>
-<p>-Fazer o login;</p>
-<p>-Colocar nome de usúario e senha;</p>
-<p>-Cadastrar produtos,fornecedores e recursos;</p>
-<p>-Incluir nota fiscal,incluindo produtos no estoque;</p>
-<p>-Incluir cardápio dos turnos;</p>
-<p>-Saída de produtos subtraindo do estoque;</p>
+<p>- Fazer o login;</p>
+<p>- Colocar nome de usúario e senha;</p>
+<p>- Cadastrar produtos, fornecedores e recursos;</p>
+<p>- Saída de produtos subtraindo do estoque;</p>
+<p>- Cadastrar nota fiscal,incluindo produtos no estoque;</p>
+<p>- Seleção de produtos para montagem do cardápio;</p>
+
 
 
 <img src="https://i.imgur.com/OOudPWP.png"/>
