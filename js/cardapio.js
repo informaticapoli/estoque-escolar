@@ -144,6 +144,7 @@ function adicionarProdutoCardapio(prod_id, qtd_turno1, qtd_turno2, qtd_turno3, i
         
     }
 
+
     function selecionarProduto(id_produto){
         $.ajax({
             url:'http://localhost/estoque-escolar/produtos/select_prod.php',

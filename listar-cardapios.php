@@ -44,14 +44,13 @@ $cardapios = $cardapio->exibir_cardapio();
                 <thead>
                     <th>Cardápio</th>   
                     <th>Status</th>  
-                    <th></th>
                 </thead>
                 <tbody id="cardapios">
                     <?php foreach($cardapios as $cardapio):?>
                         <tr>
                             <td style="width:70%"><?php echo $cardapio['nome_cardapio'] ?></td>
                             <td style="width:15%"><?php echo($cardapio['status']==0?"Desativado":"Ativo") ?></td>
-                            <td style="width:15%"><button class="btn btn-warning">Editar</button></td>
+                            <td style="width:15%"><a href="cardapio/editar-cardapio.php?id=<?php echo $cardapio['id_cardapio']?>" class="btn btn-warning">Editar</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

@@ -132,8 +132,23 @@ class Cardapio{
             return false;
         }
 
+    }
 
+    public function editarCardapio($id_item_card, $qtd_turno1, $qtd_turno2, $qtd_turno3){
+        $id_item_card = $_POST['id_item_card'];
+        $qtd_turno1 = $_POST['qtd_mat'];
+        $qtd_turno2 = $_POST['qtd_vesp'];
+        $qts_turno3 = $_POST['qtd_not'];
 
+        global $db;
+
+        $sql = "UPDATE item_cardapio SET qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not WHERE id_item_card = :id_item_card";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_item_card", $id_item_card);   
+        $sql->bindValue(":qtd_mat", $qtd_turno1);     
+        $sql->bindValue(":qtd_vesp", $qtd_turno2);     
+        $sql->bindValue(":qtd_not", $qtd_turno3);
+        $sql->execute();
     }
 }
 
