@@ -6,7 +6,7 @@ session_start();
 $banco = "estoque_escolar";
 $usuario = "root";
 $senha ="";
-$host = "localhost:8111";
+$host = "localhost";
 $url = 'http://localhost/estoque-escolar/';
 
 
