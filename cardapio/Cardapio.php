@@ -134,21 +134,45 @@ class Cardapio{
 
     }
 
-    public function editarCardapio($id_item_card, $qtd_turno1, $qtd_turno2, $qtd_turno3){
-        $id_item_card = $_POST['id_item_card'];
-        $qtd_turno1 = $_POST['qtd_mat'];
-        $qtd_turno2 = $_POST['qtd_vesp'];
-        $qts_turno3 = $_POST['qtd_not'];
+    public function editarCardapio($id_item_card, $turno1, $turno2, $turno3){
 
         global $db;
 
         $sql = "UPDATE item_cardapio SET qtd_mat = :qtd_mat, qtd_vesp = :qtd_vesp, qtd_not = :qtd_not WHERE id_item_card = :id_item_card";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_item_card", $id_item_card);   
-        $sql->bindValue(":qtd_mat", $qtd_turno1);     
-        $sql->bindValue(":qtd_vesp", $qtd_turno2);     
-        $sql->bindValue(":qtd_not", $qtd_turno3);
+        $sql->bindValue(":qtd_mat", $turno1);     
+        $sql->bindValue(":qtd_vesp", $turno2);     
+        $sql->bindValue(":qtd_not", $turno3);
         $sql->execute();
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    public function exibir_item_cardapio($id_item_card){
+        global $db;
+
+        $exibir_prod = array();
+
+        $sql = "SELECT item_cardapio.*, LPAD(item_cardapio.qtd_mat, 3, '0') AS matutino, LPAD(item_cardapio.qtd_vesp, 3, '0') AS vespertino, LPAD(item_cardapio.qtd_not, 3, '0') AS noturno, produtos.nome_produto 
+        FROM item_cardapio 
+        INNER JOIN produtos ON produtos.id_produto = item_cardapio.id_produto 
+        WHERE id_item_card = :id_item_card ORDER BY nome_produto";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_item_card", $id_item_card);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $exibir_prod = $sql->fetch();
+        }
+
+        return $exibir_prod;
+        
     }
 }
 
