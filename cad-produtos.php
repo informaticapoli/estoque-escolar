@@ -17,7 +17,7 @@ $recurso = new Recurso();
 
 
 
-if (isset($_POST["nome_produto"]) && isset($_POST["unidade_medida"])){
+if (isset($_POST["nome_produto"])){
    $produto->cadastrar();
 }
 
