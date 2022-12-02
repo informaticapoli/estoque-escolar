@@ -87,8 +87,6 @@ class Nota{
     public function adicionar_prod_nota($prod_id, $id_nota, $prod_qtd, $prod_valor){
 
         global $db;
-
-        $prod_valor = str_replace(",", ".", str_replace (".", "", $prod_valor));
         
         $sql = "INSERT INTO info_produtos_entrada SET id_produto = :id_produto, id_nota = :id_nota, qtd = :qtd, valor = :valor";
         $sql = $db->prepare($sql);

@@ -58,7 +58,7 @@ $(document).ready(function (){
                 html+= "<tr>";
                 html+= "<td>"+(json.produtos[i]['nome_produto'])+"</td>";
                 html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
-                html+= "<td>R$ "+(json.produtos[i]['valor_total'])+"</td>";
+                html+= "<td>"+(json.produtos[i]['valor_total'])+"</td>";
                 html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";
                 
                 html+= "</tr>";

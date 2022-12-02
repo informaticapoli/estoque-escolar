@@ -84,7 +84,6 @@ if(isset($_POST['id_nota'])){
                     <thead>
                         <th>Produtos</th>
                         <th>Quantidade</th>
-                        <th>Valor Produto</th>             
                         <th>Valor Total</th>   
                     </thead>
                     <tbody id="produtos_cad">
