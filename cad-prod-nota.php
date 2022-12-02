@@ -44,14 +44,23 @@ if(isset($_POST['id_nota'])){
     <div class="fundo-cad-prod-nota container">
         <div class="form-prod-nota">
             <h1>Cadastrar Produtos da Nota Fiscal</h1>
-            <form method="POST">
-                <div class="campo_pesquisa">
-                    <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">   
-                    <div class="resultado">
-                        
-                    </div>
-                </div>         
-            </form>
+            <div class="row ">
+                <form method="POST">
+                    <div class="row campo_pesquisa">
+                        <div class="col-md-12">
+                            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
+                            
+                            
+                        </div>
+                        <div class="col-md-12">
+                                <div class="resultado">
+                                
+                                </div>
+                        </div>
+                    </div>         
+                </form>
+            </div>
+            
             <div class="row info-prod">
                 <div class="row">
                     <div class="col-md-12">
@@ -66,7 +75,7 @@ if(isset($_POST['id_nota'])){
                         <input type="text" class="form-control" id="prod_qtd">
                     </div>
                     <div class="col-md-6">
-                        <label>Valor Unitário:</label>
+                        <label>Valor(UN):</label>
                         <input type="text" class="form-control dinheiro" id="prod_valor">
                     </div>
                 </div>
@@ -80,12 +89,12 @@ if(isset($_POST['id_nota'])){
         
         <div class="form-prod-nota2">
             <div class="caixa-table">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <th>Produtos</th>
                         <th>Quantidade</th>
-                        <th>Valor Produto</th>             
-                        <th>Valor Total</th>   
+                        <th>Valor(UN)</th> 
+                        <th>Total</th>    
                     </thead>
                     <tbody id="produtos_cad">
                         <div></div>
