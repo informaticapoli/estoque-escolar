@@ -34,7 +34,7 @@ Tabela de conteúdos
 <p>- Saída de produtos subtraindo do estoque;</p>
 <p>- Seleção de produtos para montagem do cardápio;</p>
 <p>- Cadastrar nota fiscal,incluindo produtos no estoque;</p>
-<p>- Cadastrar produtos da nota fiscal, quantidade, valor unitário e irá salvar, na tabela ao lado estará o produto que foi cadastrado com valor total e finalizará o cadastro; </p>
+<p>- Cadastrar produtos da nota fiscal, quantidade, valor unitário e irá salvar, na tabela ao lado estará o produto que foi cadastrado com valor total e finalizará o cadastro, caso precisar poderá também fazer a exclusão do produto; </p>
 
 
 
