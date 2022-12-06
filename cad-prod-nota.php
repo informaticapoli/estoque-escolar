@@ -49,8 +49,6 @@ if(isset($_POST['id_nota'])){
                     <div class="row campo_pesquisa">
                         <div class="col-md-12">
                             <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
-                            
-                            
                         </div>
                         <div class="col-md-12">
                                 <div class="resultado">
@@ -60,13 +58,11 @@ if(isset($_POST['id_nota'])){
                     </div>         
                 </form>
             </div>
-            
             <div class="row info-prod">
                 <div class="row">
                     <div class="col-md-12">
                         <input type="text" class="form-control" id="prod_nome" disabled>
                         <input type="hidden" id="prod_id" disabled>
-                    
                     </div>
                 </div>
                 <div class="row">
@@ -85,8 +81,7 @@ if(isset($_POST['id_nota'])){
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="form-prod-nota2">
             <div class="caixa-table">
                 <table class="table table-striped">

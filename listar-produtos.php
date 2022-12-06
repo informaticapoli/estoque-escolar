@@ -30,7 +30,7 @@ $produtos = $produto->listar();
     <script src="js/datatables.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="./css/datatable.css">
-
+    <link rel="stylesheet" href="./css/paginas.css">
     <title>Entrada</title>
 </head>
 <body>
@@ -42,9 +42,9 @@ $produtos = $produto->listar();
      
     <div class="tabela">
       
-        <fieldset>
+        <fieldset class="fundo">
             <legend>Lista de Produtos</legend>
-            <table id="myTable" class="table" >
+            <table id="myTable" class="table table-striped" >
                 <thead>
                     <tr>
                         <th> Produto</th>
@@ -57,11 +57,11 @@ $produtos = $produto->listar();
                 <tbody>
                     <?php foreach($produtos as $produto): ?>
                         <tr>
-                            <td><?php echo $produto['nome_produto']?></td>
-                            <td><?php echo $produto['unidade_medida']?></td>
-                            <td><?php echo utf8_encode($produto['nome_fornecedor'])?></td>                                        
-                            <td><?php echo $produto['nome_recurso']?></td>
-                            <td>
+                            <td style="width:40%"><?php echo $produto['nome_produto']?></td>
+                            <td style="width:5%"><?php echo $produto['unidade_medida']?></td>
+                            <td style="width:30%"><?php echo utf8_encode($produto['nome_fornecedor'])?></td>                                        
+                            <td style="width:5%"><?php echo $produto['nome_recurso']?></td>
+                            <td style="width:20%">
                                 <a href="excluir-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>
                                 <a href="editar-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-warning"> Editar </a>
                             </td>
@@ -77,6 +77,7 @@ $produtos = $produto->listar();
             </div>
 
         </fieldset>
-       
+    </div>
+    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 </body>
 </html>
