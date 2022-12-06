@@ -21,6 +21,14 @@ $(document).ready(function (){
     let id_cardapio = $("#id_cardapio").val();
     editarCardapio(id_cardapio);
 
+    $("#excluir_prod_card").on("click", function(){
+        let id_item_card = $("#id_item_card").val();
+        let confirmar = confirm("Deseja realmente excluir esse item do cardápio?");
+        if(confirmar){
+            excluir_prod_card(id_item_card);
+        }
+    });
+
     $("#adicionar_prod").on("click", function(){
         let prod_id = $("#prod_id").val();
         let qtd_turno1 = $("#qtd_turno1").val();
@@ -36,6 +44,10 @@ $(document).ready(function (){
 
     $("#editarCardapioAcao").on("click", function(){
         editarCardapioAcao();
+    });
+
+    $("#editar_nome").on("click", function(){
+        $("#nome_cardapio").modal("show");
     });
 });
 
@@ -113,6 +125,15 @@ function pesquisa(palavra){
     });
 }
 
+function limparCampos(){
+    $("#pesquisar_prod").val("");
+    $("#prod_nome").val("");
+    $("#qtd_turno1").val("");
+    $("#qtd_turno2").val("");
+    $("#qtd_turno3").val("");    
+    $("#pesquisar_prod").focus();
+}
+
 //função para listar os produtos do cardapio
 function editarCardapio(id_cardapio){
     $.ajax({
@@ -163,10 +184,6 @@ function editar_item(id_item_card){
 
     });
 
-    
-    
-
-
 }
 
 function editarCardapioAcao(){
@@ -212,4 +229,28 @@ function editarCardapioAcao(){
             });
         }
     }
+}
+
+function excluir_prod_card(id_item_card){
+    let id_cardapio = $("#id_cardapio").val();
+    $.ajax({
+        url:'http://localhost/estoque-escolar/cardapio/excluir_prod_card.php',
+        type: 'POST',
+        dataType: 'json',
+        data:{
+            id_item_card
+        },
+        success: function(json){
+            if(json.sucesso){
+                editarCardapio(id_cardapio);
+                $("#editar_cardapio").modal("hide");
+                alert("Produto excluído com sucesso");
+            }else{
+                alert("Não foi possível realizar essa ação.")
+            }
+        },
+
+    })
+
+
 }

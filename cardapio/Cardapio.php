@@ -174,7 +174,43 @@ class Cardapio{
         return $exibir_prod;
         
     }
-}
 
+    public function excluir_prod_card($id_item_card){
+
+        global $db;
+
+        $sql = "DELETE FROM item_cardapio WHERE id_item_card = :id_item_card";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_item_card", $id_item_card);
+        $sql->execute();
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function editarNomeCardapio($id_cardapio, $nome_cardapio){
+        echo "Teste";
+        exit;
+        
+        global $db;
+
+        $sql = "UPDATE cardapio SET nome_cardapio = :nome_cadapio WHERE id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue("nome_cardapio", $nome_cardapio);
+        $sql->bindValue("id_cardapio", $id_cardapio);
+        $sql->execute();
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+}
 
 ?>

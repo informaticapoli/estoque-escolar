@@ -94,6 +94,10 @@ h3{
     flex-direction: column;
 }
 
+.cardapio2 span{
+    height: 30px;
+}
+
 .colunasTurno{
     margin-top: 22px;
     width: 95%;

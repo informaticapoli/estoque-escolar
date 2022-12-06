@@ -4,9 +4,20 @@ require_once "Cardapio.php";
 
 $cardapio = new Cardapio;
 
-$id_cardapio = $_GET['id'];
+if(isset($_GET['id']) && $_GET['id'] != ""){
+    $id_cardapio = $_GET['id'];
+    $infoCardapio = $cardapio->pegarNome($id_cardapio);
+}else{
+    header("Location: ../listar-cardapios.php");
+}
 
-$infoCardapio = $cardapio->pegarNome($id_cardapio);
+if(isset($_POST['id_cardapio']) && $_POST['nome_cardapio'] != ""){
+    $editar_nome = $cardapio->editarNomeCardapio($id_cardapio, $nome_cardapio);
+}else{
+    print_r($_POST);
+}
+
+
 
 
 ?>
@@ -91,8 +102,8 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
 
             <div class="cardapio2">
 
-                <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?></h4>
-        
+                <h4>Cardápio: <?php echo $infoCardapio['nome_cardapio'] ?> <span id="editar_nome" class="btn btn-warning">Editar</span></h4>
+
                 <div class="lista_produtos">
                     <table class="table table-striped">
                         <thead>
@@ -174,12 +185,38 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
             
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-danger" id="excluir_prod_card">Excluir</button>
             <button type="submit" class="btn btn-success" id="editarCardapioAcao">Salvar</button>
         </div>
         </div>
     </div>
     </div>
-
     
+
+     <!-- Modal -->
+     <div class="modal fade" id="nome_cardapio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Nome Cardápio</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Nome do Cardápio:</label>
+                            <input type="text" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
+                            <input id="nome_cardapio" value="<?php echo $infoCardapio['nome_cardapio'] ?>" class="form-control" type="text">
+                        </div>
+                    </div>      
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="editarCardapioAcao">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
 </body>
