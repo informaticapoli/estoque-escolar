@@ -8,6 +8,12 @@ $id_cardapio = $_GET['id'];
 
 $infoCardapio = $cardapio->pegarNome($id_cardapio);
 
+if(isset($_POST['id_cardapio'])){
+    $id_cardapio = $_POST['id_cardapio'];
+    $cardapio->ativarCardapio($id_cardapio);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -105,9 +111,12 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
                         </tbody>
                     </table>
                 </div>
-
-                <a href="./listar-cardapios.php" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</a>
                 
+                <form method="POST">
+                    <input type="hidden" name="id_cardapio" id="id_cardapio" value="<?php echo $id_cardapio ?>">
+                    <button id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</button>
+                </form>
+
             </div>
 
             

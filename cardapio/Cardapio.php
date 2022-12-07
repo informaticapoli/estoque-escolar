@@ -193,22 +193,58 @@ class Cardapio{
     }
 
     public function editarNomeCardapio($id_cardapio, $nome_cardapio){
-        echo "Teste";
-        exit;
         
         global $db;
 
-        $sql = "UPDATE cardapio SET nome_cardapio = :nome_cadapio WHERE id_cardapio = :id_cardapio";
+        $sql = "UPDATE cardapio SET nome_cardapio = :nome_cardapio WHERE id_cardapio = :id_cardapio";
         $sql = $db->prepare($sql);
-        $sql->bindValue("nome_cardapio", $nome_cardapio);
-        $sql->bindValue("id_cardapio", $id_cardapio);
+        $sql->bindValue(":nome_cardapio", $nome_cardapio);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
         $sql->execute();
 
         if($sql){
-            return true;
+            header("Location: editar-cardapio.php?id=".$id_cardapio);
         }else{
             return false;
         }
+    }
+
+    public function ativarCardapio($id_cardapio){
+        
+        global $db;
+
+        $sql = "UPDATE cardapio SET status = 1 WHERE id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
+        $sql->execute();
+
+        /*print_r($sql->errorInfo());
+        exit;*/
+        if($sql){
+            header("Location: ../listar-cardapios.php");
+        }else{
+            return false;
+        }
+        
+    }
+
+    public function desativarCardapio($id_cardapio){
+        
+        global $db;
+
+        $sql = "UPDATE cardapio SET status = 0 WHERE id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
+        $sql->execute();
+
+        /*print_r($sql->errorInfo());
+        exit;*/
+        if($sql){
+            header("Location: ../listar-cardapios.php");
+        }else{
+            return false;
+        }
+        
     }
 
 }

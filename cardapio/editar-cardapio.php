@@ -12,13 +12,22 @@ if(isset($_GET['id']) && $_GET['id'] != ""){
 }
 
 if(isset($_POST['id_cardapio']) && $_POST['nome_cardapio'] != ""){
+    $nome_cardapio = addslashes($_POST['nome_cardapio']);
+    $id_cardapio = addslashes($_POST['id_cardapio']);
     $editar_nome = $cardapio->editarNomeCardapio($id_cardapio, $nome_cardapio);
 }else{
-    print_r($_POST);
+    
 }
 
+if(isset($_POST['id_cardapio']) && isset($_POST['ativar'])){
+    $id_cardapio = $_POST['id_cardapio'];
+    $cardapio->ativarCardapio($id_cardapio);
+}
 
-
+if(isset($_POST['id_cardapio']) && isset($_POST['desativar'])){
+    $id_cardapio = $_POST['id_cardapio'];
+    $cardapio->desativarCardapio($id_cardapio);
+}
 
 ?>
 
@@ -118,7 +127,21 @@ if(isset($_POST['id_cardapio']) && $_POST['nome_cardapio'] != ""){
                     </table>
                 </div>
 
-                <a href="./listar-cardapios.php" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Finalizar</a>
+                <?php if($infoCardapio['status'] == 0): ?>
+                    <form method="POST">
+                        <input type="hidden" name="id_cardapio" id="id_cardapio" value="<?php echo $id_cardapio ?>">
+                        <button name="ativar" id="finalizar_cardapio" class="btn btn-success btn-finalizar">Ativar</button>
+                        <a class="btn btn-warning btn-finalizar" href="../listar-cardapios.php">Voltar</a>
+                    </form>
+                <?php else: ?>
+                    <form method="POST">
+                        <input type="hidden" name="id_cardapio" id="id_cardapio" value="<?php echo $id_cardapio ?>">
+                        <button name="desativar" id="finalizar_cardapio" class="btn btn-danger btn-finalizar">Desativar</button>
+                        <a class="btn btn-warning btn-finalizar" href="../listar-cardapios.php">Voltar</a>
+                    </form>
+                <?php endif ?>
+
+                
                 
             </div>
 
@@ -167,19 +190,19 @@ if(isset($_POST['id_cardapio']) && $_POST['nome_cardapio'] != ""){
             <div class="row">
                 <div class="col-md-12">
                     <label>Turno 1</label>
-                    <input id="turno1" class="form-control" type="text">
+                    <input id="turno1" class="form-control peso" type="text">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <label>Turno 2</label>
-                    <input id="turno2" class="form-control" type="text">
+                    <input id="turno2" class="form-control peso" type="text">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <label>Turno 3</label>
-                    <input id="turno3" class="form-control" type="text">
+                    <input id="turno3" class="form-control peso" type="text">
                 </div>
             </div>            
             
@@ -206,13 +229,14 @@ if(isset($_POST['id_cardapio']) && $_POST['nome_cardapio'] != ""){
                     <div class="row">
                         <div class="col-md-12">
                             <label>Nome do Cardápio:</label>
-                            <input type="text" id="id_cardapio" value="<?php echo $id_cardapio ?>" disabled>
-                            <input id="nome_cardapio" value="<?php echo $infoCardapio['nome_cardapio'] ?>" class="form-control" type="text">
+                            <input type="hidden" id="id_cardapio" name="id_cardapio" value="<?php echo $id_cardapio ?>" readonly>
+                            <input id="nome_cardapio" name="nome_cardapio" value="<?php echo $infoCardapio['nome_cardapio'] ?>" class="form-control" type="text">
                         </div>
                     </div>      
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" id="editarCardapioAcao">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success" onclick="return confirm('Deseja alterar o nome do Cardápio?')" id="editarCardapioAcao">Salvar</button>
                 </div>
             </form>
         </div>
