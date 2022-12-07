@@ -20,7 +20,6 @@ Tabela de conteúdos
 <p> Após o cadastro será direcionado para a tela de listagem de notas, onde poderá editar a mesma;</p>
 
 <h2>Requisitos</h2>
-<p>Baixar o aplicativo Visual Code link: https://code.visualstudio.com/insiders/ </p>
 <ul>
   <li>PHP</li>
   <li>MySQL</li>
