@@ -13,7 +13,7 @@ Tabela de conteúdos
 <p> No cardápio teremos a opção da refeição do dia com quantidade necessária que cada pessoa irá consumir por turno multiplicado pela quantidade de alunos, essa quantidade de produto será incluída e automaticamente será excluida do estoque;</p>
 <p> O cardápio já estará disponibilizado no sistema que facilitará o preenchimento das quantidades a serem retiradas;</p>
 <p> Cadastar nota fiscal, ver qual o fornecedor, número da nota e recurso, valor total da nota fiscal;</p>
-<p> Cadastrar e Pesquisar os produtos da nota fiscal, quantidade, valor unitário, salvar e excluir;</p>
+<p> Cadastrar e Pesquisar os produtos da nota fiscal, quantidade, valor unitário e salvar;</p>
 <p> A quantidade de produtos iram se multiplicar conforme a quantidade necessaria por turno aparecendo o valor total, e caso precise fazer alterações poderá ser excluido e incluindo produtos e em seguida finalizar o cadastro;</p>
 <p> Listar produtos do qual poderá editar, alterar e excluir;</p>
 <p> Após o cadastro será direcionado para a tela de listagem de notas, onde poderá editar a mesma;</p>
