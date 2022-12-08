@@ -24,6 +24,8 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
     <script src="./js/pesquisa_prod.js"></script>
     <script src="./js/cardapio.js"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
+    <link rel="stylesheet" href="./css/paginas.css">
+
     <title>Cadastrar Produtos NF</title>
 </head>
 <body>
@@ -109,5 +111,5 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
 
     </div>
 
-    
+    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 </body>

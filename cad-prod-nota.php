@@ -31,9 +31,7 @@ if(isset($_POST['id_nota'])){
     <script src="./js/jquery.js"></script>
     <script src="./js/mask.js"></script>
     <script src="./js/datatables.js"></script>
-
     <script src="./js/app.js"></script>
-
     <script src="./js/pesquisa_prod.js"></script>
     <link rel="stylesheet" href="./css/paginas.css">
     <link rel="stylesheet" href="./css/cad-nota.css">
@@ -51,8 +49,6 @@ if(isset($_POST['id_nota'])){
                     <div class="row campo_pesquisa">
                         <div class="col-md-12">
                             <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
-                            
-                            
                         </div>
                         <div class="col-md-12">
                                 <div class="resultado">
@@ -62,13 +58,11 @@ if(isset($_POST['id_nota'])){
                     </div>         
                 </form>
             </div>
-            
             <div class="row info-prod">
                 <div class="row">
                     <div class="col-md-12">
                         <input type="text" class="form-control" id="prod_nome" disabled>
                         <input type="hidden" id="prod_id" disabled>
-                    
                     </div>
                 </div>
                 <div class="row">
@@ -87,8 +81,7 @@ if(isset($_POST['id_nota'])){
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="form-prod-nota2">
             <div class="caixa-table">
                 <table class="table table-striped">
@@ -96,7 +89,7 @@ if(isset($_POST['id_nota'])){
                         <th>Produtos</th>
                         <th>Quantidade</th>
                         <th>Valor(UN)</th> 
-                        <th>Total</th>               
+                        <th>Total</th>    
                     </thead>
                     <tbody id="produtos_cad">
                         <div></div>

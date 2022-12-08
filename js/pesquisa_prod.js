@@ -66,7 +66,7 @@ $(document).ready(function (){
                     html+= "<td>"+(json.produtos[i]['quantidade_total'])+"</td>";
                     html+= "<td>R$ "+(json.produtos[i]['valor_total'])+"</td>";
                     html+= "<td>R$ "+(json.produtos[i]['valor_total'] * json.produtos[i]['quantidade_total'] ).toFixed(2)+"</td>";
-                    html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";                
+                    html+= "<td> <a class='btn btn-danger' href='javascript:;' onclick='excluir("+json.produtos[i]['id_info']+")' >X</a></td>";     
                 html+= "</tr>";
                 total += (json.produtos[i]['valor_total'] * json.produtos[i]['quantidade_total'] );
             }

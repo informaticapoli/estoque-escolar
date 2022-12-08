@@ -60,7 +60,7 @@ $notas = $nota->listando_nota();
                             <td><?php echo $nota['nome_fornecedor']?></td>
                             <td><?php echo str_pad($nota['numero_nota'], 10, "0", STR_PAD_LEFT)?></td>
                             <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
-                            <td><span>R$ <span class="dinheiro"><?php echo $nota['valor_produto']?></span></span></td>
+                            <td><span>R$ <span class="dinheiro"><?php echo $nota['total_nota']?></span></span></td>
 
                             <td>
                                 <a href="excluir-.php?id=<?php echo $nota[''] ?>" class="btn btn-danger"> Excluir </a>

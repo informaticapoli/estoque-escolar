@@ -30,28 +30,6 @@ body{
     opacity : 0.5;
 }
 
-
-.menurp{
-    background-color:#096F34 ;
-    list-style: none;
-    height: 70px;
-    line-height: 70px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-
-.paragrafo{
-    display: flex;
-    justify-content: center;
-    color: aliceblue;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
 .dropdown{
     margin-top: 15px;
 }
@@ -63,10 +41,9 @@ body{
     border-radius: 5px;
     padding: 20px;
     overflow: auto;
-    width: 50%;
-    margin-top: 15px;
-    margin-bottom: auto;
-    margin-left: 30vh;}
+    width: 96%;
+    margin: auto;
+}
 
 .imagemcontato{
     width: 100%;
@@ -87,13 +64,6 @@ body{
     margin: 5px;
 }
 
-
-p, a{
-    display: flex;
-    justify-content: center;
-}
-
-
 .fotos{
     display: flex;
     margin-right: 10px;
@@ -108,7 +78,6 @@ p, a{
 
 .container{
     margin-bottom: 90px;
-    margin-left: 410px;
 }
 
 
@@ -121,7 +90,6 @@ i img{
     width: 40px;
 }
 
-
 .card-body a{
 align-items: center;
 color:dimgrey;
@@ -130,8 +98,6 @@ text-decoration: none;
 
 .row{
     margin-top: 23px;
-   
-
 }
 
 .btn-voltar{
@@ -143,4 +109,23 @@ text-decoration: none;
     justify-content: center;
     font-weight: 800;
     margin-top: 20px
+}
+
+.menurp{
+    background-color:#096F34 ;
+    list-style: none;
+    height: 70px;
+    line-height: 70px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.paragrafo{
+    margin-left: 680px;
+    justify-content: center;
+    color: aliceblue;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
