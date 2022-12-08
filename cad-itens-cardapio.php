@@ -10,7 +10,7 @@ $infoCardapio = $cardapio->pegarNome($id_cardapio);
 
 if(isset($_POST['id_cardapio'])){
     $id_cardapio = $_POST['id_cardapio'];
-    $cardapio->ativarCardapio($id_cardapio);
+    $cardapio->finalizarCardapio($id_cardapio);
 }
 
 

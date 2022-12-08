@@ -209,6 +209,25 @@ class Cardapio{
         }
     }
 
+    public function finalizarCardapio($id_cardapio){
+        
+        global $db;
+
+        $sql = "UPDATE cardapio SET status = 1 WHERE id_cardapio = :id_cardapio";
+        $sql = $db->prepare($sql);
+        $sql->bindValue(":id_cardapio", $id_cardapio);
+        $sql->execute();
+
+        /*print_r($sql->errorInfo());
+        exit;*/
+        if($sql){
+            header("Location: ./listar-cardapios.php");
+        }else{
+            return false;
+        }
+        
+    }
+
     public function ativarCardapio($id_cardapio){
         
         global $db;
