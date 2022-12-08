@@ -56,8 +56,8 @@ $notas = $nota->listando_nota();
                 <tbody>
                     <?php foreach($notas as $nota): ?>
                         <tr>
-                            <td><?php echo $nota['id_nota']?></td>
-                            <td><?php echo $nota['nome_fornecedor']?></td>
+                            <td><?php echo utf8_encode ($nota['id_nota'])?></td>
+                            <td><?php echo utf8_encode ($nota['nome_fornecedor'])?></td>
                             <td><?php echo str_pad($nota['numero_nota'], 10, "0", STR_PAD_LEFT)?></td>
                             <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
                             <td><span>R$ <span class="dinheiro"><?php echo $nota['total_nota']?></span></span></td>
