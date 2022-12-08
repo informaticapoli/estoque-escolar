@@ -1,10 +1,30 @@
 <?php
-require_once "config.php";
-require_once "./retirada-produtos/Retirar-produtos.php";
+require_once "../config.php";
+require_once "RetirarProdutos.php";
 
 $prod_cardapio = new RetirarProdutos;
 
-$prod_cardapios = $prod_cardapio->pegaCardapio();
+$id_cardapio = "";
+$turno = "";
+$qtd_alunos = "";
+
+$id_cardapio = $_GET['cardapio'];
+
+if($_GET['turno'] == "turno1"){
+    $turno = "Turno Matutino";
+}elseif($_GET['turno'] == "turno2"){
+    $turno = "Turno Vespertino";
+}elseif($_GET['turno'] == "turno3"){
+    $turno = "Turno Noturno";
+}else{
+    $turno = "Turno não definido";
+}
+
+$qtd_alunos = $_GET['qtd-alunos'];
+
+$cardapio = $prod_cardapio->pegaCardapioPeloID($id_cardapio);
+
+$produtos = $prod_cardapio->resumoRetirada($id_cardapio);
 
 ?>
 
@@ -18,35 +38,35 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/baixa_produtos.css">
-    <title>Retirada de Produtos</title>
+    <link rel="stylesheet" href="../css/baixa_produtos.css">
+    <title>Resumo de Retirada</title>
 </head>
 <body>
     <div class="menu">  
-        <?php require_once "./menu.php";?>
+        <?php require_once "../menu.php";?>
     </div>
     <div class="fundo">
-        <h1>Retirada de Produtos</h1>
-        <form method="GET" action="">
-            <label>Data</label>
-            <input type="date" class="form-control">
-            <label>Cardápio</label>
-                <select class="form-control" name="cardapio"> 
-                    <option value="" disabled selected>Selecione</option>
-                    <?php foreach($prod_cardapios as $prod_cardapio):?>
-                        <option value="<?php echo $prod_cardapio['id_cardapio'] ?>"><?php echo $prod_cardapio['nome_cardapio'] ?></option>
-                    <?php endforeach; ?>    
-                </select>
-            <label>Turno</label>
-                <select class="form-control" name="turno"> 
-                    <option value="" disabled selected>Selecione</option>
-                    <option value="turno1">Turno 1</option>
-                    <option value="turno2">Turno 2</option>
-                    <option value="turno3">Turno 3</option>
-                </select>
-            <label>Quantidade de alunos</label>
-            <input class="form-control" type="text" name="qtd-alunos" id="qtd-alunos">
-            <button class="btn btn-success  btn-concluir">Concluir</button>
-        </form>
+        <h1>Resumo de Retirada</h1>
+        <div class="titulos">
+            <h4>Cardápio: <?php echo $cardapio['nome_cardapio'];?></h4>
+            <h4>Turno: <?php echo $turno;?></h4>
+            <h4>Quantidade de Alunos: <?php echo $qtd_alunos;?></h4>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <th>Itens Cardápio</th>
+                <th>Quantidade por aluno</th>  
+                <th>Quantidade total</th>           
+            </thead>
+            <tbody>
+                <?php foreach($produtos as $produto): ?>
+                    <tr>
+                        <td> <?php echo $produto['id_produto'] ?> </td>                    
+                    </tr>
+                <?php endforeach; ?>
+                
+            </tbody>
+        </table>
     </div>
 </body>

@@ -27,7 +27,7 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
     </div>
     <div class="fundo">
         <h1>Retirada de Produtos</h1>
-        <form method="GET" action="">
+        <form method="GET" action="retirada-produtos/resumo.php">
             <label>Data</label>
             <input type="date" class="form-control">
             <label>Cardápio</label>

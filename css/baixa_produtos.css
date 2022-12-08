@@ -35,7 +35,7 @@ body{
     background-color: rgb(255, 255, 255);
     height: 600px;
     border-radius: 30px;
-    width: 1000px;
+    width: 1200px;
     margin: auto;
     margin-top: 35px;
     padding: 20px;
@@ -56,6 +56,14 @@ h1{
 .btn-concluir{
     margin-top: 10px;
     margin-left: 0%;
+}
+
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
 }
 
 
