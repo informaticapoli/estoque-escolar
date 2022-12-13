@@ -50,9 +50,20 @@ require_once "config.php";
             Cardápio
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item " href="<?php echo $url ?>fornecedor.php" class="botao-menu">Cadastrar Cardápio</a></li>
+            <li><a class="dropdown-item " href="<?php echo $url ?>cardapio.php" class="botao-menu">Cadastrar Cardápio</a></li>
 
-            <li><a class="dropdown-item" href="<?php echo $url ?>lista-fornecedor.php" class="botao-menu">Lista</a></li>
+            <li><a class="dropdown-item" href="<?php echo $url ?>listar-cardapios.php" class="botao-menu">Lista</a></li>
+        </ul>
+
+</div>
+
+<div class="dropdown">
+
+<button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Retirar Produtos
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item " href="<?php echo $url ?>retirada-produtos.php" class="botao-menu"> Retirar</a></li>
         </ul>
 
 </div>

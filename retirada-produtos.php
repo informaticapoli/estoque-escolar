@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-require_once "./retirada-produtos/Retirar-produtos.php";
+require_once "./retirada-produtos/RetirarProdutos.php";
 
 $prod_cardapio = new RetirarProdutos;
 
@@ -29,23 +29,23 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
         <h1>Retirada de Produtos</h1>
         <form method="GET" action="retirada-produtos/resumo.php">
             <label>Data</label>
-            <input type="date" class="form-control">
+            <input type="date" class="form-control" required>
             <label>Cardápio</label>
-                <select class="form-control" name="cardapio"> 
+                <select class="form-control" name="cardapio" required> 
                     <option value="" disabled selected>Selecione</option>
                     <?php foreach($prod_cardapios as $prod_cardapio):?>
                         <option value="<?php echo $prod_cardapio['id_cardapio'] ?>"><?php echo $prod_cardapio['nome_cardapio'] ?></option>
                     <?php endforeach; ?>    
                 </select>
             <label>Turno</label>
-                <select class="form-control" name="turno"> 
+                <select class="form-control" name="turno" required> 
                     <option value="" disabled selected>Selecione</option>
                     <option value="turno1">Turno 1</option>
                     <option value="turno2">Turno 2</option>
                     <option value="turno3">Turno 3</option>
                 </select>
             <label>Quantidade de alunos</label>
-            <input class="form-control" type="text" name="qtd-alunos" id="qtd-alunos">
+            <input class="form-control" type="text" name="qtd-alunos" id="qtd-alunos" required>
             <button class="btn btn-success  btn-concluir">Concluir</button>
         </form>
     </div>

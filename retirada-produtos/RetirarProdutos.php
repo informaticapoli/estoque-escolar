@@ -38,12 +38,12 @@ class RetirarProdutos{
 
         $resultado = array();
 
-        $sql = "SELECT * FROM item_cardapio WHERE id_cardapio = :id_cardapio";
+        $sql = "SELECT *, produtos.nome_produto FROM item_cardapio
+        INNER JOIN produtos ON item_cardapio.id_produto = produtos.id_produto
+        WHERE id_cardapio = :id_cardapio";
         $sql = $db->prepare($sql);
         $sql->bindValue(":id_cardapio", $id_cardapio);
         $sql->execute();
-
-        echo $id_cardapio;
 
        /* print_r($sql->errorInfo());
         echo $sql->rowCount();

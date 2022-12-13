@@ -31,7 +31,7 @@ $produtos = $produto->listar();
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="./css/datatable.css">
 
-    <title>Entrada</title>
+    <title>Lista de Produtos</title>
 </head>
 <body>
     

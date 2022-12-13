@@ -3,7 +3,7 @@ class Nota{
     public function cadastrar_nota(){
         $fornecedor = $_POST['id_fornecedor'];
         $num_nota = $_POST['num_nota'];
-        $recurso = $_POST['recurso'];
+        $recurso = $_POST['id_recurso'];
         $total_nf = $_POST['total_nf'];
 
         global $db;

@@ -62,10 +62,38 @@ $produtos = $prod_cardapio->resumoRetirada($id_cardapio);
             <tbody>
                 <?php foreach($produtos as $produto): ?>
                     <tr>
-                        <td> <?php echo $produto['id_produto'] ?> </td>                    
+                        <td> <?php echo $produto['nome_produto'] ?> </td>   
+                        <td>
+                            <?php
+                                if($_GET['turno'] == "turno1"){
+                                        echo $produto['qtd_mat']."g";
+                                    }elseif($_GET['turno'] == "turno2"){
+                                        echo $produto['qtd_vesp']."g";
+                                    }elseif($_GET['turno'] == "turno3"){
+                                        echo $produto['qtd_not']."g";
+                                    }else{
+                                        $turno = "Turno não definido";
+                                }
+                            ?>
+                        </td>       
+                        <td>
+                            <?php
+                                if($_GET['turno'] == "turno1"){
+                                        $multi_mat = $produto['qtd_mat']*$qtd_alunos = $_GET['qtd-alunos'];
+                                        echo $multi_mat."g";
+                                    }elseif($_GET['turno'] == "turno2"){
+                                        $multi_vesp = $produto['qtd_vesp']*$qtd_alunos = $_GET['qtd-alunos'];
+                                        echo $multi_vesp."g";
+                                    }elseif($_GET['turno'] == "turno3"){
+                                        $multi_not = $produto['qtd_not']*$qtd_alunos = $_GET['qtd-alunos'];
+                                        echo $multi_not."g";
+                                    }else{
+                                        $turno = "Turno não definido";
+                                }
+                            ?>
+                        </td>            
                     </tr>
                 <?php endforeach; ?>
-                
             </tbody>
         </table>
     </div>
