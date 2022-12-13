@@ -30,8 +30,9 @@ $produtos = $produto->listar();
     <script src="js/datatables.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="./css/datatable.css">
+
+    <title>Lista de Produtos</title>
     <link rel="stylesheet" href="./css/paginas.css">
-    <title>Entrada</title>
 </head>
 <body>
     
