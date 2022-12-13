@@ -44,13 +44,41 @@ require_once "config.php";
 
 </div>
 
-<div class="drop-down">
+<div class="dropdown">
+
+<button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cardápio
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item " href="<?php echo $url ?>cardapio.php" class="botao-menu">Cadastrar Cardápio</a></li>
+
+            <li><a class="dropdown-item" href="<?php echo $url ?>listar-cardapios.php" class="botao-menu">Lista</a></li>
+        </ul>
+
+</div>
+
+<div class="dropdown">
+
+<button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Retirar Produtos
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item " href="<?php echo $url ?>retirada-produtos.php" class="botao-menu"> Retirar</a></li>
+        </ul>
+
+</div>
+
+<div class="dropdown">
 
     <button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Estoque
     </button>
-    <ul class="drop-estoque">
-        <li><a class="dropdown-estoque" href="<?php echo $url?>index.php" class="botao-menu"></a>Relatorio</li>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" href="<?php echo $url?>relatorios/index.php" class="botao-menu">
+            Relatório
+            </a> 
+        </li>
     </ul>
 
 </div>

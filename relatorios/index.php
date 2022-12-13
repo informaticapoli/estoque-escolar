@@ -1,3 +1,13 @@
+<?php
+require_once "../config.php";
+require_once "../retirada-produtos/RetirarProdutos.php";
+
+$prod_cardapio = new RetirarProdutos;
+
+$prod_cardapios = $prod_cardapio->pegaCardapio();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,23 +36,32 @@
 
         </div>
             <fieldset>
-                <legend> Relatorio do Estoque</legend>
+                <legend> Relatório do Estoque</legend>
             </fieldset>
-
-            <form action="">
+            <form action="relatorio.php" method="GET">
                 <div class="row">
-                <label>Data Inicial:</label>
-                <input class="form-control" type="date" name="data-inicial" required>
-                <label>Data Final:</label>
-                <input class="form-control" type="date" name="data-final" required>
-                <label>Turno</label>
-                <input type="select" name="turno" required>
+                    <div class="col-md-4">
+                        <label>Data Inicial:</label>
+                        <input class="form-control" type="date" name="data-inicial" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Data Final:</label>
+                        <input class="form-control" type="date" name="data-final" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Turno</label>
+                        <select class="form-control" name="turno" required> 
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="turno1">Turno 1</option>
+                            <option value="turno2">Turno 2</option>
+                            <option value="turno3">Turno 3</option>
+                        </select>
+                    </div>
                 </div>
+    
+                
+                
+                
             </form>
-
-
-
-
-            
 </body>
 </html>

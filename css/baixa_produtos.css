@@ -1,4 +1,5 @@
 body{
+    background-color: #CFDCC0;
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -52,78 +53,17 @@ h1{
     text-align: center;
 }
 
-h3{
-    font-size: 25px;
-    text-align: center;
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-
-.btn-cardapio{
-    margin-left: 0%;
-    margin-top: 20px;
-    width: 150px;
-}
-
-.resultado{
-    cursor: pointer;
-}
-
-.info-prod{
-    margin-top: 20px;
-}
-
-.campo_pesquisa{
-    margin-top: 20px;
-}
-
-.cardapio{
-    display: flex;
-}
-
-
-.cardapio1{
-    display: block;
-    flex: 1;
-}
-
-.cardapio2{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
-.cardapio2 span{
-    height: 30px;
-}
-
-.colunasTurno{
-    margin-top: 22px;
-    width: 95%;
-}
-
-.btn-cad-prod{
+.btn-concluir{
     margin-top: 10px;
     margin-left: 0%;
 }
 
-.btn-add-prod{
-    margin-left: 0%;
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
 }
 
-.btn-finalizar{
-    margin-top: 10px;
-    margin-left: 0%;
-    width: 100px;
-    margin-top: 20px;
-}
 
-.lista_produtos{
-    overflow: auto;
-    max-height: 450px;
-}
-
-.listaCardapio{
-    overflow: auto;
-    max-height: 500px;
-}

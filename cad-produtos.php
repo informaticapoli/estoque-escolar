@@ -42,6 +42,7 @@ $recursos = $recurso->pegarecursos();
     <link rel="stylesheet" href="./css/paginas.css">
 
     <title>Entrada</title>
+    
 </head>
 <body>
 
