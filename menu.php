@@ -38,8 +38,19 @@ require_once "config.php";
             Nota Fiscal
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item " href="<?php echo $url ?>cad-nota.php" class="botao-menu">Cadastrar nota</a></li>
+        <li><a class="dropdown-item " href="<?php echo $url ?>cad-nota.php" class="botao-menu">Cadastrar nota</a></li>
             <li><a class="dropdown-item " href="<?php echo $url ?>listar-nota.php" class="botao-menu">Listar nota</a></li>
         </ul>
+
+</div>
+
+<div class="drop-down">
+
+    <button class="btn btn-success btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Estoque
+    </button>
+    <ul class="drop-estoque">
+        <li><a class="dropdown-estoque" href="<?php echo $url?>index.php" class="botao-menu"></a>Relatorio</li>
+    </ul>
 
 </div>

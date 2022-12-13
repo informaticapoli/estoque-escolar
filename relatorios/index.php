@@ -17,9 +17,32 @@
     <title>Relatórios</title>
 </head>
 <body>
-<div class="menu">  
+    
+
+    <div class="menu">  
         <?php require_once "../menu.php";?>
     </div>
-    <div class="fundo-lista-forn">
+        <div class="fundo-cad">
+
+        </div>
+            <fieldset>
+                <legend> Relatorio do Estoque</legend>
+            </fieldset>
+
+            <form action="">
+                <div class="row">
+                <label>Data Inicial:</label>
+                <input class="form-control" type="date" name="data-inicial" required>
+                <label>Data Final:</label>
+                <input class="form-control" type="date" name="data-final" required>
+                <label>Turno</label>
+                <input type="select" name="turno" required>
+                </div>
+            </form>
+
+
+
+
+            
 </body>
 </html>

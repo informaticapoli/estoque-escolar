@@ -51,7 +51,7 @@ $produtos = $produto->listar();
                         <th> U. M.</th>
                         <th> Fornecedor</th>
                         <th> Recurso</th>
-                        <th style="text-align:center"> Opções</th>
+                        <th style="text-align:center"> Opções </th>
                     </tr>   
                 </thead>
                 <tbody>
