@@ -34,7 +34,7 @@ $fornecedores = $fornecedor->listarFornecedores();
     <link rel="stylesheet" href="./css/datatable.css">
     <link rel="stylesheet" href="./css/paginas.css">
     <link rel="stylesheet" href="./css/fornecedor.css">
-    <title>Cadastrar Fornecedor</title>
+    <title>Lista de Fornecedores</title>
 </head>
 <body>
     <div class="menu">  
@@ -65,10 +65,7 @@ $fornecedores = $fornecedor->listarFornecedores();
                     </td>
                 </tr>
             <?php endforeach ?>
-            </tbody>
-           
-
-            
+            </tbody>            
         </table>
             <div class="row box">
                 <div class="col-md-6">
