@@ -40,9 +40,9 @@ $notas = $nota->listando_nota();
     </div>  
 
     <div class="tabela">
-        <fieldset>
+        <fieldset class="fundo">
             <legend>Lista de Notas</legend>
-            <table id="myTable" class="table" >
+            <table id="myTable" class="table table-striped" >
                 <thead>
                     <tr>
                         <th> #</th>
@@ -56,13 +56,13 @@ $notas = $nota->listando_nota();
                 <tbody>
                     <?php foreach($notas as $nota): ?>
                         <tr>
-                            <td><?php echo $nota['id_nota']?></td>
-                            <td><?php echo $nota['nome_fornecedor']?></td>
-                            <td><?php echo str_pad($nota['numero_nota'], 10, "0", STR_PAD_LEFT)?></td>
-                            <td><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
-                            <td><span>R$ <span class="dinheiro"><?php echo $nota['total_nota']?></span></span></td>
+                            <td style="width:5%"><?php echo $nota['id_nota']?></td>
+                            <td style="width:25%"><?php echo $nota['nome_fornecedor']?></td>
+                            <td style="width:15%"><?php echo str_pad($nota['numero_nota'], 10, "0", STR_PAD_LEFT)?></td>
+                            <td style="width:15%"><?php echo date('d/m/Y',strtotime($nota['data_entrada']))?></td>                                        
+                            <td style="width:15%"><span>R$ <span class="dinheiro"><?php echo $nota['total_nota']?></span></span></td>
 
-                            <td>
+                            <td style="width:25%">
                                 <a href="excluir-.php?id=<?php echo $nota[''] ?>" class="btn btn-danger"> Excluir </a>
                                 <a href="./nota/editar-nota.php?id=<?php echo $nota['id_nota'] ?>" class="btn btn-warning"> Editar </a>
                             </td>
@@ -72,5 +72,8 @@ $notas = $nota->listando_nota();
             </table>
         </fieldset>
     </div>
+
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>
 </html>

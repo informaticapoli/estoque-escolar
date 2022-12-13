@@ -41,16 +41,13 @@ $fornecedores = $fornecedor->listarFornecedores();
         <?php require_once "./menu.php";?>
     </div>
     <div class="fundo-lista-forn">
-    
+
+    <fieldset class="fundo">
         <h1>Lista de Fornecedores</h1>
-        <table class="table fundo" id="myTable">
+        <table class="table table-striped" id="myTable">
             <thead>
                 <th>Fornecedor</th>
                 <th>CNPJ</th>
-                <th>Endereço</th>
-                <th>Contato</th>
-                <th>Telefone 1</th>
-                <th>Telefone 2</th>
                 <th>Email</th>
                 <th>Opções</th>
             </thead>
@@ -58,14 +55,10 @@ $fornecedores = $fornecedor->listarFornecedores();
             <tbody>
             <?php foreach($fornecedores as $fornecedor): ?>
                 <tr>
-                    <td><?php echo utf8_encode($fornecedor['nome_fornecedor'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['cnpj'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['endereco_fornecedor'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['contato_fornecedor'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['telefone1'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['telefone2'])?></td>
-                    <td><?php echo utf8_encode($fornecedor['e_mail'])?></td>
-                    <td>
+                    <td style="width:50%"><?php echo utf8_encode($fornecedor['nome_fornecedor'])?></td>
+                    <td style="width:15%"><?php echo utf8_encode($fornecedor['cnpj'])?></td>
+                    <td  style="width:15%"><?php echo utf8_encode($fornecedor['e_mail'])?></td>
+                    <td  style="width:20%">
                     <a href="./fornecedores/editar.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>" class="btn btn-warning">Editar</a>
                     
                     <a href="./fornecedores/excluir.php?id_fornecedor=<?php echo $fornecedor['id_fornecedor']?>" onclick="return confirm('Deseja excluir o registro?')" class="btn btn-danger">Excluir</a>
@@ -82,6 +75,10 @@ $fornecedores = $fornecedor->listarFornecedores();
                     <a href="./inicio.php"class="btn btn-voltar btn-warning">Voltar</a>
                 </div>
             </div>
+    <fieldset>
     </div>
+
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>
 </html>
