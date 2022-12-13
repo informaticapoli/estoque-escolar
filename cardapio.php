@@ -22,6 +22,7 @@ if(isset($_POST['nome_cardapio']) && $_POST['nome_cardapio'] != ""){
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/cardapio.css">
+    <link rel="stylesheet" href="./css/paginas.css">
     <title>Cadastrar Cardápio</title>
 </head>
 <body>
@@ -37,4 +38,7 @@ if(isset($_POST['nome_cardapio']) && $_POST['nome_cardapio'] != ""){
             <button class="btn btn-cardapio btn-success" type="submit">Próxima etapa</button>
         </form>
     </div>
+
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>

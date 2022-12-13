@@ -19,6 +19,7 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/baixa_produtos.css">
+    <link rel="stylesheet" href="./css/paginas.css">
     <title>Retirada de Produtos</title>
 </head>
 <body>
@@ -49,4 +50,7 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
             <button class="btn btn-success  btn-concluir">Concluir</button>
         </form>
     </div>
+
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>
