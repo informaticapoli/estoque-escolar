@@ -1,28 +1,14 @@
 .btn{
     width: 130px;
-    height: 40px;
+    height: 38px;
     border-radius: 15px;
     margin-left: 10px;
-}
-
-.menurp{
-    background-color:#096F34 ;
-    list-style: none;
-    height: 70px;
-    line-height: 70px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 legend{
     display: flex;
     justify-content: center;
     color: #115B31;
-}
-
-dropdown{
-    margin-left: 20px;
 }
 
 input, select{

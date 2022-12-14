@@ -51,7 +51,7 @@ $recursos = $recurso->pegarecursos();
     </div>
     <div class="fundo-cad-nota">
         <h1>Cadastrar Nota Fiscal</h1>
-        <form class="container" method="POST">
+        <form method="POST">
             <label>Fornecedor:</label>
             <select class="form-control" name="id_fornecedor" required> 
                 <option value="" disabled selected >Selecione um fornecedor</option>
@@ -79,7 +79,7 @@ $recursos = $recurso->pegarecursos();
             
     </div>
 
-    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 
 </body>
 </html>

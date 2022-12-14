@@ -62,5 +62,8 @@ $cardapios = $cardapio->exibir_cardapio();
             </table>
         </div>
     </div>
+
+    <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>
 </html>
