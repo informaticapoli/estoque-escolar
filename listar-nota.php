@@ -71,7 +71,7 @@ $notas = $nota->listando_nota();
                 </tbody>
             </table>
         </fieldset>
-    </div>
+    </div >
 
     <footer class="menurp"><a href="contato.php" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
 
