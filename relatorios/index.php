@@ -27,41 +27,46 @@ $prod_cardapios = $prod_cardapio->pegaCardapio();
     <title>Relatórios</title>
 </head>
 <body>
-    
-
     <div class="menu">  
         <?php require_once "../menu.php";?>
     </div>
-        <div class="fundo-cad">
-
+    <div class="fundo-cad">
+        <fieldset>
+            <legend> Relatório do Estoque</legend>
+        </fieldset>
+        <form action="relatorio.php" method="GET">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Data Inicial:</label>
+                <input class="form-control" type="date" name="data-inicial" required>
+            </div>
+            <div class="col-md-3">
+                <label>Data Final:</label>
+                <input class="form-control" type="date" name="data-final" required>
+            </div>
+            <div class="col-md-3">
+                <label>Turno:</label>
+                <select class="form-control" name="turno" required> 
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="turno1">Turno 1</option>
+                    <option value="turno2">Turno 2</option>
+                    <option value="turno3">Turno 3</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label>Movimentação:</label>
+                <select class="form-control" name="movimentacao" required> 
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="saida">Saída</option>
+                    <option value="entrada">Entrada</option>
+                </select>
+            </div>
         </div>
-            <fieldset>
-                <legend> Relatório do Estoque</legend>
-            </fieldset>
-            <form action="relatorio.php" method="GET">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label>Data Inicial:</label>
-                        <input class="form-control" type="date" name="data-inicial" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Data Final:</label>
-                        <input class="form-control" type="date" name="data-final" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Turno</label>
-                        <select class="form-control" name="turno" required> 
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="turno1">Turno 1</option>
-                            <option value="turno2">Turno 2</option>
-                            <option value="turno3">Turno 3</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="row">
+                <button class="btn btn-success">Relatório</button>
+            </div>
+        </form>
+    </div>
     
-                
-                
-                
-            </form>
 </body>
 </html>
