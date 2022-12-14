@@ -114,6 +114,7 @@ $(document).ready(function (){
                 html+= "</tr>";
             }
             $("#produtos_cad").html(html);
+            listar_prod(id_nota);
             limparCampos();
         }
             

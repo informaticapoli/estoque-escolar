@@ -41,20 +41,16 @@ if(isset($_POST['id_nota'])){
     <div class="menu">  
         <?php require_once "./menu.php";?>
     </div>
-    <div class="fundo-cad-prod-nota container">
+    <div class="fundo-cad-prod-nota">
         <div class="form-prod-nota">
             <h1>Cadastrar Produtos da Nota Fiscal</h1>
             <div class="row ">
                 <form method="POST">
                     <div class="row campo_pesquisa">
-                        <div class="col-md-12">
-                            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
-                        </div>
-                        <div class="col-md-12">
-                                <div class="resultado">
-                                
-                                </div>
-                        </div>
+                    <div class="campo_pesquisa col-md-11">
+                        <button type="button" class="btn btn-success btn-add-prod" data-bs-toggle="modal" data-bs-target="#exampleModal">Adicionar Nota</button>
+                    </div>
+
                     </div>         
                 </form>
             </div>
@@ -102,5 +98,33 @@ if(isset($_POST['id_nota'])){
             </form>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Nota</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input id="pesquisar_prod" class="form-control form-prod" placeholder="Pesquise um produto para incluir" type="text">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Produtos</th>    
+                    </thead>
+                    <tbody class="resultado" data-bs-dismiss="modal">
+                        
+                    </tbody>
+                </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="menurp"><a href="" class="paragrafo">-->Desenvolvido pela Segunda Turma do Curso Técnico de Informática<--</a></footer>
+
 </body>
 </html>
