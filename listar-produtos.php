@@ -52,17 +52,17 @@ $produtos = $produto->listar();
                         <th> U. M.</th>
                         <th> Fornecedor</th>
                         <th> Recurso</th>
-                        <th> Opções</th>
+                        <th style="text-align:center"> Opções </th>
                     </tr>   
                 </thead>
                 <tbody>
                     <?php foreach($produtos as $produto): ?>
                         <tr>
-                            <td style="width:40%"><?php echo $produto['nome_produto']?></td>
-                            <td style="width:5%"><?php echo $produto['unidade_medida']?></td>
+                            <td style="width:30%"><?php echo $produto['nome_produto']?></td>
+                            <td style="width:10%"><?php echo $produto['unidade_medida']?></td>
                             <td style="width:30%"><?php echo utf8_encode($produto['nome_fornecedor'])?></td>                                        
                             <td style="width:5%"><?php echo $produto['nome_recurso']?></td>
-                            <td style="width:20%">
+                            <td style="width:30%;text-align:center">
                                 <a href="excluir-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-danger"> Excluir </a>
                                 <a href="editar-produtos.php?id=<?php echo $produto['id_produto'] ?>" class="btn btn-warning"> Editar </a>
                             </td>
